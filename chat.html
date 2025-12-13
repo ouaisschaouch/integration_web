@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduLink - Chat</title>
+  <link rel="stylesheet" href="dist/output.css" />
+</head>
+<body class="chat-container">
+
+ <header class="h-16 bg-nav-gray py-4 px-6 shadow-md">
+  <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+
+    <!-- Logo -->
+    <div class="flex items-center mb-4 md:mb-0">
+      <h1 class="logo-title">Édulink</h1>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="flex flex-wrap justify-center gap-4 md:gap-8 text-gray-700 font-medium">
+      <a href="#" class="nav-link">Student</a>
+      <a href="#" class="nav-link">Events</a>
+      <a href="#" class="nav-link">Planning</a>
+      <a href="#" class="nav-link">Assistant</a>
+    </nav>
+
+    <!-- Button -->
+    <div class="mt-4 md:mt-0">
+      <button class="btn-join">
+        Join Now
+      </button>
+    </div>
+
+  </div>
+</header>
+
+  <!-- Title -->
+  <h1 class="text-center text-3xl font-semibold text-blue-700 my-6 tracking-wide">
+    Discussion entre conseiller et étudiant
+  </h1>
+
+  <!-- Layout -->
+  <div class="flex w-full px-8 gap-6 flex-1">
+
+    <!-- LEFT PANEL -->
+    <aside class="contacts flex flex-col">
+      <h2 class="text-xl font-semibold mb-4">Messages</h2>
+      <input type="text" placeholder="Search" class="w-full p-2 rounded-full text-gray-700 mb-4" />
+
+      <div class="flex flex-col gap-4 overflow-y-auto">
+        <div class="contact">
+          <img src="https://via.placeholder.com/40" class="w-10 h-10 rounded-full" />
+          <div>
+            <p class="font-semibold">Yahia Mejri</p>
+            <p class="text-sm opacity-80 truncate">Hello, How can I assist you?</p>
+          </div>
+        </div>
+
+        <div class="contact flex items-center gap-3 bg-blue-500 p-2 rounded-lg cursor-pointer hover:bg-blue-400">
+          <img src="https://via.placeholder.com/40" class="w-10 h-10 rounded-full" />
+          <div class="flex-1">
+            <p class="font-semibold">Sedki Aarouch</p>
+            <p class="text-sm opacity-80 truncate">See you tomorrow!</p>
+          </div>
+          <span class="bg-red-500 text-white w-6 h-6 flex items-center justify-center text-sm rounded-full">2</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CHAT PANEL -->
+    <main class="chat-panel flex-1 bg-blue-500 rounded-2xl p-6 flex flex-col justify-between">
+
+      <!-- Chat messages -->
+      <div class="messages bg-white rounded-xl p-6 space-y-6 h-[540px] overflow-y-auto">
+
+        <!-- User message -->
+        <div class="message message--user">Hi, I need help with my assignment</div>
+
+        <!-- Advisor message -->
+        <div class="message message--other">Hello, how can I assist you?</div>
+      </div>
+
+      <!-- Message input -->
+      <div class="mt-4">
+        <div class="flex bg-white rounded-full px-4 py-2 items-center gap-3">
+          <input type="text" placeholder="Type a message" class="flex-1 outline-none" />
+          <span class="text-xl cursor-pointer">💡</span>
+          <span class="text-xl cursor-pointer">✈️</span>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+<footer class="flex-shrink-0 bg-nav-gray py-6 px-4 mt-8">
+  <div class="container mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+
+      <!-- Logo & Feedback -->
+      <div class="mb-4 md:mb-0">
+        <h3 class="logo-title">Edulink</h3>
+        <p class="text-gray-600 mt-1">Donner votre feedback</p>
+      </div>
+
+      <!-- Footer Info -->
+      <div class="text-center md:text-right">
+        <p class="footer-text">&copy; 2025 EduLink. All rights reserved</p>
+        <p class="text-gray-700 text-xs mt-1">
+          Communication • Organisation • Ressource et partage • Accompagnement
+        </p>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+</html>

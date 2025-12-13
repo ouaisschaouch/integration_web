@@ -1,0 +1,23 @@
+.chat-container {
+  @apply flex flex-col min-h-screen bg-gray-100;
+
+  .chat-header {
+    @apply flex items-center justify-between bg-white shadow px-10 py-4;
+  }
+
+  .contacts {
+    @apply w-[300px] bg-blue-600 text-white rounded-xl p-4 flex flex-col;
+  }
+
+  .message {
+    @apply px-4 py-2 rounded-xl;
+
+    &--user {
+      @apply bg-blue-500 text-white text-right;
+    }
+
+    &--other {
+      @apply bg-gray-100 text-gray-700 text-left;
+    }
+  }
+}
