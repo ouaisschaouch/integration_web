@@ -6,57 +6,53 @@
   <title>EduLink - Chat</title>
   <link rel="stylesheet" href="dist/output.css" />
 </head>
-<body class="chat-container">
+<body class="flex flex-col min-h-screen bg-gray-50">
 
- <header class="h-16 bg-nav-gray py-4 px-6 shadow-md">
-  <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+  <!-- HEADER -->
+  <header class="h-16 bg-nav-gray py-4 px-6 shadow-md">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
 
-    <!-- Logo -->
-    <div class="flex items-center mb-4 md:mb-0">
-      <h1 class="logo-title">Édulink</h1>
+      <div class="flex items-center mb-4 md:mb-0">
+        <h1 class="logo-title">Édulink</h1>
+      </div>
+
+      <nav class="flex flex-wrap justify-center gap-4 md:gap-8 text-gray-700 font-medium">
+        <a href="#" class="nav-link">Student</a>
+        <a href="#" class="nav-link">Events</a>
+        <a href="#" class="nav-link">Planning</a>
+        <a href="#" class="nav-link">Assistant</a>
+      </nav>
+
+      <div class="mt-4 md:mt-0">
+        <button class="btn-join">Join Now</button>
+      </div>
+
     </div>
-
-    <!-- Navigation -->
-    <nav class="flex flex-wrap justify-center gap-4 md:gap-8 text-gray-700 font-medium">
-      <a href="#" class="nav-link">Student</a>
-      <a href="#" class="nav-link">Events</a>
-      <a href="#" class="nav-link">Planning</a>
-      <a href="#" class="nav-link">Assistant</a>
-    </nav>
-
-    <!-- Button -->
-    <div class="mt-4 md:mt-0">
-      <button class="btn-join">
-        Join Now
-      </button>
-    </div>
-
-  </div>
-</header>
+  </header>
 
   <!-- Title -->
   <h1 class="text-center text-3xl font-semibold text-blue-700 my-6 tracking-wide">
     Discussion entre conseiller et étudiant
   </h1>
 
-  <!-- Layout -->
-  <div class="flex w-full px-8 gap-6 flex-1">
+  <!-- MAIN LAYOUT -->
+  <div class="flex flex-1 w-full px-8 gap-6 mb-8">
 
-    <!-- LEFT PANEL -->
-    <aside class="contacts flex flex-col">
-      <h2 class="text-xl font-semibold mb-4">Messages</h2>
+    <!-- LEFT PANEL (Contacts) -->
+    <aside class="contacts flex flex-col w-64 rounded-xl p-4" style="background-color: #5872F4;">
+      <h2 class="text-xl font-semibold mb-4 text-white">Messages</h2>
       <input type="text" placeholder="Search" class="w-full p-2 rounded-full text-gray-700 mb-4" />
 
       <div class="flex flex-col gap-4 overflow-y-auto">
-        <div class="contact">
+        <div class="contact flex items-center gap-3 cursor-pointer hover:bg-blue-400 p-2 rounded-lg">
           <img src="https://via.placeholder.com/40" class="w-10 h-10 rounded-full" />
           <div>
-            <p class="font-semibold">Yahia Mejri</p>
-            <p class="text-sm opacity-80 truncate">Hello, How can I assist you?</p>
+            <p class="font-semibold text-white">Yahia Mejri</p>
+            <p class="text-sm text-gray-200 truncate">Hello, How can I assist you?</p>
           </div>
         </div>
 
-        <div class="contact flex items-center gap-3 bg-blue-500 p-2 rounded-lg cursor-pointer hover:bg-blue-400">
+        <div class="contact flex items-center gap-3 bg-blue-500 p-2 rounded-lg cursor-pointer hover:bg-blue-400 text-white">
           <img src="https://via.placeholder.com/40" class="w-10 h-10 rounded-full" />
           <div class="flex-1">
             <p class="font-semibold">Sedki Aarouch</p>
@@ -70,49 +66,96 @@
     <!-- CHAT PANEL -->
     <main class="chat-panel flex-1 bg-blue-500 rounded-2xl p-6 flex flex-col justify-between">
 
-      <!-- Chat messages -->
-      <div class="messages bg-white rounded-xl p-6 space-y-6 h-[540px] overflow-y-auto">
+      <!-- Chat header -->
+      <div class="flex justify-between items-center mb-4">
+        <div class="flex items-center gap-3">
+          <img src="https://via.placeholder.com/40" alt="Yahia Mejri" class="w-10 h-10 rounded-full border-2 border-white" />
+          <div class="flex flex-col">
+            <p class="text-white font-semibold">Yahia Mejri</p>
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 bg-green-500 rounded-full"></span>
+              <span class="text-gray-200 text-sm">En ligne</span>
+            </div>
+          </div>
+        </div>
 
-        <!-- User message -->
-        <div class="message message--user">Hi, I need help with my assignment</div>
-
-        <!-- Advisor message -->
-        <div class="message message--other">Hello, how can I assist you?</div>
-      </div>
-
-      <!-- Message input -->
-      <div class="mt-4">
-        <div class="flex bg-white rounded-full px-4 py-2 items-center gap-3">
-          <input type="text" placeholder="Type a message" class="flex-1 outline-none" />
-          <span class="text-xl cursor-pointer">💡</span>
-          <span class="text-xl cursor-pointer">✈️</span>
+        <div class="flex items-center gap-4">
+          <!-- Call -->
+          <button class="bg-white p-2 rounded-full hover:bg-gray-200">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-gray-700">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+            </svg>
+          </button>
+          <!-- Video -->
+          <button class="bg-white p-2 rounded-full hover:bg-gray-200">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-gray-700">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
+            </svg>
+          </button>
         </div>
       </div>
 
-    </main>
-  </div>
+   <!-- Messages container -->
+<div class="messages flex-1 flex flex-col gap-2 p-4 overflow-y-auto bg-white rounded-xl">
 
-</body>
-<footer class="flex-shrink-0 bg-nav-gray py-6 px-4 mt-8">
-  <div class="container mx-auto">
-    <div class="flex flex-col md:flex-row justify-between items-center">
-
-      <!-- Logo & Feedback -->
-      <div class="mb-4 md:mb-0">
-        <h3 class="logo-title">Edulink</h3>
-        <p class="text-gray-600 mt-1">Donner votre feedback</p>
-      </div>
-
-      <!-- Footer Info -->
-      <div class="text-center md:text-right">
-        <p class="footer-text">&copy; 2025 EduLink. All rights reserved</p>
-        <p class="text-gray-700 text-xs mt-1">
-          Communication • Organisation • Ressource et partage • Accompagnement
-        </p>
-      </div>
-
+  <!-- Message de l'utilisateur (aligné à droite) -->
+  <div class="flex w-full">
+    <div class="ml-auto bg-blue-500 text-white p-3 rounded-xl max-w-xs">
+      Salut ! J’ai besoin d’aide pour mon devoir.
     </div>
   </div>
-</footer>
 
+  <!-- Message du conseiller (aligné à gauche) -->
+  <div class="flex w-full">
+    <div class="bg-gray-200 text-gray-800 p-3 rounded-xl max-w-xs">
+      Bonjour ! Comment puis-je t’aider ?
+    </div>
+  </div>
+
+  <!-- Autre message utilisateur -->
+  <div class="flex w-full">
+    <div class="ml-auto bg-blue-500 text-white p-3 rounded-xl max-w-xs">
+      Merci ! J’ai besoin de conseils pour mon projet.
+    </div>
+  </div>
+
+</div>
+
+
+
+
+      <!-- Input + attach -->
+      <div class="flex items-center gap-4 mt-4 bg-white rounded-full px-4 py-2">
+        <input type="text" placeholder="Type a message" class="flex-1 outline-none chat-input" />
+        <button class="bg-gray-100 p-2 rounded-full hover:bg-gray-200">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-gray-700">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13" />
+          </svg>
+        </button>
+        <button class="bg-title-blue text-white px-4 py-2 rounded-full hover:bg-blue-700">Envoyer</button>
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="flex-shrink-0 bg-nav-gray py-6 px-4 mt-8">
+    <div class="container mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <h3 class="logo-title">Edulink</h3>
+          <p class="text-gray-600 mt-1">Donner votre feedback</p>
+        </div>
+        <div class="text-center md:text-right">
+          <p class="footer-text">&copy; 2025 EduLink. All rights reserved</p>
+          <p class="text-gray-700 text-xs mt-1">
+            Communication • Organisation • Ressource et partage • Accompagnement
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
 </html>

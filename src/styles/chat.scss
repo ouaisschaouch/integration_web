@@ -20,4 +20,25 @@
       @apply bg-gray-100 text-gray-700 text-left;
     }
   }
+  .chat-action-btn {
+  @apply p-2 rounded-full hover:bg-gray-200 transition;
+}
+
+.chat-input {
+  @apply flex-1 px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-title-blue;
+}
+
+.chat-send-btn {
+  @apply bg-title-blue text-white px-4 py-2 rounded-full hover:bg-blue-700 transition;
+}
+
+.message--user {
+  @apply bg-blue-100 p-3 rounded-lg self-end max-w-xs;
+}
+
+.message--other {
+  @apply bg-gray-100 p-3 rounded-lg self-start max-w-xs;
+}
+
+  
 }
