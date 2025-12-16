@@ -1,0 +1,16 @@
+@use "variables" as *;
+
+.edu-shell{
+  background: $panel;
+  border-radius: $radius-lg;
+  padding: 22px;
+}
+
+.edu-full{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 28px;
+}

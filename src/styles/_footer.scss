@@ -1,0 +1,40 @@
+@use "variables" as *;
+
+.edu-footer{
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #64748b;
+  font-size: 14px;
+  padding: 10px 8px;
+}
+
+.edu-footer-brand{
+  font-weight: 900;
+  color: $blue2;
+}
+
+.edu-footer-icons{
+  display: flex;
+  gap: 12px;
+
+  a{
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    text-decoration: none;
+    color: #334155;
+    box-shadow: 0 10px 18px rgba(15,23,42,.10);
+    transition: transform .15s ease;
+
+    &:hover{
+      transform: translateY(-2px);
+    }
+  }
+}

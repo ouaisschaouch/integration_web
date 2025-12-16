@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduLink - EduChat</title>
+
+  <link rel="stylesheet" href="../tailwind.css" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body class="min-h-screen bg-slate-100">
+
+  <main class="edu-shell edu-full">
+
+    <!-- NAVBAR -->
+    <header class="edu-nav">
+      <div class="edu-brand">EduLink</div>
+      <nav class="edu-links">
+        <a href="./students.html">Student</a>
+        <a href="#">Events</a>
+        <a href="./planning.html">Planning</a>
+        <a class="active" href="./assistant.html">Assistant</a>
+      </nav>
+    </header>
+
+    <!-- BOT FULL SCREEN AREA -->
+    <section class="bot-wrap">
+      <a class="bot-back" href="./students.html" aria-label="Back">←</a>
+
+      <div class="bot-shell">
+
+        <!-- LEFT SIDEBAR -->
+        <aside class="bot-left">
+          <div class="bot-logo">
+            <span class="bot-gpt">🌀</span>
+            <span>EduChat</span>
+          </div>
+
+          <button class="bot-new">+ New Chat</button>
+
+          <div class="bot-group">
+            <div class="bot-group-title">Today</div>
+            <a class="bot-link" href="#">✳ Studing</a>
+            <a class="bot-link" href="#">🧩 Help</a>
+          </div>
+
+          <div class="bot-group">
+            <div class="bot-group-title">Previouse Day</div>
+            <a class="bot-link" href="#">🌀 Planning</a>
+            <a class="bot-link" href="#">📌 Events update</a>
+            <a class="bot-link" href="#">ℹ Chat Information</a>
+          </div>
+
+          <div class="bot-user">
+            <img src="../assets/alina.jpg" alt="Alina">
+            <div class="bot-user-info">
+              <div class="bot-user-name">Alina Marta</div>
+              <span class="bot-pro">Upgraded To Pro</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- CENTER -->
+        <section class="bot-center">
+
+          <!-- header -->
+          <div class="bot-head">
+            <div class="bot-head-left">
+              <h3>Photo Generation</h3>
+              <button class="bot-edit" title="Edit">✎</button>
+            </div>
+
+            <div class="bot-head-right">
+              <button title="spark">✦</button>
+              <button title="delete">🗑</button>
+            </div>
+          </div>
+
+          <!-- content -->
+          <div class="bot-body">
+
+            <div class="bot-day">Today</div>
+
+            <div class="bot-msg me">
+              <div class="bot-bubble me">"Create an HD Wallpaper Student Image"</div>
+              <img class="bot-mini" src="../assets/alina.jpg" alt="">
+            </div>
+
+            <div class="bot-card">
+              <img src="../assets/ai-generated-9295105_640.jpg" alt="Image created">
+              <div class="bot-card-footer">
+                <span>Image Created</span>
+                <div class="bot-react">
+                  <button>🙂</button>
+                  <button>♡</button>
+                  <button>👍</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- input -->
+          <div class="bot-input">
+            <input type="text" placeholder="Send a message" />
+            <button title="image">🖼</button>
+            <button title="send">➤</button>
+          </div>
+
+        </section>
+
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="edu-footer">
+      <div class="edu-footer-brand">EduLink</div>
+      <div class="edu-footer-copy">© 2025 EduLink. All rights reserved</div>
+      <div class="edu-footer-icons">
+        <a href="#">f</a>
+        <a href="#">@</a>
+        <a href="#">in</a>
+        <a href="#">x</a>
+      </div>
+    </footer>
+
+  </main>
+
+</body>
+</html>

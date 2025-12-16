@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduLink - Private Chat</title>
+
+  <link rel="stylesheet" href="../tailwind.css" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body class="min-h-screen bg-slate-100">
+
+  <main class="edu-shell edu-full">
+
+    <!-- NAVBAR -->
+    <header class="edu-nav">
+      <div class="edu-brand">EduLink</div>
+
+      <nav class="edu-links">
+        <a href="./students.html">Student</a>
+        <a href="#">Events</a>
+        <a href="planning.html">Planning</a>
+        <a href="assistant.html">Assistant</a>
+      </nav>
+    </header>
+
+    <!-- CHAT WRAPPER -->
+    <section class="pc-wrap">
+
+      <!-- back -->
+      <button class="pc-back" aria-label="Back">←</button>
+
+      <div class="pc-grid">
+
+        <!-- LEFT SIDEBAR -->
+        <aside class="pc-left">
+          <h3 class="pc-title">Message</h3>
+
+          <div class="pc-search">
+            <span class="pc-search-ico">🔎</span>
+            <input type="text" placeholder="Search" />
+          </div>
+
+          <div class="pc-list">
+
+            <a class="pc-item active" href="#">
+              <img class="pc-item-pic" src="../assets/alina.jpg" alt="Alina">
+              <div class="pc-item-body">
+                <div class="pc-item-top">
+                  <span class="pc-item-name">Alina Marta</span>
+                  <span class="pc-item-time">Now</span>
+                </div>
+                <div class="pc-item-msg">Hello , How Can I Assist You ?</div>
+              </div>
+            </a>
+
+            <a class="pc-item" href="#">
+              <img class="pc-item-pic" src="../assets/salma.jpg" alt="Salma">
+              <div class="pc-item-body">
+                <div class="pc-item-top">
+                  <span class="pc-item-name">Salma Lamir</span>
+                  <span class="pc-item-time">1h ago</span>
+                </div>
+                <div class="pc-item-msg">See you tomorrow</div>
+              </div>
+              <span class="pc-badge">1</span>
+            </a>
+
+            <a class="pc-item" href="#">
+              <img class="pc-item-pic" src="../assets/aziz.jfif" alt="Aziz">
+              <div class="pc-item-body">
+                <div class="pc-item-top">
+                  <span class="pc-item-name">Aziz Rahouej</span>
+                  <span class="pc-item-time">Now</span>
+                </div>
+                <div class="pc-item-msg">Thanks !</div>
+              </div>
+            </a>
+
+          </div>
+        </aside>
+
+        <!-- CENTER CHAT -->
+        <section class="pc-center">
+
+          <!-- header -->
+          <div class="pc-head">
+            <div class="pc-head-left">
+              <img class="pc-head-pic" src="../assets/alina.jpg" alt="Alina">
+              <div>
+                <div class="pc-head-name">Alina Marta</div>
+                <div class="pc-head-status"><span class="pc-dot"></span> Online</div>
+              </div>
+            </div>
+
+            <div class="pc-head-actions">
+              <button title="Call">📞</button>
+              <button title="Video">🎥</button>
+              <button title="More">⋯</button>
+            </div>
+          </div>
+
+          <!-- messages -->
+          <div class="pc-body">
+
+            <div class="pc-day">Today</div>
+
+            <div class="pc-row me">
+              <div class="pc-bubble me">Hi , I need help with my assignment</div>
+              <img class="pc-mini" src="../assets/aziz.jfif" alt="">
+            </div>
+
+            <div class="pc-row">
+              <img class="pc-mini" src="../assets/alina.jpg" alt="">
+              <div class="pc-bubble">Hello , How Can I Assist You ?</div>
+            </div>
+
+            <div class="pc-row me">
+              <div class="pc-bubble me">The Topic is Data Science</div>
+              <img class="pc-mini" src="../assets/aziz.jfif" alt="">
+            </div>
+
+            <div class="pc-row me">
+              <div class="pc-bubble me img">
+                <img src="../assets/code.jpg" alt="notes">
+                <div class="pc-img-cap">Here are my notes on the topic</div>
+              </div>
+              <img class="pc-mini" src="../assets/aziz.jfif" alt="">
+            </div>
+
+            <div class="pc-row">
+              <img class="pc-mini" src="../assets/alina.jpg" alt="">
+              <div class="pc-bubble">Sure , I can help with That ...</div>
+            </div>
+
+          </div>
+
+          <!-- input -->
+          <div class="pc-input">
+            <div class="pc-input-left">
+              <button title="Emoji">🙂</button>
+              <input type="text" placeholder="Type a message ...." />
+            </div>
+
+            <div class="pc-input-right">
+              <button title="Attach">📎</button>
+              <button title="Mic">🎤</button>
+              <button class="pc-send">Send ➤</button>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- RIGHT INFO -->
+        <aside class="pc-right">
+          <h3 class="pc-right-title">Information about<br>Student</h3>
+
+          <div class="pc-card">
+            <div class="pc-card-top">
+              <div class="pc-card-avatar">
+                <img src="../assets/alina.jpg" alt="Alina">
+              </div>
+              <div class="pc-card-name">Alina Marta</div>
+              <div class="pc-card-online">Online</div>
+            </div>
+
+            <div class="pc-box">
+              <div class="pc-box-title">Description</div>
+              <p>
+                A DS student specializes in data analysis, machine learning, statistics, and programming.
+                They learn how to extract insights from data.
+              </p>
+            </div>
+
+            <div class="pc-toggle">
+              <div class="pc-toggle-left">
+                <span class="pc-bell">🔔</span>
+                <span>Notification</span>
+              </div>
+              <label class="pc-switch">
+                <input type="checkbox" checked />
+                <span class="pc-slider"></span>
+              </label>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="edu-footer">
+      <div class="edu-footer-brand">EduLink</div>
+      <div class="edu-footer-copy">© 2025 EduLink. All rights reserved</div>
+      <div class="edu-footer-icons">
+        <a href="#">f</a>
+        <a href="#">@</a>
+        <a href="#">in</a>
+        <a href="#">x</a>
+      </div>
+    </footer>
+
+  </main>
+
+</body>
+</html>

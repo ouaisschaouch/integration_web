@@ -1,0 +1,239 @@
+@use "variables" as *;
+
+/* ===== Banner (mockup style) ===== */
+.edu-banner{
+  height: 320px;
+  width: 100%;
+  border-radius: $radius-xl;
+  position: relative;
+  overflow: hidden;
+  box-shadow: $shadow-lg;
+  border: 1px solid rgba(255,255,255,.55);
+  background: #bfe8ff;
+
+  /* background photo + gradient */
+  &::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      linear-gradient(90deg, rgba(155,220,255,.85), rgba(155,220,255,.35)),
+      url("../assets/student-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+  }
+}
+
+/* back button */
+.edu-back{
+  position:absolute;
+  top: 18px;
+  left: 18px;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+
+  background: rgba(255,255,255,.60);
+  color: #1e40af;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 18px;
+
+  box-shadow: 0 10px 18px rgba(0,0,0,.12);
+  backdrop-filter: blur(6px);
+  z-index: 3;
+}
+
+.edu-banner-inner{
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 26px;
+  padding: 26px;
+}
+
+/* left profile */
+.edu-profile{
+  width: 140px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.edu-profile-pic{
+  width: 96px;
+  height: 96px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 5px solid rgba(255,255,255,.85);
+  box-shadow: 0 12px 25px rgba(2,8,23,.18);
+  background: #fff;
+
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display:block;
+  }
+}
+
+.edu-status-pill{
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(90,120,255,.90);
+  color: #fff;
+  box-shadow: 0 10px 16px rgba(30,92,255,.25);
+}
+
+/* info card */
+.edu-info-card{
+  flex: 1;
+  max-width: 760px;
+  background: rgba(255,255,255,.92);
+  border-radius: 14px;
+  padding: 18px 22px;
+  box-shadow: $shadow-md;
+  border: 1px solid rgba(255,255,255,.85);
+  margin-top: 28px;
+
+  h3{
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: 900;
+    color: $text;
+  }
+}
+
+.edu-info-line{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  margin-top: 8px;
+  color:#475569;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.edu-icon{
+  width: 22px;
+  height: 22px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius: 6px;
+  background: rgba(79,110,247,.12);
+  color: $blue2;
+}
+
+.edu-banner-quote{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom: 22px;
+  text-align:center;
+  font-weight: 900;
+  letter-spacing: .08em;
+  color: rgba(20,60,190,.70);
+  text-shadow: 0 6px 12px rgba(0,0,0,.10);
+  z-index: 2;
+}
+
+/* ===== CTA ===== */
+.edu-cta{
+  width: 100%;
+  border-radius: $radius-xl;
+  padding: 26px 28px;
+  background: linear-gradient(135deg, $blue, #2e4fe6);
+  box-shadow: 0 18px 36px rgba(2,8,23,.18);
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 24px;
+}
+
+.edu-cta-left{
+  display:flex;
+  align-items:center;
+  gap: 18px;
+}
+
+.edu-cta-icon{
+  width: 76px;
+  height: 76px;
+  border-radius: 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 34px;
+  background: rgba(255,255,255,.16);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.18);
+}
+
+.edu-cta-text{
+  h2{
+    margin: 0;
+    color:#fff;
+    font-size: 26px;
+    font-weight: 900;
+  }
+  p{
+    margin: 6px 0 0 0;
+    color: rgba(255,255,255,.85);
+    font-weight: 700;
+  }
+}
+
+/* CTA button is <a> in your HTML */
+.edu-cta-btn{
+  text-decoration:none;
+  border: none;
+  cursor: pointer;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.18);
+  color:#fff;
+  font-weight: 900;
+
+  display:flex;
+  align-items:center;
+  gap: 12px;
+
+  box-shadow: 0 16px 30px rgba(0,0,0,.18);
+  transition: transform .18s ease, background .18s ease;
+
+  &:hover{
+    transform: translateY(-2px);
+    background: rgba(255,255,255,.22);
+  }
+}
+
+.edu-cta-btn-ico{
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(255,255,255,.15);
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .edu-banner-inner{ flex-direction: column; }
+  .edu-profile{ width:auto; flex-direction: row; }
+  .edu-info-card{ max-width: 100%; margin-top: 10px; }
+
+  .edu-cta{ flex-direction: column; align-items: flex-start; }
+  .edu-cta-btn{ align-self: stretch; justify-content: center; }
+}

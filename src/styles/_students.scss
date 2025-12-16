@@ -1,0 +1,53 @@
+@use "variables" as *;
+
+.edu-hero {
+  border-radius: $radius-lg;
+  overflow: hidden;
+  background: linear-gradient(135deg, $blue1, $blue2);
+  box-shadow: 0 18px 40px rgba(2, 8, 23, .25);
+  position: relative;
+
+  &::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image: url("./assets/hero-hand.png");
+    background-size: cover;
+    background-position: center;
+    opacity: .28;
+    pointer-events:none;
+  }
+
+  &::after {
+    content:"";
+    position:absolute;
+    inset:0;
+    background: linear-gradient(135deg, rgba(5,20,60,.70), rgba(30,92,255,.35));
+    pointer-events:none;
+  }
+
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.edu-card {
+  border-radius: 22px;
+  box-shadow: 0 14px 30px rgba(2, 8, 23, .18);
+  border: 1px solid rgba(15,23,42,.06);
+  transition: transform .2s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+  }
+}
+
+.edu-avatar {
+  box-shadow: 0 12px 25px rgba(2, 8, 23, .25);
+  border: 6px solid rgba(255,255,255,.9);
+}
+
+.edu-go {
+  box-shadow: 0 14px 22px rgba(30,92,255,.35);
+}
