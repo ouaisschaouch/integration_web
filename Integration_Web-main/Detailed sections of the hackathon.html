@@ -6,66 +6,114 @@
   <title>Hackathon – Details</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
     body {
       font-family: 'Poppins', sans-serif;
-      background: #e6ecff;
+      background: linear-gradient(135deg, #e6ecff, #f5f8ff);
       margin: 0;
       padding: 0;
     }
 
+    /* Header */
     .nav-pill {
-      background: #dee7f6;
+      background: #ffffffcc;
       border-radius: 50px;
-      padding: 15px 40px;
+      padding: 10px 30px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      max-width: 1400px;
-      margin: 20px auto;
-      width: calc(100% - 80px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      max-width: 1200px;
+      margin: 15px auto;
+      width: calc(100% - 60px);
+      backdrop-filter: blur(8px);
     }
-
     .nav-links a:hover {
       color: #3b82f6;
+      transform: scale(1.05);
+      transition: 0.3s;
     }
-
     .btn-join {
       background-color: #3b82f6;
       color: white;
-      padding: 10px 28px;
+      padding: 8px 20px;
       border-radius: 50px;
       font-weight: 500;
-      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+      box-shadow: 0 4px 15px rgba(59,130,246,0.3);
       transition: 0.3s;
+      font-size: 0.9rem;
     }
-
     .btn-join:hover {
       background-color: #2563eb;
       transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
+      box-shadow: 0 6px 18px rgba(59,130,246,0.4);
     }
 
+    /* Info Card */
     .info-card {
       background: white;
-      border-radius: 24px;
-      padding: 32px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      border-left: 6px solid #3b82f6;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      border-left: 5px solid #3b82f6;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .info-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.1);
     }
 
+    /* Location Card */
+    .location-card {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .location-card:hover {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+    }
+
+    /* Steps */
     .step-active {
       background-color: #3b82f6;
       color: white;
+      box-shadow: 0 3px 10px rgba(59,130,246,0.4);
+      transition: transform 0.3s;
     }
-
+    .step-active:hover {
+      transform: scale(1.1);
+    }
     .step-inactive {
       background-color: #e5e7eb;
       color: #6b7280;
+      transition: transform 0.3s;
+    }
+    .step-inactive:hover {
+      transform: scale(1.05);
+    }
+
+    /* Flèches visibles */
+    .back-btn, .next-btn {
+      font-size: 2.5rem;                       /* grosse taille */
+      color: #1d4ed8;                           /* bleu visible */
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* ombre pour contraste */
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, color 0.2s;
+    }
+    .back-btn:hover {
+      color: #0c4a6e;
+      transform: translateX(-4px) scale(1.1);
+    }
+    .next-btn:hover {
+      color: #0c4a6e;
+      transform: translateX(4px) scale(1.1);
     }
   </style>
 </head>
@@ -75,90 +123,92 @@
 <!-- HEADER -->
 <header aria-label="Main Navigation">
   <div class="nav-pill">
-    <a href="#" class="text-2xl font-bold text-blue-600">EduLink</a>
-
-    <div class="nav-links flex gap-10 text-gray-600 font-medium">
+    <a href="#" class="text-xl font-bold text-blue-600">EduLink</a>
+    <div class="nav-links flex gap-6 text-gray-600 font-medium text-sm">
       <a href="#">Student</a>
       <a href="#">Events</a>
       <a href="#">Planning</a>
       <a href="#">Assistant</a>
     </div>
-
     <button class="btn-join">Log out</button>
   </div>
 </header>
 
-<!-- Back Arrow -->
-<div class="flex items-center p-6">
-  <button class="text-blue-700 text-3xl" onclick="goBack()">⬅</button>
+<!-- Flèche de retour -->
+<div class="flex items-center p-4">
+  <button class="back-btn" onclick="history.back()">⬅</button>
 </div>
 
 <!-- TITLE -->
-<h2 class="text-4xl font-bold text-center text-blue-700 mb-12 px-4">
-  Detailed sections of the hackathon
+<h2 class="text-3xl md:text-4xl font-bold text-center text-blue-700 mb-10 px-4">
+  Hackathon AI & Data Science – Détails
 </h2>
 
 <!-- MAIN CONTENT -->
-<div class="px-6 max-w-5xl mx-auto grid md:grid-cols-2 gap-10 mb-16">
+<div class="px-4 max-w-5xl mx-auto grid md:grid-cols-2 gap-8 mb-16">
 
-  <!-- LEFT -->
-  <div class="info-card text-lg leading-relaxed text-gray-700">
-      The AI & Data Science Hackathon will be held
-      from <strong>October 25 to 27, 2025</strong> at <strong>ESPRIT Ariana</strong>.<br><br>
-      Participation fee: <strong>40 DT</strong><br>
-      Reward: <strong>2000 DT</strong> + AI training 🚀
+  <!-- INFO CARD -->
+  <div class="info-card text-base leading-relaxed text-gray-700">
+    <h3 class="text-xl font-semibold text-blue-600 mb-3">📌 Informations principales</h3>
+    <p>
+      Le Hackathon AI & Data Science aura lieu du <strong>25 au 27 octobre 2025</strong> à <strong>ESPRIT Ariana</strong>.
+    </p>
+    <p class="mt-3">Frais de participation : <strong>40 DT</strong></p>
+    <p>Récompense : <strong>2000 DT</strong> + formation AI 🚀</p>
+    <p class="mt-3 text-gray-500">Rejoignez-nous pour vivre une expérience unique et enrichissante dans le domaine de l’intelligence artificielle et la science des données.</p>
   </div>
 
-  <!-- RIGHT MAP -->
-  <div class="rounded-3xl overflow-hidden border border-gray-300 shadow-md bg-white">
+  <!-- LOCATION CARD -->
+  <div class="location-card bg-white">
     <div class="bg-blue-600 p-4 text-white">
-      <h3 class="text-xl font-semibold">📍 ESPRIT Ariana</h3>
+      <h3 class="text-lg font-semibold">📍 ESPRIT Ariana</h3>
     </div>
-    <div class="h-80 bg-gray-100 flex flex-col items-center justify-center">
-      <div class="text-6xl text-blue-500 mb-3">📍</div>
+    <div class="h-64 bg-gray-50 flex flex-col items-center justify-center">
+      <div class="text-5xl text-blue-500 mb-2 animate-bounce">📍</div>
       <p class="text-gray-800 font-semibold">ESPRIT Ariana Campus</p>
-      <p class="text-gray-500 mt-1">Ghazela, 2080 Ariana</p>
+      <p class="text-gray-500 mt-1 text-sm">Ghazela, 2080 Ariana, Tunisie</p>
     </div>
   </div>
 
 </div>
 
 <!-- STEPS -->
-<div class="flex justify-center mt-10">
-  <div class="flex items-center gap-10">
-
-    <div class="w-12 h-12 flex items-center justify-center step-active rounded-full shadow">1</div>
-    <div class="w-20 h-1 bg-gray-300"></div>
-
-    <div class="w-12 h-12 flex items-center justify-center step-inactive rounded-full">2</div>
-    <div class="w-20 h-1 bg-gray-300"></div>
-
-    <div class="w-12 h-12 flex items-center justify-center step-inactive rounded-full">3</div>
-    <div class="w-20 h-1 bg-gray-300"></div>
-
-    <div class="w-12 h-12 flex items-center justify-center step-inactive rounded-full">4</div>
-
+<div class="flex justify-center mt-12 mb-16">
+  <div class="flex items-center gap-6">
+    <div class="w-12 h-12 flex items-center justify-center step-active rounded-full shadow text-base font-semibold">1</div>
+    <div class="w-20 h-1 bg-gray-300 rounded-full"></div>
+    <div class="w-12 h-12 flex items-center justify-center step-inactive rounded-full shadow text-base font-semibold">2</div>
+    <div class="w-20 h-1 bg-gray-300 rounded-full"></div>
+    <div class="w-12 h-12 flex items-center justify-center step-inactive rounded-full shadow text-base font-semibold">3</div>
+    <div class="w-20 h-1 bg-gray-300 rounded-full"></div>
+    <div class="w-12 h-12 flex items-center justify-center step-inactive rounded-full shadow text-base font-semibold">4</div>
   </div>
 </div>
 
+<!-- Next button -->
+<div class="flex justify-end max-w-5xl mx-auto p-4 mb-8">
+  <button class="next-btn" onclick="goNextPage()">➡</button>
+</div>
+
 <!-- FOOTER -->
-<footer class="bg-gray-200 py-8 mt-20">
-  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
-    
-    <div class="mb-4 md:mb-0">
-      <h3 class="text-2xl font-bold text-blue-600">EduLink</h3>
-      <p class="text-gray-600">Donner votre feedback</p>
+<footer class="bg-gray-100 py-8">
+  <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+    <div>
+      <h3 class="text-xl font-bold text-blue-600">EduLink</h3>
+      <p class="text-gray-600 text-sm">Donnez votre feedback et suggestions</p>
     </div>
-
-    <div class="text-center md:text-right">
-      <p class="text-gray-700 text-sm">© 2025 EduLink. All rights reserved</p>
-      <p class="text-gray-600 text-xs mt-1">
-        Communication • Organisation • Ressource • Accompagnement
-      </p>
+    <div class="text-center md:text-right text-xs text-gray-600">
+      <p>© 2025 EduLink. Tous droits réservés</p>
+      <p>Communication • Organisation • Ressource • Accompagnement</p>
     </div>
-
   </div>
 </footer>
+
+<script>
+  function goNextPage() {
+    window.location.href = "page-suivante.html";
+  }
+</script>
 
 </body>
 </html>
