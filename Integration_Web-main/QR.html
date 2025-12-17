@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Confirmation - Hackathon Submission</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e6ecff, #f5f8ff);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    .nav-pill {
+      background: #ffffffcc;
+      border-radius: 50px;
+      padding: 10px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      max-width: 1200px;
+      margin: 15px auto;
+      width: calc(100% - 60px);
+      backdrop-filter: blur(8px);
+    }
+    .nav-links a:hover {
+      color: #3b82f6;
+      transform: scale(1.05);
+      transition: 0.3s;
+    }
+    .btn-join {
+      background-color: #3b82f6;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-weight: 500;
+      box-shadow: 0 4px 15px rgba(59,130,246,0.3);
+      transition: 0.3s;
+      font-size: 0.9rem;
+    }
+    .btn-join:hover {
+      background-color: #2563eb;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(59,130,246,0.4);
+    }
+
+    /* Confirmation Card */
+    .confirmation-card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px 32px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* Icon Success */
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #10b981, #34d399);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      color: white;
+      font-size: 36px;
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
+    }
+
+    /* Confirmation Details */
+    .confirmation-details {
+      background-color: #f9fafb;
+      border-radius: 16px;
+      padding: 24px;
+      margin: 30px 0;
+      text-align: left;
+      border-left: 4px solid #3b82f6;
+    }
+
+    .detail-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .detail-item:last-child {
+      border-bottom: none;
+    }
+
+    .detail-label {
+      font-weight: 500;
+      color: #4b5563;
+    }
+
+    .detail-value {
+      font-weight: 600;
+      color: #1f2937;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background-color: #3b82f6;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 500;
+      box-shadow: 0 4px 15px rgba(59,130,246,0.3);
+      transition: 0.3s;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 10px;
+    }
+    
+    .btn-primary:hover {
+      background-color: #2563eb;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(59,130,246,0.4);
+    }
+    
+    .btn-secondary {
+      background-color: white;
+      color: #4b5563;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 500;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      transition: 0.3s;
+      font-size: 1rem;
+      border: 1px solid #d1d5db;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 10px;
+    }
+    
+    .btn-secondary:hover {
+      background-color: #f9fafb;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+
+    /* Steps */
+    .step-active {
+      background-color: #3b82f6;
+      color: white;
+      box-shadow: 0 3px 10px rgba(59,130,246,0.4);
+      transition: transform 0.3s;
+    }
+    .step-active:hover {
+      transform: scale(1.1);
+    }
+    .step-inactive {
+      background-color: #e5e7eb;
+      color: #6b7280;
+      transition: transform 0.3s;
+    }
+    .step-inactive:hover {
+      transform: scale(1.05);
+    }
+
+    /* Flèches */
+    .back-btn, .next-btn {
+      font-size: 2.5rem;
+      color: #1d4ed8;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, color 0.2s;
+    }
+    .back-btn:hover {
+      color: #0c4a6e;
+      transform: translateX(-4px) scale(1.1);
+    }
+    .next-btn:hover {
+      color: #0c4a6e;
+      transform: translateX(4px) scale(1.1);
+    }
+    
+    /* Titre */
+    .page-title {
+      text-align: center;
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: #1e40af;
+      margin-bottom: 1rem;
+      padding: 0 1rem;
+    }
+    
+    .page-subtitle {
+      text-align: center;
+      font-size: 1.125rem;
+      color: #6b7280;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 1rem;
+    }
+    
+    @media (max-width: 640px) {
+      .confirmation-card {
+        padding: 30px 20px;
+        margin: 0 1rem;
+      }
+      .page-title {
+        font-size: 1.875rem;
+      }
+      .btn-primary, .btn-secondary {
+        width: 100%;
+        margin: 5px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header aria-label="Main Navigation">
+  <div class="nav-pill">
+    <a href="#" class="text-xl font-bold text-blue-600"aria-label="EduLink Home">EduLink</a>
+    <div class="nav-links flex gap-6 text-gray-600 font-medium text-sm">
+      <a href="#">Student</a>
+      <a href="hackathons.html" style="color: #3b82f6; font-weight: 600;">Events</a>
+      <a href="#">Planning</a>
+      <a href="#">Assistant</a>
+    </div>
+    <button class="btn-join">Log out</button>
+  </div>
+</header>
+
+<!-- Flèche de retour -->
+<div class="flex items-center p-4">
+  <button class="back-btn" onclick="goBack()">⬅</button>
+</div>
+
+<!-- TITRE ET SOUS-TITRE -->
+<h1 class="page-title">
+  Confirmation - Hackathon Submission
+</h1>
+<p class="page-subtitle">
+  Your registration has been successfully submitted. Please review the details below.
+</p>
+
+<!-- CARTE DE CONFIRMATION -->
+<div class="confirmation-card">
+  <!-- Icône de succès -->
+  <div class="success-icon">
+    <i class="fas fa-check"></i>
+  </div>
+  
+  <h2 class="text-2xl font-bold text-gray-800 mb-2">Registration Successful!</h2>
+  <p class="text-gray-600 mb-8">
+    Thank you for registering for the hackathon. Your submission has been received and is currently being reviewed.
+  </p>
+  
+  <!-- Détails de la confirmation -->
+  <div class="confirmation-details">
+    <h3 class="text-xl font-semibold text-gray-800 mb-4">Submission Details</h3>
+    
+    <div class="detail-item">
+      <span class="detail-label">Submission ID:</span>
+      <span class="detail-value">HACK-2025-8472</span>
+    </div>
+    
+    <div class="detail-item">
+      <span class="detail-label">Registration Date:</span>
+      <span class="detail-value">December 17, 2025</span>
+    </div>
+    
+    <div class="detail-item">
+      <span class="detail-label">Hackathon Event:</span>
+      <span class="detail-value">AI Innovation Challenge 2025</span>
+    </div>
+    
+    <div class="detail-item">
+      <span class="detail-label">Team Name:</span>
+      <span class="detail-value">Code Pioneers</span>
+    </div>
+    
+    <div class="detail-item">
+      <span class="detail-label">Payment Method:</span>
+      <span class="detail-value">Credit Card (**** 4567)</span>
+    </div>
+    
+    <div class="detail-item">
+      <span class="detail-label">Payment Status:</span>
+      <span class="detail-value text-green-600 font-semibold">Paid ✓</span>
+    </div>
+    
+    <div class="detail-item">
+      <span class="detail-label">Submission Status:</span>
+      <span class="detail-value text-blue-600 font-semibold">Under Review</span>
+    </div>
+  </div>
+  
+  <!-- Instructions -->
+  <div class="text-left mb-8 p-4 bg-blue-50 rounded-xl border border-blue-100">
+    <h4 class="font-semibold text-blue-800 mb-2 flex items-center gap-2">
+      <i class="fas fa-info-circle"></i> Next Steps
+    </h4>
+    <ul class="text-gray-700 space-y-2 pl-5 list-disc">
+      <li>You will receive a confirmation email within 24 hours</li>
+      <li>The review process takes 3-5 business days</li>
+      <li>Check your dashboard for updates on your submission status</li>
+      <li>Finalists will be announced on January 5, 2026</li>
+    </ul>
+  </div>
+  
+  <!-- Boutons d'action -->
+  <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-10">
+    
+    
+    <button class="btn-secondary" onclick="downloadReceipt()">
+      <i class="fas fa-download"></i> Download Receipt
+    </button>
+    
+    
+  </div>
+</div>
+
+<!-- STEPS -->
+<div class="flex justify-center mt-12 mb-16">
+  <div class="flex items-center gap-6">
+    <div class="w-12 h-12 flex items-center justify-center step-inactive rounded-full shadow text-base font-semibold">1</div>
+    <div class="w-20 h-1 bg-gray-300 rounded-full"></div>
+    <div class="w-12 h-12 flex items-center justify-center step-inactive rounded-full shadow text-base font-semibold">2</div>
+    <div class="w-20 h-1 bg-gray-300 rounded-full"></div>
+    <div class="w-12 h-12 flex items-center justify-center step-inactive rounded-full shadow text-base font-semibold">3</div>
+    <div class="w-20 h-1 bg-gray-300 rounded-full"></div>
+    <div class="w-12 h-12 flex items-center justify-center step-active rounded-full shadow text-base font-semibold">4</div>
+  </div>
+</div>
+
+<!-- Next button (caché ou modifié selon le besoin) -->
+<div class="flex justify-end max-w-5xl mx-auto p-4 mb-8">
+  <!-- Pas de flèche suivante sur la page de confirmation finale -->
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-gray-100 py-8 mt-8">
+  <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+    <div>
+      <h3 class="text-xl font-bold text-blue-600">EduLink</h3>
+      <p class="text-gray-600 text-sm">Company's share is a key shareholder.</p>
+    </div>
+    <div class="text-center md:text-right text-xs text-gray-600">
+      <p>© 2025 EduLink. All rights reserved</p>
+      <p>Communication • Organisation • Ressource • Accompagnement</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function goBack() {
+    window.location.href = "payement.html";
+  }
+  
+  function viewDashboard() {
+    // Simulation de chargement
+    const btn = event.target.closest('button');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Redirecting...';
+    btn.disabled = true;
+    
+    setTimeout(() => {
+      alert("Redirecting to your dashboard...");
+      window.location.href = "dashboard.html";
+    }, 1000);
+  }
+  
+  function downloadReceipt() {
+    // Simulation de téléchargement
+    const btn = event.target.closest('button');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating...';
+    btn.disabled = true;
+    
+    setTimeout(() => {
+      btn.innerHTML = originalText;
+      btn.disabled = false;
+      alert("Receipt downloaded successfully!");
+      
+      // Dans une application réelle, vous généreriez un PDF ici
+      // et utiliseriez window.open() ou une API de téléchargement
+    }, 1500);
+  }
+  
+  function printConfirmation() {
+    window.print();
+  }
+  
+  // Afficher une notification de succès au chargement
+  document.addEventListener('DOMContentLoaded', function() {
+    // Cette fonction peut être utilisée pour des animations supplémentaires
+    console.log("Confirmation page loaded successfully");
+  });
+</script>
+
+</body>
+</html>

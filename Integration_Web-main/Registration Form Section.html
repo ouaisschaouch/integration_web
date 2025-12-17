@@ -118,9 +118,9 @@
 
     /* Flèches */
     .back-btn, .next-btn {
-      font-size: 2.5rem;
+      font-size: 2.7rem;
       color: #1d4ed8;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
       background: none;
       border: none;
       cursor: pointer;
@@ -128,11 +128,11 @@
     }
     .back-btn:hover {
       color: #0c4a6e;
-      transform: translateX(-4px) scale(1.1);
+      transform: translateX(-6px) scale(1.12);
     }
     .next-btn:hover {
       color: #0c4a6e;
-      transform: translateX(4px) scale(1.1);
+      transform: translateX(6px) scale(1.12);
     }
   </style>
 </head>
@@ -140,23 +140,26 @@
 <body>
 
 <!-- HEADER -->
+<!-- HEADER -->
 <header aria-label="Main Navigation">
   <div class="nav-pill">
-    <a href="#" class="text-xl font-bold text-blue-600">EduLink</a>
+    <a href="#" class="text-xl font-bold text-blue-600" aria-label="EduLink Home">EduLink</a>
+
     <div class="nav-links flex gap-6 text-gray-600 font-medium text-sm">
-      <a href="#">         Student</a>
-      <a href="#">Events     </a>
-      <a href="#">Planning        </a>
-      <a href="#">Assistant       </a>
+      <a href="#">Student</a>
+      <a href="hackathons.html" style="color: #3b82f6; font-weight: 600;">Events</a>
+
+      <a href="#">Planning</a>
+      <a href="#">Assistant</a>
     </div>
+
     <button class="btn-join">Log out</button>
   </div>
 </header>
 
-<!-- Flèche de retour -->
+<!-- Flèche retour -->
 <div class="flex items-center p-4">
   <button class="back-btn" onclick="go()">⬅</button>
-
 </div>
 
 <!-- TITLE -->
@@ -178,11 +181,10 @@
 
     <label for="establishment">Establishment</label>
     <input type="text" id="establishment" placeholder="Enter your establishment" required>
-
   </form>
 </div>
 
-<!-- STEPS SOUS LE FORMULAIRE -->
+<!-- STEPS -->
 <div class="flex justify-center mt-12 mb-16">
   <div class="flex items-center gap-6">
     <div class="w-12 h-12 flex items-center justify-center step-inactive rounded-full shadow text-base font-semibold">1</div>
@@ -215,11 +217,11 @@
 </footer>
 
 <script>
-     function go() {
-    window.location.href = "Detailed sections of the hackathon.html"; // modifier selon votre étape suivante
+  function go() {
+    window.location.href = "Detailed sections of the hackathon.html";
   }
   function goNextPage() {
-    window.location.href = "payement.html"; // modifier selon votre étape suivante
+    window.location.href = "payement.html";
   }
 </script>
 

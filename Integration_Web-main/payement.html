@@ -199,18 +199,24 @@
 <body>
 
 <!-- HEADER -->
+<!-- HEADER -->
 <header aria-label="Main Navigation">
   <div class="nav-pill">
-    <a href="#" class="text-xl font-bold text-blue-600">EduLink</a>
+    <a href="#" class="text-xl font-bold text-blue-600" aria-label="EduLink Home">EduLink</a>
+
     <div class="nav-links flex gap-6 text-gray-600 font-medium text-sm">
       <a href="#">Student</a>
-      <a href="#">Events</a>
+
+      <a href="hackathons.html" style="color: #3b82f6; font-weight: 600;">Events</a>
+
       <a href="#">Planning</a>
       <a href="#">Assistant</a>
     </div>
+
     <button class="btn-join">Log out</button>
   </div>
 </header>
+
 
 <!-- Flèche de retour -->
 <div class="flex items-center p-4">
@@ -257,7 +263,7 @@
       </label>
     </div>
     
-  </div>
+   </div>
 </div>
 
 <!-- STEPS SOUS LE FORMULAIRE -->
@@ -298,75 +304,9 @@
   }
   
   function goNextPage() {
-    // Vérifier si une méthode de paiement est sélectionnée
-    const selectedOption = document.querySelector('.payment-option.selected');
-    if (!selectedOption) {
-      alert("Please select a payment method before continuing.");
-      return;
-    }
-    
-    const paymentMethod = selectedOption.getAttribute('data-payment');
-    const paymentName = selectedOption.querySelector('.payment-label').textContent.trim();
-    
-    // Simulation de traitement
-    const submitBtn = document.getElementById('submit-payment');
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
-    submitBtn.disabled = true;
-    
-    setTimeout(() => {
-      alert(`Payment method selected: ${paymentName}\n\nRedirecting to confirmation...`);
-      window.location.href = "confirmation.html"; // modifier selon votre étape suivante
-    }, 1500);
+    window.location.href = "QR.html";
   }
-  
-  document.addEventListener('DOMContentLoaded', function() {
-    const paymentOptions = document.querySelectorAll('.payment-option');
-    const submitBtn = document.getElementById('submit-payment');
-    
-    // Gérer la sélection d'une option de paiement
-    paymentOptions.forEach(option => {
-      const radioInput = option.querySelector('input[type="radio"]');
-      
-      option.addEventListener('click', function() {
-        // Désélectionner toutes les options
-        paymentOptions.forEach(opt => {
-          opt.classList.remove('selected');
-          opt.querySelector('input[type="radio"]').checked = false;
-        });
-        
-        // Sélectionner l'option cliquée
-        this.classList.add('selected');
-        radioInput.checked = true;
-        
-        // Activer le bouton continuer
-        submitBtn.disabled = false;
-        submitBtn.textContent = `Continue with ${this.querySelector('.payment-label').textContent.trim()}`;
-      });
-    });
-    
-    // Gérer le bouton de soumission
-    submitBtn.addEventListener('click', function() {
-      const selectedOption = document.querySelector('.payment-option.selected');
-      
-      if (!selectedOption) {
-        alert("Please select a payment method before continuing.");
-        return;
-      }
-      
-      const paymentMethod = selectedOption.getAttribute('data-payment');
-      const paymentName = selectedOption.querySelector('.payment-label').textContent.trim();
-      
-      // Simulation de traitement
-      this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
-      this.disabled = true;
-      
-      setTimeout(() => {
-        alert(`Payment method selected: ${paymentName}\n\nRedirecting to confirmation...`);
-        window.location.href = "confirmation.html"; // modifier selon votre étape suivante
-      }, 1500);
-    });
-  });
-</script>
+    </script>
 
 </body>
 </html>
