@@ -1,0 +1,340 @@
+@import 'variable';
+@import 'mixins';
+
+// Styles pour la page forum
+.forum-title {
+  font-size: $font-size-4xl;
+  font-weight: bold;
+  color: $title-blue;
+  margin-bottom: $spacing-2;
+  text-align: center;
+}
+
+.forum-subtitle {
+  color: $gray-600;
+  font-size: $font-size-lg;
+  text-align: center;
+  margin-bottom: $spacing-8;
+}
+
+// Conteneur principal du forum
+.forum-container {
+  max-width: 6xl;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-8;
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+// Carte latérale (liste des étudiants)
+.sidebar-card {
+  @include card;
+  color: $white;
+  
+  h3 {
+    font-size: $font-size-2xl;
+    font-weight: 600;
+    margin-bottom: $spacing-4;
+  }
+}
+
+// Barre de recherche
+.search-container {
+  margin-bottom: $spacing-6;
+}
+
+.search-box {
+  display: flex;
+  gap: $spacing-2;
+  
+  input {
+    flex: 1;
+    padding: $spacing-3 $spacing-4;
+    border-radius: 0.5rem;
+    border: 1px solid $gray-300;
+    
+    &:focus {
+      outline: none;
+      border-color: $title-blue;
+      box-shadow: 0 0 0 2px rgba($title-blue, 0.2);
+    }
+  }
+  
+  .search-btn {
+    background-color: $white;
+    color: $title-blue;
+    padding: $spacing-3 $spacing-6;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    
+    &:hover {
+      background-color: adjust-color($white, $lightness: -5%);
+    }
+  }
+}
+
+// Liste des étudiants
+.students-list {
+  .student-item {
+    display: flex;
+    align-items: center;
+    padding: $spacing-3;
+    border-radius: 0.5rem;
+    margin-bottom: $spacing-3;
+    background-color: rgba($white, 0.1);
+    transition: all 0.3s;
+    
+    &:hover {
+      background-color: rgba($white, 0.2);
+    }
+    
+    .student-avatar {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      background-color: $white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $title-blue;
+      font-weight: bold;
+      margin-right: $spacing-3;
+    }
+    
+    .student-info {
+      flex: 1;
+      
+      .student-name {
+        font-weight: 600;
+        color: $white;
+      }
+      
+      .student-status {
+        font-size: $font-size-sm;
+        
+        &.online {
+          color: #10b981; // Vert pour en ligne
+        }
+        
+        &.offline {
+          color: $gray-400;
+        }
+      }
+    }
+    
+    .status-indicator {
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 50%;
+      
+      &.online {
+        background-color: #10b981;
+      }
+      
+      &.offline {
+        background-color: $gray-400;
+      }
+    }
+  }
+}
+
+// Carte principale de chat
+.chat-card {
+  @include card;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chat-header {
+  border-bottom: 1px solid rgba($white, 0.2);
+  padding-bottom: $spacing-4;
+  margin-bottom: $spacing-4;
+  
+  h3 {
+    font-size: $font-size-2xl;
+    font-weight: 600;
+  }
+  
+  .current-chat-info {
+    display: flex;
+    align-items: center;
+    margin-top: $spacing-3;
+    
+    .chat-avatar {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background-color: $white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $title-blue;
+      font-weight: bold;
+      margin-right: $spacing-3;
+    }
+    
+    .chat-user {
+      font-weight: 600;
+    }
+  }
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: $spacing-2;
+  
+  .message {
+    margin-bottom: $spacing-4;
+    
+    .message-content {
+      background-color: rgba($white, 0.1);
+      padding: $spacing-3 $spacing-4;
+      border-radius: 1rem;
+      border-top-left-radius: 0.25rem;
+      max-width: 80%;
+      display: inline-block;
+    }
+    
+    .message-time {
+      font-size: $font-size-sm;
+      color: rgba($white, 0.6);
+      margin-top: $spacing-1;
+    }
+    
+    &.message-sent {
+      text-align: right;
+      
+      .message-content {
+        background-color: rgba($white, 0.2);
+        border-top-right-radius: 0.25rem;
+        border-top-left-radius: 1rem;
+      }
+    }
+  }
+}
+
+.chat-input {
+  display: flex;
+  gap: $spacing-2;
+  margin-top: $spacing-4;
+  padding-top: $spacing-4;
+  border-top: 1px solid rgba($white, 0.2);
+  
+  input {
+    flex: 1;
+    padding: $spacing-3 $spacing-4;
+    border-radius: 0.5rem;
+    border: 1px solid rgba($white, 0.3);
+    background-color: rgba($white, 0.1);
+    color: $white;
+    
+    &:focus {
+      outline: none;
+      border-color: $white;
+    }
+    
+    &::placeholder {
+      color: rgba($white, 0.5);
+    }
+  }
+  
+  .send-btn {
+    background-color: $white;
+    color: $title-blue;
+    padding: $spacing-3 $spacing-6;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    
+    &:hover {
+      background-color: adjust-color($white, $lightness: -5%);
+    }
+    
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+
+// Features list
+.features-list {
+  margin-top: $spacing-6;
+  padding-top: $spacing-4;
+  border-top: 1px solid rgba($white, 0.2);
+  
+  .feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: $spacing-2;
+    
+    .feature-icon {
+      margin-right: $spacing-2;
+      color: $yellow-400;
+    }
+    
+    .feature-text {
+      color: $white;
+      font-weight: 500;
+    }
+  }
+  // ==========================
+// Attachment styles
+// ==========================
+
+.attachment-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.5rem;
+  background-color: rgba($white, 0.15);
+  color: $white;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: rgba($white, 0.25);
+  }
+}
+
+.file-preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: $spacing-2;
+  padding: $spacing-2 $spacing-3;
+  background-color: rgba($white, 0.15);
+  border-radius: 0.5rem;
+  color: $white;
+  font-size: $font-size-sm;
+
+  button {
+    background: none;
+    border: none;
+    color: $white;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      color: #ef4444;
+    }
+  }
+}
+
+}

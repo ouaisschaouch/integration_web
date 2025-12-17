@@ -1,23 +1,68 @@
-/* Tailwind */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-/* Sass */
-@import "variables";
-@import "mixins";
-@import "chat";
+/* Import des partials SCSS avec @import (ancienne méthode) */
+@import 'variable';
+@import 'mixins';
+@import 'header';
+@import 'footer';
+@import 'feedback';
+@import 'chat';
+@import 'forum';
+@import 'organisation';
+/* Import des polices */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* Custom Tailwind components */
-.nav-link {
-  @apply hover:text-title-blue transition-colors duration-300;
+/* Styles de base */
+body {
+  font-family: $font-inter;
+  background-color: $white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.btn-join {
-  @apply bg-title-blue text-white px-6 py-2 rounded-lg font-medium
-         hover:bg-blue-700 transition-colors duration-300 shadow;
+/* Classes utilitaires */
+.flex-grow {
+  flex-grow: 1;
 }
 
-.logo-title {
-  @apply text-title-blue text-2xl md:text-3xl font-bold;
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding-left: $spacing-4;
+  padding-right: $spacing-4;
+  margin-left: auto;
+  margin-right: auto;
+  
+  @media (min-width: 640px) {
+    max-width: 640px;
+  }
+  
+  @media (min-width: 768px) {
+    max-width: 768px;
+  }
+  
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+  }
+  
+  @media (min-width: 1280px) {
+    max-width: 1280px;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.space-y-4 > * + * {
+  margin-top: $spacing-4;
 }

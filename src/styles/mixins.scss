@@ -1,5 +1,40 @@
+@import 'variable';
+
+// Mixins réutilisables
 @mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin transition-all($duration: 300ms) {
+  transition: all $duration ease-in-out;
+}
+
+@mixin transition-colors($duration: 300ms) {
+  transition: background-color $duration ease-in-out, 
+              color $duration ease-in-out, 
+              border-color $duration ease-in-out;
+}
+
+@mixin card {
+  background-color: $title-blue;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  
+  @media (min-width: 768px) {
+    padding: 2rem;
+    border-radius: 1.5rem;
+  }
 }
