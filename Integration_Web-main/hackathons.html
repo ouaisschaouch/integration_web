@@ -134,6 +134,7 @@
       border-left: 8px solid #3b82f6;
       position: relative;
       overflow: hidden;
+      cursor: pointer;
     }
 
     .card::before {
@@ -271,16 +272,16 @@
 <!-- Navigation -->
 <header aria-label="Main Navigation">
   <div class="nav-pill">
-    <a href="#" class="logo" aria-label="EduLink Home">EduLink</a>
+    <a href="index.html" class="logo" aria-label="EduLink Home">EduLink</a>
     
     <div class="nav-links">
-      <a href="#features">Student</a>
-      <a href="#features">Events</a>
-      <a href="#features">Planning</a>
-      <a href="#features">Assistant</a>
+      <a href="index.html">Home</a>
+      <a href="hackathons.html" style="color: #3b82f6; font-weight: 600;">Events</a>
+      <a href="#">Planning</a>
+      <a href="#">Assistant</a>
     </div>
     
-    <button class="btn-join" onclick="joinNow()">
+    <button class="btn-join" onclick="logout()">
       Log out
     </button>
   </div>
@@ -314,7 +315,7 @@
   <div class="flex flex-col gap-10">
 
     <!-- CARD 1: AI & Data Science -->
-    <div class="card">
+    <div class="card" onclick="viewHackathonDetails('ai-data-science')">
       <div class="grid md:grid-cols-2 gap-8 items-center">
 
         <div>
@@ -335,7 +336,9 @@
           <p class="font-semibold text-blue-800">Reward</p>
           <p class="text-3xl font-bold text-green-600 my-2">2000 DT</p>
           <p class="text-gray-600 text-sm">+ AI training</p>
-          <button class="btn mt-6" onclick="participate('AI & Data Science')">Participate</button>
+          <button class="btn mt-6" onclick="event.stopPropagation(); navigateToDetails('ai-data-science')">
+            Participate
+          </button>
         </div>
 
       </div>
@@ -344,7 +347,7 @@
     <div class="divider"></div>
 
     <!-- CARD 2: Mobile Innovators -->
-    <div class="card">
+    <div class="card" onclick="viewHackathonDetails('mobile-innovators')">
       <div class="grid md:grid-cols-2 gap-8 items-center">
 
         <div>
@@ -365,7 +368,9 @@
           <p class="font-semibold text-blue-800">Reward</p>
           <p class="text-3xl font-bold text-green-600 my-2">1000 DT</p>
           <p class="text-gray-600 text-sm">+ workshops</p>
-          <button class="btn mt-6" onclick="participate('Mobile Innovators')">Participate</button>
+          <button class="btn mt-6" onclick="event.stopPropagation(); navigateToDetails('mobile-innovators')">
+            Participate
+          </button>
         </div>
 
       </div>
@@ -374,7 +379,7 @@
     <div class="divider"></div>
 
     <!-- CARD 3: GreenTech Chall -->
-    <div class="card">
+    <div class="card" onclick="viewHackathonDetails('greentech-chall')">
       <div class="grid md:grid-cols-2 gap-8 items-center">
 
         <div>
@@ -395,14 +400,43 @@
           <p class="font-semibold text-blue-800">Reward</p>
           <p class="text-3xl font-bold text-green-600 my-2">2000 DT</p>
           <p class="text-gray-600 text-sm">+ coaching</p>
-          <button class="btn mt-6" onclick="participate('GreenTech Chall')">Participate</button>
+          <button class="btn mt-6" onclick="event.stopPropagation(); navigateToDetails('greentech-chall')">
+            Participate
+          </button>
         </div>
 
       </div>
     </div>
 
+    <!-- CARD 4: Web Development -->
+    <div class="card" onclick="viewHackathonDetails('web-dev')">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
 
-    
+        <div>
+          <span class="badge">Web Development</span>
+          <h3 class="text-2xl font-semibold text-blue-800 mb-3">
+            Hackathon Web Development
+          </h3>
+
+          <p class="text-gray-600 mb-1">📅 December 5 to 7, 2025</p>
+          <p class="text-gray-600 mb-4">📍 <strong>ESPRIT</strong> Tunis</p>
+
+          <span class="inline-block bg-blue-50 text-blue-600 px-4 py-2 rounded-full font-medium">
+            💰 Fee: 35 DT
+          </span>
+        </div>
+
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-6 text-center">
+          <p class="font-semibold text-blue-800">Reward</p>
+          <p class="text-3xl font-bold text-green-600 my-2">1500 DT</p>
+          <p class="text-gray-600 text-sm">+ mentorship program</p>
+          <button class="btn mt-6" onclick="event.stopPropagation(); navigateToDetails('web-dev')">
+            Participate
+          </button>
+        </div>
+
+      </div>
+    </div>
 
   </div>
 </main>
@@ -436,14 +470,46 @@
     }
   }
   
-  // Function to handle Join Now
-  function joinNow() {
-    alert('🎉 Welcome to EduLink!\n\nRedirecting to signup page...\n\nIn a real application, this would take you to the registration form.');
+  // Function to handle logout
+  function logout() {
+    if (confirm('Are you sure you want to log out?')) {
+      alert('You have been logged out successfully.');
+      window.location.href = 'index.html';
+    }
   }
   
-  // Function to handle participation
-  function participate(hackathonName) {
-    alert(`Thank you for your interest in ${hackathonName}! Registration details will be sent to you shortly.`);
+  // Function to navigate to hackathon details page
+  function navigateToDetails(hackathonId) {
+    // You can pass parameters to the details page using URL parameters or localStorage
+    localStorage.setItem('selectedHackathon', hackathonId);
+    
+    // Navigate to the details page
+    window.location.href = 'Detailed sections of the hackathon.html';
+  }
+  
+  // Function to view hackathon details when clicking on the card
+  function viewHackathonDetails(hackathonId) {
+    // Store which hackathon was clicked
+    localStorage.setItem('selectedHackathon', hackathonId);
+    
+    // Ask the user if they want to view details or participate
+    const hackathonName = getHackathonName(hackathonId);
+    const userChoice = confirm(`View details for "${hackathonName}"?\n\nClick OK to view details, or Cancel to stay on this page.`);
+    
+    if (userChoice) {
+      window.location.href = 'Detailed sections of the hackathon.html';
+    }
+  }
+  
+  // Helper function to get hackathon name by ID
+  function getHackathonName(id) {
+    const hackathons = {
+      'ai-data-science': 'Hackathon Intelligence Artificielle',
+      'mobile-innovators': 'Hackathon Mobile Innovators',
+      'greentech-chall': 'GreenTech Challenge',
+      'web-dev': 'Hackathon Web Development'
+    };
+    return hackathons[id] || 'Hackathon';
   }
   
   // Add some interactivity
@@ -451,12 +517,20 @@
     const cards = document.querySelectorAll('.card');
     
     cards.forEach(card => {
-      card.addEventListener('click', function(e) {
-        if (!e.target.classList.contains('btn')) {
-          const title = this.querySelector('h3').textContent;
-          alert(`More details about: ${title}\n\nClick the "Participate" button to register for this hackathon.`);
-        }
-      });
+      // Remove the old click event that showed alert
+      // We'll use the new viewHackathonDetails function instead
+    });
+    
+    // Set active link style
+    const currentPage = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === currentPage || 
+          (currentPage.includes('hackathons') && link.textContent === 'Events')) {
+        link.style.color = '#3b82f6';
+        link.style.fontWeight = '600';
+      }
     });
   });
 </script>

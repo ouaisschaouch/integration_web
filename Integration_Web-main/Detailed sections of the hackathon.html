@@ -136,7 +136,7 @@
 
 <!-- Flèche de retour -->
 <div class="flex items-center p-4">
-  <button class="back-btn" onclick="history.back()">⬅</button>
+  <button class="back-btn" onclick="goi()">⬅</button>
 </div>
 
 <!-- TITLE -->
@@ -205,8 +205,11 @@
 </footer>
 
 <script>
+    function goi() {
+    window.location.href = "hackathons.html";
+  }
   function goNextPage() {
-    window.location.href = "page-suivante.html";
+    window.location.href = "Registration Form Section.html";
   }
 </script>
 
