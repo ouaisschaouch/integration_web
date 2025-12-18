@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduLink – Hackathons</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="icon" href="https://img.icons8.com/color/96/000000/student-center.png">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f5ff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navigation Header */
+    .nav-pill {
+      background: #dee7f6;
+      border-radius: 50px;
+      padding: 15px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      max-width: 1400px;
+      margin: 20px auto;
+      width: calc(100% - 80px);
+    }
+    
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #3b82f6;
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      color: #4b5563;
+      font-weight: 500;
+    }
+    
+    .nav-links a {
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    
+    .nav-links a:hover {
+      color: #3b82f6;
+    }
+    
+    .btn-join {
+      background-color: #3b82f6;
+      color: white;
+      padding: 10px 28px;
+      border-radius: 50px;
+      font-weight: 500;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .btn-join:hover {
+      background-color: #2563eb;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
+    }
+    
+    .search-pill {
+      background-color: white;
+      border-radius: 50px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      margin: 32px auto;
+      max-width: 800px;
+      width: calc(100% - 80px);
+    }
+    
+    .search-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+    }
+    
+    .search-left input {
+      outline: none;
+      width: 100%;
+      color: #6b7280;
+      font-size: 16px;
+      background: transparent;
+      border: none;
+    }
+    
+    .search-left input::placeholder {
+      color: #9ca3af;
+    }
+    
+    .btn-search {
+      background-color: #3b82f6;
+      color: white;
+      padding: 10px 28px;
+      border-radius: 50px;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .btn-search:hover {
+      background-color: #2563eb;
+    }
+
+    /* Hackathon Card Styles */
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+      transition: all 0.35s ease;
+      border-left: 8px solid #3b82f6;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(59,130,246,0.15), transparent);
+      transform: translate(40%, -40%);
+    }
+
+    .card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 30px 70px rgba(59,130,246,0.18);
+    }
+
+    .badge {
+      background: linear-gradient(135deg, #3b82f6, #6366f1);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 14px;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      color: white;
+      padding: 14px 36px;
+      border-radius: 999px;
+      font-weight: 600;
+      width: 100%;
+      transition: 0.3s;
+      box-shadow: 0 10px 25px rgba(59,130,246,0.45);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 35px rgba(59,130,246,0.6);
+    }
+
+    .logo-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #3b82f6;
+    }
+
+    .footer-text {
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    .bg-nav-gray {
+      background-color: #dce6f5;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+      margin: 30px 0;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+      .nav-pill {
+        padding: 15px 30px;
+        width: calc(100% - 60px);
+      }
+    }
+    
+    @media (max-width: 1024px) {
+      .nav-links {
+        gap: 30px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav-pill {
+        padding: 12px 20px;
+        flex-direction: column;
+        gap: 15px;
+        width: calc(100% - 40px);
+        border-radius: 25px;
+      }
+      
+      .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .search-pill {
+        flex-direction: column;
+        gap: 15px;
+        padding: 12px 20px;
+        width: calc(100% - 40px);
+      }
+      
+      .search-left {
+        width: 100%;
+      }
+      
+      .btn-main, .btn-join, .btn-search {
+        padding: 12px 24px;
+        font-size: 14px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .nav-pill {
+        padding: 10px 15px;
+        width: calc(100% - 30px);
+      }
+      
+      .nav-links {
+        gap: 15px;
+      }
+      
+      .search-pill {
+        padding: 10px 15px;
+        width: calc(100% - 30px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<header aria-label="Main Navigation">
+  <div class="nav-pill">
+    <a href="index.html" class="logo" aria-label="EduLink Home">EduLink</a>
+    
+    <div class="nav-links">
+      <a href="">Student</a>
+      <a href="hackathons.html" style="color: #3b82f6; font-weight: 600;">Events</a>
+      <a href="#">Planning</a>
+      <a href="#">Assistant</a>
+    </div>
+    
+    <button class="btn-join" onclick="logout()">
+      Log out
+    </button>
+  </div>
+</header>
+
+<!-- Search Bar -->
+<div>
+  <div class="search-pill">
+    <div class="search-left">
+      <span class="text-gray-400 text-lg">🔍</span>
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Find collaborators or mentors instantly"
+        onkeydown="if(event.key === 'Enter') searchProjects()"
+      />
+    </div>
+    <button class="btn-search" onclick="searchProjects()">
+      Search
+    </button>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<main class="max-w-4xl mx-auto px-6 py-14 flex-grow">
+
+  <h2 class="text-4xl font-bold text-center text-blue-800 mb-14">
+    List of available Hackathons
+  </h2>
+
+  <div class="flex flex-col gap-10">
+
+    <!-- CARD 1: AI & Data Science -->
+    <div class="card" onclick="viewHackathonDetails('ai-data-science')">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+
+        <div>
+          <span class="badge">AI & Data Science</span>
+          <h3 class="text-2xl font-semibold text-blue-800 mb-3">
+            Hackathon Intelligence Artificielle
+          </h3>
+
+          <p class="text-gray-600 mb-1">📅 October 25 to 27, 2025</p>
+          <p class="text-gray-600 mb-4">📍 <strong>ESPRIT</strong> Ariana</p>
+
+          <span class="inline-block bg-blue-50 text-blue-600 px-4 py-2 rounded-full font-medium">
+            💰 Fee: 40 DT
+          </span>
+        </div>
+
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-6 text-center">
+          <p class="font-semibold text-blue-800">Reward</p>
+          <p class="text-3xl font-bold text-green-600 my-2">2000 DT</p>
+          <p class="text-gray-600 text-sm">+ AI training</p>
+          <button class="btn mt-6" onclick="event.stopPropagation(); navigateToDetails('ai-data-science')">
+            Participate
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- CARD 2: Mobile Innovators -->
+    <div class="card" onclick="viewHackathonDetails('mobile-innovators')">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+
+        <div>
+          <span class="badge">Mobile Innovators</span>
+          <h3 class="text-2xl font-semibold text-blue-800 mb-3">
+            Hackathon Mobile Innovators
+          </h3>
+
+          <p class="text-gray-600 mb-1">📅 November 12 to 14, 2025</p>
+          <p class="text-gray-600 mb-4">📍 <strong>ESPRIT</strong> Ariana</p>
+
+          <span class="inline-block bg-blue-50 text-blue-600 px-4 py-2 rounded-full font-medium">
+            💰 Fee: 45 DT
+          </span>
+        </div>
+
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-6 text-center">
+          <p class="font-semibold text-blue-800">Reward</p>
+          <p class="text-3xl font-bold text-green-600 my-2">1000 DT</p>
+          <p class="text-gray-600 text-sm">+ workshops</p>
+          <button class="btn mt-6" onclick="event.stopPropagation(); navigateToDetails('mobile-innovators')">
+            Participate
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- CARD 3: GreenTech Chall -->
+    <div class="card" onclick="viewHackathonDetails('greentech-chall')">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+
+        <div>
+          <span class="badge">GreenTech Chall</span>
+          <h3 class="text-2xl font-semibold text-blue-800 mb-3">
+            GreenTech Challenge
+          </h3>
+
+          <p class="text-gray-600 mb-1">📅 November 20 to 22, 2025</p>
+          <p class="text-gray-600 mb-4">📍 <strong>ESPRIT</strong> Tunis</p>
+
+          <span class="inline-block bg-blue-50 text-blue-600 px-4 py-2 rounded-full font-medium">
+            💰 Fee: 60 DT
+          </span>
+        </div>
+
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-6 text-center">
+          <p class="font-semibold text-blue-800">Reward</p>
+          <p class="text-3xl font-bold text-green-600 my-2">2000 DT</p>
+          <p class="text-gray-600 text-sm">+ coaching</p>
+          <button class="btn mt-6" onclick="event.stopPropagation(); navigateToDetails('greentech-chall')">
+            Participate
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CARD 4: Web Development -->
+    <div class="card" onclick="viewHackathonDetails('web-dev')">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+
+        <div>
+          <span class="badge">Web Development</span>
+          <h3 class="text-2xl font-semibold text-blue-800 mb-3">
+            Hackathon Web Development
+          </h3>
+
+          <p class="text-gray-600 mb-1">📅 December 5 to 7, 2025</p>
+          <p class="text-gray-600 mb-4">📍 <strong>ESPRIT</strong> Tunis</p>
+
+          <span class="inline-block bg-blue-50 text-blue-600 px-4 py-2 rounded-full font-medium">
+            💰 Fee: 35 DT
+          </span>
+        </div>
+
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-6 text-center">
+          <p class="font-semibold text-blue-800">Reward</p>
+          <p class="text-3xl font-bold text-green-600 my-2">1500 DT</p>
+          <p class="text-gray-600 text-sm">+ mentorship program</p>
+          <button class="btn mt-6" onclick="event.stopPropagation(); navigateToDetails('web-dev')">
+            Participate
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-nav-gray py-6 px-4 mt-8">
+  <div class="container mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-4 md:mb-0">
+        <h3 class="logo-title">Edulink</h3>
+        <p class="text-gray-600 mt-1">Donner votre feedback</p>
+      </div>
+      <div class="text-center md:text-right">
+        <p class="footer-text">&copy; 2025 EduLink. All rights reserved</p>
+        <p class="text-gray-700 text-xs mt-1">
+          Communication • Organisation • Ressource et partage • Accompagnement
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Function to handle search
+  function searchProjects() {
+    const searchTerm = document.getElementById('searchInput').value;
+    if (searchTerm.trim()) {
+      alert(`🔍 Searching for: "${searchTerm}"\n\nThis would normally display results for collaborators, mentors, or hackathons matching your search.`);
+    } else {
+      alert('Please enter a search term to find collaborators, mentors, or hackathons.');
+    }
+  }
+  
+  // Function to handle logout
+  function logout() {
+    if (confirm('Are you sure you want to log out?')) {
+      alert('You have been logged out successfully.');
+      window.location.href = 'index.html';
+    }
+  }
+  
+  // Function to navigate to hackathon details page
+  function navigateToDetails(hackathonId) {
+    // You can pass parameters to the details page using URL parameters or localStorage
+    localStorage.setItem('selectedHackathon', hackathonId);
+    
+    // Navigate to the details page
+    window.location.href = 'Detailed sections of the hackathon.html';
+  }
+  
+  // Function to view hackathon details when clicking on the card
+  function viewHackathonDetails(hackathonId) {
+    // Store which hackathon was clicked
+    localStorage.setItem('selectedHackathon', hackathonId);
+    
+    // Ask the user if they want to view details or participate
+    const hackathonName = getHackathonName(hackathonId);
+    const userChoice = confirm(`View details for "${hackathonName}"?\n\nClick OK to view details, or Cancel to stay on this page.`);
+    
+    if (userChoice) {
+      window.location.href = 'Detailed sections of the hackathon.html';
+    }
+  }
+  
+  // Helper function to get hackathon name by ID
+  function getHackathonName(id) {
+    const hackathons = {
+      'ai-data-science': 'Hackathon Intelligence Artificielle',
+      'mobile-innovators': 'Hackathon Mobile Innovators',
+      'greentech-chall': 'GreenTech Challenge',
+      'web-dev': 'Hackathon Web Development'
+    };
+    return hackathons[id] || 'Hackathon';
+  }
+  
+  // Add some interactivity
+  document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.card');
+    
+    cards.forEach(card => {
+      // Remove the old click event that showed alert
+      // We'll use the new viewHackathonDetails function instead
+    });
+    
+    // Set active link style
+    const currentPage = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === currentPage || 
+          (currentPage.includes('hackathons') && link.textContent === 'Events')) {
+        link.style.color = '#3b82f6';
+        link.style.fontWeight = '600';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

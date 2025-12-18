@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration Form Section</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e6ecff, #f5f8ff);
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header */
+    .nav-pill {
+      background: #ffffffcc;
+      border-radius: 50px;
+      padding: 10px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      max-width: 1200px;
+      margin: 15px auto;
+      width: calc(100% - 60px);
+      backdrop-filter: blur(8px);
+    }
+    .nav-links a:hover {
+      color: #3b82f6;
+      transform: scale(1.05);
+      transition: 0.3s;
+    }
+    .btn-join {
+      background-color: #3b82f6;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-weight: 500;
+      box-shadow: 0 4px 15px rgba(59,130,246,0.3);
+      transition: 0.3s;
+      font-size: 0.9rem;
+    }
+    .btn-join:hover {
+      background-color: #2563eb;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(59,130,246,0.4);
+    }
+
+    /* Form */
+    .form-card {
+      background: white;
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .form-card label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: #1f2937;
+    }
+    .form-card input {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid #d1d5db;
+      margin-bottom: 18px;
+      font-size: 0.95rem;
+      transition: border 0.3s, box-shadow 0.3s;
+    }
+    .form-card input:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+    }
+    .submit-btn {
+      background-color: #3b82f6;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: 500;
+      box-shadow: 0 4px 15px rgba(59,130,246,0.3);
+      transition: 0.3s;
+      width: 100%;
+      font-size: 1rem;
+    }
+    .submit-btn:hover {
+      background-color: #2563eb;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(59,130,246,0.4);
+    }
+
+    /* Steps */
+    .step-active {
+      background-color: #3b82f6;
+      color: white;
+      box-shadow: 0 3px 10px rgba(59,130,246,0.4);
+      transition: transform 0.3s;
+    }
+    .step-active:hover {
+      transform: scale(1.1);
+    }
+    .step-inactive {
+      background-color: #e5e7eb;
+      color: #6b7280;
+      transition: transform 0.3s;
+    }
+    .step-inactive:hover {
+      transform: scale(1.05);
+    }
+
+    /* Flèches */
+    .back-btn, .next-btn {
+      font-size: 2.7rem;
+      color: #1d4ed8;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, color 0.2s;
+    }
+    .back-btn:hover {
+      color: #0c4a6e;
+      transform: translateX(-6px) scale(1.12);
+    }
+    .next-btn:hover {
+      color: #0c4a6e;
+      transform: translateX(6px) scale(1.12);
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<!-- HEADER -->
+<header aria-label="Main Navigation">
+  <div class="nav-pill">
+    <a href="index.html" class="text-xl font-bold text-blue-600" aria-label="EduLink Home">EduLink</a>
+
+    <div class="nav-links flex gap-6 text-gray-600 font-medium text-sm">
+      <a href="#">Student</a>
+      <a href="hackathons.html" style="color: #3b82f6; font-weight: 600;">Events</a>
+
+      <a href="#">Planning</a>
+      <a href="#">Assistant</a>
+    </div>
+
+    <button class="btn-join">Log out</button>
+  </div>
+</header>
+
+<!-- Flèche retour -->
+<div class="flex items-center p-4">
+  <button class="back-btn" onclick="go()">⬅</button>
+</div>
+
+<!-- TITLE -->
+<h2 class="text-3xl md:text-4xl font-bold text-center text-blue-700 mb-10 px-4">
+  Registration Form Section
+</h2>
+
+<!-- FORMULAIRE -->
+<div class="form-card">
+  <form>
+    <label for="fullname">Full name</label>
+    <input type="text" id="fullname" placeholder="Enter your full name" required>
+
+    <label for="email">Email address</label>
+    <input type="email" id="email" placeholder="Enter your email" required>
+
+    <label for="phone">Phone number</label>
+    <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+    <label for="establishment">Establishment</label>
+    <input type="text" id="establishment" placeholder="Enter your establishment" required>
+  </form>
+</div>
+
+<!-- STEPS -->
+<div class="flex justify-center mt-12 mb-16">
+  <div class="flex items-center gap-6">
+    <div class="w-12 h-12 flex items-center justify-center step-inactive rounded-full shadow text-base font-semibold">1</div>
+    <div class="w-20 h-1 bg-gray-300 rounded-full"></div>
+    <div class="w-12 h-12 flex items-center justify-center step-active rounded-full shadow text-base font-semibold">2</div>
+    <div class="w-20 h-1 bg-gray-300 rounded-full"></div>
+    <div class="w-12 h-12 flex items-center justify-center step-inactive rounded-full shadow text-base font-semibold">3</div>
+    <div class="w-20 h-1 bg-gray-300 rounded-full"></div>
+    <div class="w-12 h-12 flex items-center justify-center step-inactive rounded-full shadow text-base font-semibold">4</div>
+  </div>
+</div>
+
+<!-- Next button -->
+<div class="flex justify-end max-w-5xl mx-auto p-4 mb-8">
+  <button class="next-btn" onclick="goNextPage()">➡</button>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-gray-100 py-8">
+  <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+    <div>
+      <h3 class="text-xl font-bold text-blue-600">EduLink</h3>
+      <p class="text-gray-600 text-sm">Donnez votre feedback et suggestions</p>
+    </div>
+    <div class="text-center md:text-right text-xs text-gray-600">
+      <p>© 2025 EduLink. Tous droits réservés</p>
+      <p>Communication • Organisation • Ressource • Accompagnement</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function go() {
+    window.location.href = "Detailed sections of the hackathon.html";
+  }
+  function goNextPage() {
+    window.location.href = "payement.html";
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Choose Your Payment Method</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e6ecff, #f5f8ff);
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header */
+    .nav-pill {
+      background: #ffffffcc;
+      border-radius: 50px;
+      padding: 10px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      max-width: 1200px;
+      margin: 15px auto;
+      width: calc(100% - 60px);
+      backdrop-filter: blur(8px);
+    }
+    .nav-links a:hover {
+      color: #3b82f6;
+      transform: scale(1.05);
+      transition: 0.3s;
+    }
+    .btn-join {
+      background-color: #3b82f6;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-weight: 500;
+      box-shadow: 0 4px 15px rgba(59,130,246,0.3);
+      transition: 0.3s;
+      font-size: 0.9rem;
+    }
+    .btn-join:hover {
+      background-color: #2563eb;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(59,130,246,0.4);
+    }
+
+    /* Form Card */
+    .form-card {
+      background: white;
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Payment Options */
+    .payment-option {
+      display: flex;
+      align-items: center;
+      padding: 18px 20px;
+      border: 2px solid #e5e7eb;
+      border-radius: 16px;
+      margin-bottom: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .payment-option:hover {
+      border-color: #3b82f6;
+      background-color: #f8fafc;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+    }
+    
+    .payment-option.selected {
+      border-color: #3b82f6;
+      background-color: #eff6ff;
+    }
+    
+    .payment-option input[type="radio"] {
+      margin-right: 15px;
+      transform: scale(1.3);
+      accent-color: #3b82f6;
+    }
+    
+    .payment-label {
+      display: flex;
+      align-items: center;
+      font-size: 17px;
+      font-weight: 500;
+      flex-grow: 1;
+    }
+    
+    .payment-icon {
+      margin-right: 15px;
+      font-size: 20px;
+      color: #3b82f6;
+      width: 30px;
+      text-align: center;
+    }
+
+    /* Submit Button */
+    .submit-btn {
+      background-color: #3b82f6;
+      color: white;
+      padding: 14px 24px;
+      border-radius: 50px;
+      font-weight: 500;
+      box-shadow: 0 4px 15px rgba(59,130,246,0.3);
+      transition: 0.3s;
+      width: 100%;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .submit-btn:hover:not(:disabled) {
+      background-color: #2563eb;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(59,130,246,0.4);
+    }
+    
+    .submit-btn:disabled {
+      background-color: #9ca3af;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* Steps */
+    .step-active {
+      background-color: #3b82f6;
+      color: white;
+      box-shadow: 0 3px 10px rgba(59,130,246,0.4);
+      transition: transform 0.3s;
+    }
+    .step-active:hover {
+      transform: scale(1.1);
+    }
+    .step-inactive {
+      background-color: #e5e7eb;
+      color: #6b7280;
+      transition: transform 0.3s;
+    }
+    .step-inactive:hover {
+      transform: scale(1.05);
+    }
+
+    /* Flèches */
+    .back-btn, .next-btn {
+      font-size: 2.5rem;
+      color: #1d4ed8;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, color 0.2s;
+    }
+    .back-btn:hover {
+      color: #0c4a6e;
+      transform: translateX(-4px) scale(1.1);
+    }
+    .next-btn:hover {
+      color: #0c4a6e;
+      transform: translateX(4px) scale(1.1);
+    }
+    
+    /* Titre */
+    .page-title {
+      text-align: center;
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: #1e40af;
+      margin-bottom: 1.5rem;
+      padding: 0 1rem;
+    }
+    
+    @media (max-width: 640px) {
+      .form-card {
+        padding: 24px;
+        margin: 0 1rem;
+      }
+      .page-title {
+        font-size: 1.875rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<!-- HEADER -->
+<header aria-label="Main Navigation">
+  <div class="nav-pill">
+    <a href="index.html" class="text-xl font-bold text-blue-600" aria-label="EduLink Home">EduLink</a>
+
+    <div class="nav-links flex gap-6 text-gray-600 font-medium text-sm">
+      <a href="#">Student</a>
+
+      <a href="hackathons.html" style="color: #3b82f6; font-weight: 600;">Events</a>
+
+      <a href="#">Planning</a>
+      <a href="#">Assistant</a>
+    </div>
+
+    <button class="btn-join">Log out</button>
+  </div>
+</header>
+
+
+<!-- Flèche de retour -->
+<div class="flex items-center p-4">
+  <button class="back-btn" onclick="goBack()">⬅</button>
+</div>
+
+<!-- TITLE -->
+<h1 class="page-title">
+  Choose Your Payment Method
+</h1>
+
+<!-- FORMULAIRE DE PAIEMENT -->
+<div class="form-card">
+  <div class="payment-options">
+    <div class="payment-option" data-payment="credit-card">
+      <input type="radio" id="credit-card" name="payment-method">
+      <label for="credit-card" class="payment-label">
+        <span class="payment-icon"><i class="fas fa-credit-card"></i></span>
+        Credit Card
+      </label>
+    </div>
+    
+    <div class="payment-option" data-payment="d17">
+      <input type="radio" id="d17" name="payment-method">
+      <label for="d17" class="payment-label">
+        <span class="payment-icon"><i class="fas fa-mobile-alt"></i></span>
+        D17
+      </label>
+    </div>
+    
+    <div class="payment-option" data-payment="bank-transfer">
+      <input type="radio" id="bank-transfer" name="payment-method">
+      <label for="bank-transfer" class="payment-label">
+        <span class="payment-icon"><i class="fas fa-university"></i></span>
+        Bank Transfer
+      </label>
+    </div>
+    
+    <div class="payment-option" data-payment="cash">
+      <input type="radio" id="cash" name="payment-method">
+      <label for="cash" class="payment-label">
+        <span class="payment-icon"><i class="fas fa-money-bill-wave"></i></span>
+        Cash at the Office
+      </label>
+    </div>
+    
+   </div>
+</div>
+
+<!-- STEPS SOUS LE FORMULAIRE -->
+<div class="flex justify-center mt-12 mb-16">
+  <div class="flex items-center gap-6">
+    <div class="w-12 h-12 flex items-center justify-center step-inactive rounded-full shadow text-base font-semibold">1</div>
+    <div class="w-20 h-1 bg-gray-300 rounded-full"></div>
+    <div class="w-12 h-12 flex items-center justify-center step-inactive rounded-full shadow text-base font-semibold">2</div>
+    <div class="w-20 h-1 bg-gray-300 rounded-full"></div>
+    <div class="w-12 h-12 flex items-center justify-center step-active rounded-full shadow text-base font-semibold">3</div>
+    <div class="w-20 h-1 bg-gray-300 rounded-full"></div>
+    <div class="w-12 h-12 flex items-center justify-center step-inactive rounded-full shadow text-base font-semibold">4</div>
+  </div>
+</div>
+
+<!-- Next button -->
+<div class="flex justify-end max-w-5xl mx-auto p-4 mb-8">
+  <button class="next-btn" onclick="goNextPage()">➡</button>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-gray-100 py-8">
+  <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+    <div>
+      <h3 class="text-xl font-bold text-blue-600">EduLink</h3>
+      <p class="text-gray-600 text-sm">Company's share is a key shareholder.</p>
+    </div>
+    <div class="text-center md:text-right text-xs text-gray-600">
+      <p>© 2025 EduLink. All rights reserved</p>
+      <p>Communication • Organisation • Ressource • Accompagnement</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function goBack() {
+    window.location.href = "Registration Form Section.html"; // modifier selon votre page précédente
+  }
+  
+  function goNextPage() {
+    window.location.href = "QR.html";
+  }
+    </script>
+
+</body>
+</html>
