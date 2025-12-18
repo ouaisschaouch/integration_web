@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduLink - AI Collaboration Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="src/styles/index.scss">
+  <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/student-center.png">
+  
+    <link rel="stylesheet" href="src/styles/main.css" />
+
+    <link rel="stylesheet" href="./dist/output.css">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f5ff;
+    }
+    
+    .nav-pill {
+      background: #dee7f6;
+      border-radius: 50px;
+      padding: 15px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+    
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #3b82f6;
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      color: #4b5563;
+      font-weight: 500;
+    }
+    
+    .nav-links a {
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    
+    .nav-links a:hover {
+      color: #3b82f6;
+    }
+    
+    .btn-join {
+      background-color: #3b82f6;
+      color: white;
+      padding: 10px 28px;
+      border-radius: 50px;
+      font-weight: 500;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .btn-join:hover {
+      background-color: #2563eb;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
+    }
+    
+    .search-pill {
+      background-color: white;
+      border-radius: 50px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      margin-top: 32px;
+    }
+    
+    .search-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+    }
+    
+    .search-left input {
+      outline: none;
+      width: 100%;
+      color: #6b7280;
+      font-size: 16px;
+      background: transparent;
+      border: none;
+    }
+    
+    .search-left input::placeholder {
+      color: #9ca3af;
+    }
+    
+    .btn-search {
+      background-color: #3b82f6;
+      color: white;
+      padding: 10px 28px;
+      border-radius: 50px;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .btn-search:hover {
+      background-color: #2563eb;
+    }
+    
+    .hero-title {
+      font-size: 46px;
+      font-weight: 700;
+      color: #1e40af;
+      line-height: 1.2;
+    }
+    
+    .hero-desc {
+      margin-top: 20px;
+      color: #6b7280;
+      max-width: 420px;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    
+    .hero-img-container {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      height: 350px;
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    }
+    
+    .ai-badge {
+      position: absolute;
+      left: 24px;
+      bottom: 24px;
+      background-color: #7c3aed;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 14px;
+      z-index: 10;
+    }
+    
+    .features-title {
+      text-align: center;
+      font-size: 30px;
+      font-weight: 600;
+      color: #1e40af;
+      margin-bottom: 8px;
+    }
+    
+    .features-sub {
+      text-align: center;
+      color: #6b7280;
+      font-size: 16px;
+      margin-top: 12px;
+      margin-bottom: 40px;
+    }
+    
+    .feature-card {
+      background: #f5f8ff;
+      border-radius: 24px;
+      padding: 40px 32px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.08);
+      height: 100%;
+      border: 1px solid rgba(219, 234, 254, 0.5);
+      transition: all 0.3s ease;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
+    }
+    
+    .feature-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      color: white;
+      font-size: 28px;
+    }
+    
+    .ai-assistant-icon {
+      background: linear-gradient(135deg, #7c3aed 0%, #3B82F6 100%);
+    }
+    
+    .matching-icon {
+      background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+    }
+    
+    .community-icon {
+      background: linear-gradient(135deg, #3B82F6 0%, #3B82F6 100%);
+    }
+    
+    .feature-card h4 {
+      font-weight: 600;
+      color: #1f2937;
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    
+    .feature-card p {
+      color: #6b7280;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    
+    .btn-main {
+      background-color: #3b82f6;
+      color: white;
+      padding: 14px 48px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 16px;
+      box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .btn-main:hover {
+      background-color: #2563eb;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(59, 130, 246, 0.5);
+    }
+
+    .stats-container {
+      margin-top: 60px;
+      text-align: center;
+    }
+    
+    .stats-title {
+      font-size: 28px;
+      font-weight: 600;
+      color: #1e40af;
+      margin-bottom: 40px;
+    }
+    
+    .stat-card {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .stat-number {
+      font-size: 36px;
+      font-weight: 700;
+      color: #3b82f6;
+      margin-bottom: 8px;
+    }
+    
+    .stat-label {
+      color: #6b7280;
+      font-size: 15px;
+    }
+    
+    .footer {
+      background: #dce6f5;
+      padding: 40px 0;
+      margin-top: 100px;
+      text-align: center;
+    }
+    
+    .logo-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #3b82f6;
+      margin-bottom: 8px;
+    }
+    
+    .socials {
+      margin-bottom: 20px;
+    }
+    
+    .social-icon {
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      border-radius: 50%;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      margin: 0 8px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      font-size: 18px;
+      text-decoration: none;
+      color: #4b5563;
+    }
+    
+    .social-icon:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      background-color: #3b82f6;
+      color: white;
+    }
+    
+    .footer-text {
+      color: #6b7280;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+    
+    .feedback-text {
+      color: #6b7280;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+    
+    .tagline {
+      color: #4b5563;
+      font-size: 13px;
+      margin-top: 8px;
+      font-style: italic;
+    }
+    
+    @media (max-width: 768px) {
+      .nav-pill {
+        padding: 12px 20px;
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .hero-title {
+        font-size: 32px;
+      }
+      
+      .features-title {
+        font-size: 26px;
+      }
+      
+      .feature-card {
+        padding: 30px 20px;
+      }
+      
+      .grid-cols-3 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .stat-number {
+        font-size: 28px;
+      }
+      
+      .btn-main, .btn-join, .btn-search {
+        padding: 12px 24px;
+        font-size: 14px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 28px;
+      }
+      
+      .search-pill {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .search-left {
+        width: 100%;
+      }
+    }
+    
+    /* Animation for the hero image */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .floating {
+      animation: float 5s ease-in-out infinite;
+    }
+  </style>
+<body class="min-h-screen">
+
+<!-- Navigation -->
+<header class="max-w-7xl mx-auto px-6 pt-8" aria-label="Main Navigation">
+  <div class="nav-pill">
+    <a href="#" class="logo" aria-label="EduLink Home">EduLink</a>
+    
+    <div class="nav-links">
+      <a href="public/pages/Students.html">Student</a>
+      <a href="hackathons.html">Events</a> <!-- MODIFICATION ICI -->
+      <a href="index1.html">Planning</a>
+      <a href="public/pages/assistant.html">Assistant</a>
+    </div>
+    
+    <button class="btn-join" onclick="joinNow()">
+      Join Now
+    </button>
+  </div>
+</header>
+
+<!-- Search Bar -->
+<main class="max-w-7xl mx-auto px-6">
+  <div class="max-w-4xl mx-auto">
+    <div class="search-pill">
+      <div class="search-left">
+        <span class="text-gray-400 text-lg">🔍</span>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Find collaborators or mentors instantly"
+          onkeydown="if(event.key === 'Enter') searchProjects()"
+        />
+      </div>
+      <button class="btn-search" onclick="searchProjects()">
+        Search
+      </button>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="mt-16 grid md:grid-cols-2 gap-16 items-center">
+    <div>
+      <h2 class="hero-title">
+        The AI Collaboration <br>
+        Platform For Students
+      </h2>
+      
+      <p class="hero-desc">
+Supercharge your student life with smart collaboration and AI-powered tools.      </p>
+      
+      <div class="mt-8">
+        <button class="btn-main" onclick="getStarted()">
+          Get Started Now
+        </button>
+      </div>
+    </div>
+    
+    <div class="relative">
+      <div class="hero-img-container">
+        <!-- Hero image content -->
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="text-white text-center p-6 floating">
+            <div class="text-6xl mb-4">🤖</div>
+            <div class="font-medium text-xl">Connect • Collaborate • Create</div>
+            <div class="mt-4 text-sm opacity-80">AI-powered student network</div>
+          </div>
+        </div>
+        <span class="ai-badge">AI-Powered</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="mt-32 bg-white rounded-3xl shadow-xl p-10">
+    <h3 class="features-title">Smart Features For Success</h3>
+    <p class="features-sub">
+      Everything you need to collaborate, learn, and grow together
+    </p>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      
+      <!-- AI Assistant Card -->
+      <div class="feature-card">
+        <div class="feature-icon ai-assistant-icon">🤖</div>
+        <h4>AI Assistant</h4>
+        <p>Work smarter, not harder</p>
+      </div>
+      
+      <!-- Smart Matching Card -->
+      <div class="feature-card">
+        <div class="feature-icon matching-icon">🎯</div>
+        <h4>Smart Matching</h4>
+<p>Connect with like-minded
+ peers      </div>
+      
+      <!-- Community Card -->
+      <div class="feature-card">
+        <div class="feature-icon community-icon">👥</div>
+        <h4>Community</h4>
+<p>Join a vibrant student 
+network      </div>
+      
+    </div>
+    
+    <!-- Button -->
+    <div class="text-center mt-12">
+      <button class="btn-main" onclick="exploreFeatures()">
+        Explore All Features
+      </button>
+    </div>
+  </section>
+
+  
+</main>
+
+<footer class="flex-shrink-0 bg-nav-gray py-6 px-4 mt-8">
+    <div class="container mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <h3 class="logo-title">Edulink</h3>
+          <p class="text-gray-600 mt-1">Donner votre feedback</p>
+        </div>
+        <div class="text-center md:text-right">
+          <p class="footer-text">&copy; 2025 EduLink. All rights reserved</p>
+          <p class="text-gray-700 text-xs mt-1">
+            Communication • Organisation • Ressource et partage • Accompagnement
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  // Function to handle search
+  function searchProjects() {
+    const searchTerm = document.getElementById('searchInput').value;
+    if (searchTerm.trim()) {
+      alert(`🔍 Searching for: "${searchTerm}"\n\nThis would normally display results for collaborators, mentors, or projects matching your search.`);
+      // In a real app: fetch search results from API
+    } else {
+      alert('Please enter a search term to find collaborators or mentors.');
+    }
+  }
+  
+  // Function to handle Join Now
+  function joinNow() {
+    alert('🎉 Welcome to EduLink!\n\nRedirecting to signup page...\n\nIn a real application, this would take you to the registration form.');
+    // In a real app: window.location.href = '/signup';
+  }
+  
+  // Function to handle Get Started
+  function getStarted() {
+    alert('🚀 Getting started with EduLink!\n\nYou would now be guided through creating your profile and setting up your student account.');
+    // In a real app: window.location.href = '/onboarding';
+  }
+  
+  // Function to handle Explore Features
+  function exploreFeatures() {
+    alert('📚 Exploring all features!\n\nThis would navigate to a detailed page explaining all the features of EduLink in depth.');
+    // In a real app: window.location.href = '/features';
+  }
+  
+  // Add some interactivity to the feature cards
+  document.addEventListener('DOMContentLoaded', function() {
+    const featureCards = document.querySelectorAll('.feature-card');
+    
+    featureCards.forEach(card => {
+      card.addEventListener('click', function() {
+        const title = this.querySelector('h4').textContent;
+        alert(`You selected: ${title}\n\nThis feature helps students collaborate more effectively using AI technology.`);
+      });
+    });
+    
+    // Make the hero image interactive
+    const heroImage = document.querySelector('.hero-img-container');
+    heroImage.addEventListener('click', function() {
+      alert('🎓 Welcome to EduLink!\n\nThe future of student collaboration is here.\n\nClick "Join Now" to become part of our community.');
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+.edu-card {
+  border-radius: 22px;
+  transition: .2s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+  }
+}
+

@@ -1,12 +1,71 @@
-.nav-link {
-  @apply hover:text-title-blue transition-colors duration-300;
-}
+@import 'variable';
+@import 'mixins';
 
-.btn-join {
-  @apply bg-title-blue text-white px-6 py-2 rounded-lg font-medium
-         hover:bg-blue-700 transition-colors duration-300 shadow;
+.header {
+  height: 4rem;
+  background-color: $nav-gray;
+  padding: $spacing-4 $spacing-6;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  .container {
+    @include flex-col;
+    
+    @media (min-width: 768px) {
+      @include flex-row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
 }
 
 .logo-title {
-  @apply text-title-blue text-2xl md:text-3xl font-bold;
+  color: $title-blue;
+  font-size: $font-size-3xl;
+  font-weight: bold;
+  margin-bottom: $spacing-4;
+  
+  @media (min-width: 768px) {
+    font-size: $font-size-2xl;
+    margin-bottom: 0;
+  }
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $spacing-6;
+  color: $gray-700;
+  font-weight: 500;
+  margin-bottom: $spacing-4;
+  
+  @media (min-width: 768px) {
+    gap: $spacing-8;
+    margin-bottom: 0;
+  }
+}
+
+.nav-link {
+  @include transition-all;
+  
+  &:hover {
+    color: $title-blue;
+  }
+}
+
+.btn-join {
+  background-color: $title-blue;
+  color: $white;
+  padding: $spacing-2 $spacing-6;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  @include transition-all;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  &:hover {
+    background-color: adjust-color($title-blue, $lightness: -10%);
+    transform: translateY(-2px);
+  }
 }

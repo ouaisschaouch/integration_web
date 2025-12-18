@@ -1,0 +1,138 @@
+@import 'variable';
+@import 'mixins';
+
+/* =========================
+   TITLE
+========================= */
+.list-title {
+  font-size: $font-size-3xl;
+  font-weight: 600;
+  color: $title-blue;
+  margin-bottom: $spacing-4;
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+.list-back-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: $title-blue;
+  cursor: pointer;
+}
+
+/* =========================
+   MAIN CARD
+========================= */
+.notification-card {
+  @include card;
+  width: 100%;
+  max-width: 820px;
+  background-color: lighten($title-blue, 35%);
+}
+
+/* =========================
+   SEARCH BAR
+========================= */
+.notification-search {
+  @include flex-row;
+  align-items: center;
+  gap: $spacing-2;
+  background-color: $white;
+  padding: $spacing-2;
+  border-radius: 9999px;
+  margin-bottom: $spacing-4;
+
+  input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: $font-size-sm;
+    padding-left: $spacing-3;
+    color: $gray-700;
+  }
+
+  .search-btn {
+    background-color: $title-blue;
+    color: $white;
+    border-radius: 9999px;
+    padding: 0.4rem 1.2rem;
+    font-size: $font-size-sm;
+    font-weight: 500;
+    @include transition-colors;
+
+    &:hover {
+      background-color: darken($title-blue, 10%);
+    }
+  }
+}
+
+/* =========================
+   LIST SCROLL
+========================= */
+.notification-list {
+  max-height: 230px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+/* =========================
+   ITEM
+========================= */
+.notification-item {
+  @include flex-row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $white;
+  border-radius: 0.75rem;
+  padding: $spacing-3 $spacing-4;
+  margin-bottom: $spacing-3;
+  @include transition-all;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.notification-text {
+  font-size: $font-size-sm;
+  font-weight: 500;
+  color: $gray-800;
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+.notification-right {
+  @include flex-row;
+  align-items: center;
+  gap: $spacing-3;
+}
+
+.notification-date {
+  font-size: $font-size-xs;
+  color: $gray-500;
+}
+
+.notification-icon {
+  font-size: 1.2rem;
+}
+
+/* =========================
+   ADD BUTTON
+========================= */
+.add-notification-btn {
+  background-color: $title-blue;
+  color: $white;
+  border-radius: 9999px;
+  padding: 0.6rem 1.6rem;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  @include transition-colors;
+
+  &:hover {
+    background-color: darken($title-blue, 12%);
+  }
+}
