@@ -1,0 +1,47 @@
+@use 'variables' as vars;
+@use 'mixins' as *;
+
+.nav-container {
+  @include flex-between;
+  background-color: vars.$secondary-color;
+  padding: vars.$spacing-md vars.$spacing-xl;
+  margin-bottom: vars.$spacing-lg;
+  border-radius: vars.$radius-xl;
+  box-shadow: vars.$shadow-md;
+
+  @include tablet {
+    flex-direction: column;
+    gap: vars.$spacing-md;
+  }
+}
+
+.nav-brand {
+  font-size: vars.$font-size-xl;
+  font-weight: 700;
+  color: vars.$primary-color;
+}
+
+.nav-links {
+  display: flex;
+  gap: vars.$spacing-lg;
+
+  @include mobile {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: vars.$spacing-sm;
+  }
+}
+
+.nav-link {
+  color: vars.$text-dark;
+  text-decoration: none;
+  font-weight: 500;
+  transition: vars.$transition-base;
+  padding: vars.$spacing-xs vars.$spacing-md;
+  border-radius: vars.$radius-md;
+
+  &:hover {
+    color: vars.$primary-color;
+    background-color: vars.$white;
+  }
+}

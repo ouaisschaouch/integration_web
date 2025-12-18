@@ -1,26 +1,29 @@
-/* Tailwind */
+@use 'variables' as vars;
+@use 'mixins' as *;
+@use 'header';
+@use 'footer';
+@use 'advisor';
+@use 'forum_conseiller';
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Sass */
-@import "variables";
-@import "mixins";
-@import "chat";
-
-/* Custom Tailwind components */
-.nav-link {
-  @apply hover:text-title-blue transition-colors duration-300;
+// Global styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.btn-join {
-  @apply bg-title-blue text-white px-6 py-2 rounded-lg font-medium
-         hover:bg-blue-700 transition-colors duration-300 shadow;
+body {
+  font-family: vars.$font-family;
+  color: vars.$text-dark;
+  background-color: vars.$background-light;
 }
-
-.logo-title {
-  @apply text-title-blue text-2xl md:text-3xl font-bold;
-}
-.test {
-  @apply text-red-500 text-xl;
+.forum-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }

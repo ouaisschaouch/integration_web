@@ -1,0 +1,94 @@
+@use 'variables' as vars;
+@use 'mixins' as *;
+
+.advisor-card {
+  @include card;
+  max-width: 600px;
+  margin: 2rem auto;
+
+  @include tablet {
+    padding: vars.$spacing-lg;
+  }
+}
+
+.advisor-content {
+  @include flex-column;
+  gap: vars.$spacing-lg;
+}
+
+.advisor-avatar {
+  @include flex-center;
+  margin-bottom: vars.$spacing-md;
+
+  .avatar-img {
+    width: 120px;
+    height: 120px;
+    border-radius: vars.$radius-full;
+    border: 4px solid vars.$white;
+    box-shadow: vars.$shadow-lg;
+
+    @include mobile {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+
+.advisor-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: vars.$spacing-lg;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: vars.$spacing-md;
+  }
+}
+
+.info-item {
+  @include flex-column;
+  gap: vars.$spacing-xs;
+}
+
+.info-label {
+  font-size: vars.$font-size-sm;
+  color: vars.$text-light;
+  font-weight: 500;
+}
+
+.info-value {
+  background-color: vars.$white;
+  padding: vars.$spacing-sm vars.$spacing-md;
+  border-radius: vars.$radius-md;
+  font-weight: 500;
+  color: vars.$text-dark;
+  box-shadow: vars.$shadow-sm;
+}
+
+.status-badges {
+  display: flex;
+  gap: vars.$spacing-sm;
+  flex-wrap: wrap;
+}
+
+.badge-male {
+  background-color: vars.$male-color;
+  color: #78350F;
+}
+
+.badge-single {
+  background-color: vars.$single-color;
+  color: #831843;
+}
+
+.contact-btn {
+  @include button-base;
+  background-color: vars.$primary-color;
+  color: vars.$white;
+  font-size: vars.$font-size-base;
+  margin-top: vars.$spacing-md;
+
+  &:hover {
+    background-color: vars.$primary-hover;
+  }
+}

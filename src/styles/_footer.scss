@@ -1,0 +1,49 @@
+@use 'variables' as vars;
+@use 'mixins' as *;
+
+.footer {
+  @include flex-between;
+  padding: vars.$spacing-lg vars.$spacing-xl;
+  margin-top: vars.$spacing-xl;
+  border-top: 1px solid vars.$border-color;
+
+  @include tablet {
+    flex-direction: column;
+    gap: vars.$spacing-md;
+    text-align: center;
+  }
+}
+
+.footer-brand {
+  font-size: vars.$font-size-lg;
+  font-weight: 600;
+  color: vars.$text-dark;
+}
+
+.footer-text {
+  font-size: vars.$font-size-sm;
+  color: vars.$text-light;
+}
+
+.footer-social {
+  display: flex;
+  gap: vars.$spacing-md;
+}
+
+.social-link {
+  @include flex-center;
+  width: 40px;
+  height: 40px;
+  border-radius: vars.$radius-full;
+  background-color: vars.$secondary-color;
+  color: vars.$text-dark;
+  text-decoration: none;
+  font-weight: 600;
+  transition: vars.$transition-base;
+
+  &:hover {
+    background-color: vars.$primary-color;
+    color: vars.$white;
+    transform: translateY(-3px);
+  }
+}

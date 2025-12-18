@@ -1,0 +1,59 @@
+@use 'variables' as vars;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin button-base {
+  padding: vars.$spacing-sm vars.$spacing-lg;
+  border-radius: vars.$radius-full;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: vars.$transition-base;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: vars.$shadow-lg;
+  }
+}
+
+@mixin card {
+  background-color: vars.$card-bg;
+  border-radius: vars.$radius-xl;
+  padding: vars.$spacing-xl;
+  box-shadow: vars.$shadow-md;
+}
+
+// Responsive
+@mixin mobile {
+  @media (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
