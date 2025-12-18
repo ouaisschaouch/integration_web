@@ -1,514 +1,521 @@
-/*
-! tailwindcss v3.2.7 | MIT License | https://tailwindcss.com
-*/
+/* Sass */
+.nav-link {
+  @apply hover:text-title-blue transition-colors duration-300;
+}
 
-/*
-1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
-2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
-*/
+.btn-join {
+  @apply bg-title-blue text-white px-6 py-2 rounded-lg font-medium
+         hover:bg-blue-700 transition-colors duration-300 shadow;
+}
 
-*,
-::before,
-::after {
+.logo-title {
+  @apply text-title-blue text-2xl md:text-3xl font-bold;
+}
+
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  /* 1 */
-  border-width: 0;
-  /* 2 */
-  border-style: solid;
-  /* 2 */
-  border-color: #e5e7eb;
-  /* 2 */
+  font-family: "Inter", sans-serif;
 }
-
-::before,
-::after {
-  --tw-content: '';
-}
-
-/*
-1. Use a consistent sensible line-height in all browsers.
-2. Prevent adjustments of font size after orientation changes in iOS.
-3. Use a more readable tab size.
-4. Use the user's configured `sans` font-family by default.
-5. Use the user's configured `sans` font-feature-settings by default.
-*/
-
-html {
-  line-height: 1.5;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
-  -moz-tab-size: 4;
-  /* 3 */
-  -o-tab-size: 4;
-     tab-size: 4;
-  /* 3 */
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  /* 4 */
-  font-feature-settings: normal;
-  /* 5 */
-}
-
-/*
-1. Remove the margin in all browsers.
-2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
-*/
 
 body {
-  margin: 0;
-  /* 1 */
-  line-height: inherit;
-  /* 2 */
+  background: #f1f4fa;
+  color: #1f2937;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/*
-1. Add the correct height in Firefox.
-2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
-3. Ensure horizontal rules are visible by default.
-*/
-
-hr {
-  height: 0;
-  /* 1 */
-  color: inherit;
-  /* 2 */
-  border-top-width: 1px;
-  /* 3 */
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-/*
-Add the correct text decoration in Chrome, Edge, and Safari.
-*/
-
-abbr:where([title]) {
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+/* ===== HEADER ===== */
+.top-bar {
+  background: linear-gradient(90deg, #cfd8ee, #e2e8f6);
+  border-radius: 0 0 28px 28px;
 }
 
-/*
-Remove the default font size and weight for headings.
-*/
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: inherit;
-  font-weight: inherit;
+.header-content {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/*
-Reset links to optimize for opt-in styling instead of opt-out.
-*/
-
-a {
-  color: inherit;
-  text-decoration: inherit;
+.logo {
+  font-size: 26px;
+  font-weight: 800;
+  color: #5b7fd6;
 }
 
-/*
-Add the correct font weight in Edge and Safari.
-*/
-
-b,
-strong {
-  font-weight: bolder;
+.nav a {
+  margin: 0 14px;
+  text-decoration: none;
+  color: #374151;
+  font-weight: 500;
+}
+.nav a.active {
+  font-weight: 700;
 }
 
-/*
-1. Use the user's configured `mono` font family by default.
-2. Correct the odd `em` font sizing in all browsers.
-*/
-
-code,
-kbd,
-samp,
-pre {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
-}
-
-/*
-Add the correct font size in all browsers.
-*/
-
-small {
-  font-size: 80%;
-}
-
-/*
-Prevent `sub` and `sup` elements from affecting the line height in all browsers.
-*/
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-/*
-1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
-2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
-3. Remove gaps between table borders by default.
-*/
-
-table {
-  text-indent: 0;
-  /* 1 */
-  border-color: inherit;
-  /* 2 */
-  border-collapse: collapse;
-  /* 3 */
-}
-
-/*
-1. Change the font styles in all browsers.
-2. Remove the margin in Firefox and Safari.
-3. Remove default padding in all browsers.
-*/
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  font-weight: inherit;
-  /* 1 */
-  line-height: inherit;
-  /* 1 */
-  color: inherit;
-  /* 1 */
-  margin: 0;
-  /* 2 */
-  padding: 0;
-  /* 3 */
-}
-
-/*
-Remove the inheritance of text transform in Edge and Firefox.
-*/
-
-button,
-select {
-  text-transform: none;
-}
-
-/*
-1. Correct the inability to style clickable types in iOS and Safari.
-2. Remove default button styles.
-*/
-
-button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
-  -webkit-appearance: button;
-  /* 1 */
-  background-color: transparent;
-  /* 2 */
-  background-image: none;
-  /* 2 */
-}
-
-/*
-Use the modern Firefox focus style for all focusable elements.
-*/
-
-:-moz-focusring {
-  outline: auto;
-}
-
-/*
-Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
-*/
-
-:-moz-ui-invalid {
-  box-shadow: none;
-}
-
-/*
-Add the correct vertical alignment in Chrome and Firefox.
-*/
-
-progress {
-  vertical-align: baseline;
-}
-
-/*
-Correct the cursor style of increment and decrement buttons in Safari.
-*/
-
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-  height: auto;
-}
-
-/*
-1. Correct the odd appearance in Chrome and Safari.
-2. Correct the outline style in Safari.
-*/
-
-[type='search'] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
-}
-
-/*
-Remove the inner padding in Chrome and Safari on macOS.
-*/
-
-::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/*
-1. Correct the inability to style clickable types in iOS and Safari.
-2. Change font properties to `inherit` in Safari.
-*/
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
-}
-
-/*
-Add the correct display in Chrome and Safari.
-*/
-
-summary {
-  display: list-item;
-}
-
-/*
-Removes the default spacing and border for appropriate elements.
-*/
-
-blockquote,
-dl,
-dd,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-hr,
-figure,
-p,
-pre {
-  margin: 0;
-}
-
-fieldset {
-  margin: 0;
-  padding: 0;
-}
-
-legend {
-  padding: 0;
-}
-
-ol,
-ul,
-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/*
-Prevent resizing textareas horizontally by default.
-*/
-
-textarea {
-  resize: vertical;
-}
-
-/*
-1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
-2. Set the default placeholder color to the user's configured gray 400 color.
-*/
-
-input::-moz-placeholder, textarea::-moz-placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
-}
-
-input::placeholder,
-textarea::placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
-}
-
-/*
-Set the default cursor for buttons.
-*/
-
-button,
-[role="button"] {
+.btn-primary {
+  background: #5b7fd6;
+  color: #ffffff;
+  border: none;
+  padding: 10px 26px;
+  border-radius: 999px;
+  font-weight: 600;
   cursor: pointer;
 }
 
-/*
-Make sure disabled buttons don't get the pointer cursor.
-*/
-
-:disabled {
-  cursor: default;
+.btn-secondary {
+  background: #d1d5db;
+  border: none;
+  padding: 10px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-/*
-1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
-2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
-   This can trigger a poorly considered lint error in some tools but is included by design.
-*/
+/* ===== MAIN ===== */
+.confirmation {
+  flex: 1;
+  padding: 60px 0;
+  position: relative;
+}
 
-img,
-svg,
-video,
-canvas,
-audio,
-iframe,
-embed,
-object {
+/* Back arrow */
+.back-btn {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 22px;
+  color: #5b7fd6;
+}
+
+/* ===== SUCCESS ===== */
+.success {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.success .icon {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 24px;
+  background: linear-gradient(180deg, #7dd3fc, #818cf8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.success .icon i {
+  font-size: 40px;
+  color: white;
+}
+.success h1 {
+  font-size: 32px;
+  font-weight: 800;
+}
+.success p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* ===== CARD ===== */
+.parrain-card {
+  background: #a7bdf0;
+  border-radius: 32px;
+  padding: 28px 36px;
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  background: #e5e7eb;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.infos h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.infos p {
+  font-size: 14px;
+  color: #374151;
+  margin-top: 4px;
+}
+
+.dispo {
+  text-align: right;
+}
+.dispo strong {
   display: block;
-  /* 1 */
-  vertical-align: middle;
-  /* 2 */
+  font-size: 14px;
+}
+.dispo p {
+  font-size: 14px;
+  color: #374151;
 }
 
-/*
-Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
-*/
-
-img,
-video {
-  max-width: 100%;
-  height: auto;
+/* ===== ACTIONS ===== */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
-/* Make elements with the HTML hidden attribute stay hidden by default */
-
-[hidden] {
-  display: none;
+.hint {
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
 }
 
-*, ::before, ::after {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
+/* ===== FOOTER ===== */
+.footer {
+  background: #e5e7eb;
+  padding: 24px 0;
 }
 
-::backdrop {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
+.socials i {
+  margin-left: 14px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.chat-container {
+  @apply flex flex-col min-h-screen bg-gray-100;
+}
+.chat-container .chat-header {
+  @apply flex items-center justify-between bg-white shadow px-10 py-4;
+}
+.chat-container .contacts {
+  @apply w-[300px] bg-blue-600 text-white rounded-xl p-4 flex flex-col;
+}
+.chat-container .message {
+  @apply px-4 py-2 rounded-xl;
+}
+.chat-container .message--user {
+  @apply bg-blue-500 text-white text-right;
+}
+.chat-container .message--other {
+  @apply bg-gray-100 text-gray-700 text-left;
+}
+
+.logo-title {
+  @apply text-title-blue text-2xl md:text-3xl font-bold;
+}
+
+.footer-text {
+  @apply text-gray-500 text-sm;
+}
+
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== PAGE TITLE ===== */
+.page-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.page-title h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.page-title p {
+  font-size: 16px;
+}
+
+/* ===== CARD ===== */
+.card {
+  display: flex;
+  gap: 40px;
+  max-width: 800px;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc; /* juste pour visualiser la card */
+  border-radius: 12px;
+}
+
+.card-left {
+  max-width: 60%;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.info i {
+  margin-right: 8px;
+}
+
+.description {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.actions {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.actions button {
+  padding: 8px 16px;
+}
+
+.actions a {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ===== AVATAR ===== */
+.avatar img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .card-left {
+    max-width: 100%;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: #f5f7fb;
+  color: #1f2937;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.top-bar {
+  background: linear-gradient(90deg, #cfd8ee, #e2e8f6);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 25px 25px;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #5b7fd6;
+}
+
+.nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #374151;
+}
+.nav a.active {
+  font-weight: 700;
+}
+
+.btn-primary {
+  background: #5b7fd6;
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.6rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: #d1d5db;
+  border: none;
+  padding: 0.6rem 1.6rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* SEARCH */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+}
+.search-bar input {
+  width: 420px;
+  padding: 0.8rem;
+  border-radius: 20px 0 0 20px;
+  border: none;
+}
+.search-bar button {
+  background: #5b7fd6;
+  color: #ffffff;
+  border: none;
+  padding: 0 1.4rem;
+  border-radius: 0 20px 20px 0;
+}
+
+/* TITLE */
+.page-title {
+  text-align: center;
+}
+.page-title h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+.page-title p {
+  margin-top: 0.5rem;
+  color: #4b5563;
+}
+
+/* LAYOUT */
+.resources-layout {
+  display: flex;
+  max-width: 1200px;
+  margin: 3rem auto;
+  gap: 2rem;
+}
+
+/* SIDEBAR */
+.sidebar {
+  background: #f3f4f6;
+  border-radius: 20px;
+  padding: 1.5rem;
+  width: 220px;
+}
+.sidebar ul {
+  list-style: none;
+}
+.sidebar ul li {
+  padding: 0.7rem;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.sidebar ul li.active {
+  background: #fdecec;
+  font-weight: 600;
+}
+
+/* RESOURCE CARD */
+.resources {
+  flex: 1;
+}
+
+.resource-card {
+  background: #a7bdf0;
+  border-radius: 25px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.section-subtitle {
+  margin: 2rem 0 1rem;
+  font-weight: 700;
+}
+
+/* POPULAR */
+.popular-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.popular-card {
+  background: #9bb7ea;
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-align: center;
+}
+.popular-card button {
+  margin-top: 1rem;
+  background: #5b7fd6;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.4rem;
+  border-radius: 20px;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: auto;
+  background: #e5e7eb;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Custom Tailwind components */
+.nav-link {
+  @apply hover:text-title-blue transition-colors duration-300;
+}
+
+.btn-join {
+  @apply bg-title-blue text-white px-6 py-2 rounded-lg font-medium
+         hover:bg-blue-700 transition-colors duration-300 shadow;
+}
+
+.logo-title {
+  @apply text-title-blue text-2xl md:text-3xl font-bold;
+}
+
+/*# sourceMappingURL=style.css.map */

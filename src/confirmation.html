@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLink - Demande envoyée</title>
+    <style>
+        /* Variables */
+        :root {
+            --primary: #5b7fd6;
+            --secondary: #a7bdf0;
+            --bg: #f5f7fb;
+            --white: #ffffff;
+            --text: #1f2937;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Inter", sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* HEADER */
+        .top-bar {
+            background: linear-gradient(90deg, #cfd8ee, #e2e8f6);
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 0 0 50px 50px;
+            margin: 0 3rem;
+            margin-top: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--gray-700);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: var(--primary);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 0.6rem 1.6rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #4a6bc5;
+        }
+
+        .btn-secondary {
+            background: var(--gray-300);
+            color: var(--text);
+            border: none;
+            padding: 0.75rem 2.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: #b8bec9;
+        }
+
+        /* BACK ARROW */
+        .back-arrow {
+            margin: 3rem 0 2rem 4rem;
+        }
+
+        .arrow-icon {
+            width: 80px;
+            height: 48px;
+            fill: var(--secondary);
+            opacity: 0.7;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .arrow-icon:hover {
+            opacity: 1;
+        }
+
+        /* MAIN CONTENT */
+        .confirmation-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* SUCCESS ICON */
+        .success-icon {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #a7bdf0 0%, #5b7fd6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(91, 127, 214, 0.3);
+        }
+
+        .checkmark {
+            width: 120px;
+            height: 120px;
+            stroke: white;
+            stroke-width: 4;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* SUCCESS MESSAGE */
+        .success-title {
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .success-description {
+            font-size: 1.3rem;
+            text-align: center;
+            color: var(--gray-600);
+            max-width: 900px;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+        }
+
+        /* MENTOR CARD */
+        .mentor-card {
+            background: var(--secondary);
+            border-radius: 30px;
+            padding: 2rem 3rem;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .mentor-info-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .mentor-avatar {
+            width: 130px;
+            height: 130px;
+            background: var(--gray-300);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gray-700);
+        }
+
+        .mentor-details h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .mentor-details p {
+            color: var(--gray-600);
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
+        }
+
+        .mentor-availability {
+            text-align: right;
+        }
+
+        .mentor-availability p:first-child {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            color: var(--text);
+        }
+
+        .mentor-availability p:last-child {
+            color: var(--gray-600);
+            font-size: 1rem;
+        }
+
+        /* ACTION BUTTONS */
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-contact {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 0.9rem 3rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+
+        .btn-contact:hover {
+            background: #4a6bc5;
+        }
+
+        /* FOOTER MESSAGE */
+        .footer-message {
+            text-align: center;
+            color: var(--gray-600);
+            margin-bottom: 3rem;
+            font-size: 1rem;
+        }
+
+        /* FOOTER */
+        .footer {
+            margin-top: auto;
+            background: var(--gray-200);
+            padding: 2rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-text {
+            font-size: 0.75rem;
+            color: var(--gray-600);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s;
+            border: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .social-icon:hover {
+            background: var(--gray-100);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="top-bar">
+        <div class="logo">EduLink</div>
+        <nav class="nav">
+            <a href="#">Communication</a>
+            <a href="#">Organisation</a>
+            <a href="#">Ressource et partage</a>
+            <a href="#">Accompagnement</a>
+            <button class="btn-primary">Join Now</button>
+        </nav>
+    </header>
+
+    <!-- Back Arrow -->
+    <div class="back-arrow">
+        <svg class="arrow-icon" viewBox="0 0 24 24">
+            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+        </svg>
+    </div>
+
+    <!-- Main Content -->
+    <main class="confirmation-container">
+        <!-- Success Icon -->
+        <div class="success-icon">
+            <svg class="checkmark" viewBox="0 0 24 24">
+                <path d="M5 13l4 4L19 7"/>
+            </svg>
+        </div>
+
+        <!-- Success Message -->
+        <h1 class="success-title">Votre demande a été envoyée !</h1>
+        <p class="success-description">
+            Merci — un parrain compatible avec votre filière et votre besoin<br>
+            va vous contacter sous 24 heures card
+        </p>
+
+        <!-- Mentor Card -->
+        <div class="mentor-card">
+            <div class="mentor-info-wrapper">
+                <div class="mentor-avatar">AB</div>
+                <div class="mentor-details">
+                    <h3>john</h3>
+                    <p>Promo 2023 • Génie Logiciel</p>
+                    <p>Domaine : Aide PFE, Java, Architecture</p>
+                </div>
+            </div>
+            <div class="mentor-availability">
+                <p>Disponibilité</p>
+                <p>Lundi • 14h - 17h</p>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button class="btn-contact">Contacter</button>
+            <button class="btn-secondary">Retour à l'acceuil</button>
+        </div>
+
+        <!-- Footer Message -->
+        <p class="footer-message">
+            Contactez votre tuteur dès maintenant et commencez votre accompagnement StepUp.
+        </p>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div>
+            <div class="footer-logo">EduLink</div>
+            <p class="footer-text">Lorem ipsum. Praesent bibendum feugiat Curabitur</p>
+        </div>
+        <div class="social-icons">
+            <button class="social-icon">f</button>
+            <button class="social-icon">@</button>
+            <button class="social-icon">in</button>
+            <button class="social-icon">X</button>
+        </div>
+    </footer>
+</body>
+</html>

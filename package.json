@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "dev": "tailwindcss -i ./src/styles/main.scss -o ./dist/output.css --watch"
+  "dev": "tailwindcss -i ./src/styles/main.scss -o ./dist/output.css --watch",
+    "sass:watch": "sass --watch ./src/styles/main.scss public/style.css"
+
 }
 ,
   "keywords": [],
