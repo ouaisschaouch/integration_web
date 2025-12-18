@@ -1,12 +1,19 @@
+
+/* Sass */
+@use "./variable";
+@use 'mixins';
+
+// Import des composants
+@use 'header';
+@use 'accompagnement';
+@use 'chat';
+@use 'footer';
+@use 'profil-parrain';
+@use 'confirmation';
 /* Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Sass */
-@import "variables";
-@import "mixins";
-@import "chat";
 
 /* Custom Tailwind components */
 .nav-link {
