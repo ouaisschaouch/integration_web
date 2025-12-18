@@ -4,6 +4,15 @@
 @import 'mixins';
 @import 'header';
 @import 'footer';
+
+@import'base';
+@import 'layout';
+@import 'navbar';
+@import 'students';
+@import 'planning';
+@import 'student-home';
+@import '_assistant';
+@import 'private-chat';
 @import 'feedback';
 @import 'chat';
 @import 'forum';
