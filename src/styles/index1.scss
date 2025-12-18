@@ -1,0 +1,86 @@
+@import 'variable';
+@import 'mixins';
+
+/* SEARCH BAR */
+.search-bar {
+  @include flex-between;
+  background: $white;
+  padding: $spacing-3;
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+
+  input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: $spacing-2 $spacing-4;
+    font-size: $font-size-sm;
+  }
+
+  button {
+    background-color: $title-blue;
+    color: $white;
+    padding: $spacing-2 $spacing-6;
+    border-radius: 999px;
+    font-weight: 500;
+    @include transition-all;
+
+    &:hover {
+      background-color: adjust-color($title-blue, $lightness: -10%);
+    }
+  }
+}
+
+/* TITLES */
+.page-title {
+  font-size: $font-size-3xl;
+  font-weight: bold;
+  text-align: center;
+  color: $gray-800;
+}
+
+.page-subtitle {
+  text-align: center;
+  color: $gray-600;
+  margin-top: $spacing-2;
+}
+
+/* RESOURCES SECTION */
+.resources-wrapper {
+  @include gradient-bg(#9db8ff, #a7c1ff);
+  border-radius: 1.5rem;
+  padding: $spacing-10;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-8;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* CARD */
+.resource-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 1.25rem;
+  padding: $spacing-8;
+  text-align: center;
+  cursor: pointer;
+  @include shadow(md);
+  @include transition-all;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  }
+
+  .icon {
+    font-size: 2rem;
+    margin-bottom: $spacing-4;
+  }
+
+  p {
+    font-weight: 600;
+    color: $gray-700;
+  }
+}
