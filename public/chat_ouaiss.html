@@ -1,215 +1,257 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EduLink - Discussion</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- Lien vers le CSS compilé à partir de chat.scss -->
     <!-- À adapter selon votre outil de build (Vite, Webpack, etc.) -->
-    <link rel="stylesheet" href="../dist/main.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="./dist/main.css" />
+  </head>
+  <body>
     <!-- Header -->
     <header class="header">
-    <div class="container">
-<a href="index.html" class="logo-link">
-    <h1 class="logo-title">Edulink</h1>
-  </a>      <nav class="nav-links">
+      <div class="container">
+        <a href="index.html" class="logo-link">
+          <h1 class="logo-title">Edulink</h1>
+        </a>
+        <nav class="nav-links">
           <a href="public/pages/Students.html">Student</a>
-      <a href="hackathons.html">Events</a> <!-- MODIFICATION ICI -->
-      <a href="index1.html">Planning</a>
-      <a href="create_demande.html">Assistant</a>
-      </nav>
+          <a href="hackathons.html">Events</a>
+          <!-- MODIFICATION ICI -->
+          <a href="index1.html">Planning</a>
+          <a href="create_demande.html">Assistant</a>
+        </nav>
 
-      <button class="btn-join">Join Now</button>
-    </div>
-  </header>
+        <button class="btn-join">Join Now</button>
+      </div>
+    </header>
 
     <!-- Partie Chat -->
     <div class="chat-container">
-        <!-- Sidebar -->
-        <aside class="sidebar open">
-            <div class="sidebar-header">
-                <h2>Messages</h2>
-                <button class="add-btn"><i class="fas fa-plus"></i></button>
+      <!-- Sidebar -->
+      <aside class="sidebar open">
+        <div class="sidebar-header">
+          <h2>Messages</h2>
+          <button class="add-btn"><i class="fas fa-plus"></i></button>
+        </div>
+        <div class="search-bar">
+          <input type="text" placeholder="Rechercher" />
+        </div>
+        <ul class="contact-list">
+          <li class="contact active">
+            <a href="information.html" class="contact-link">
+              <img
+                src="https://www.shutterstock.com/image-photo/portrait-one-young-happy-cheerful-600nw-1980856400.jpg"
+                alt="yahya merji"
+              />
+              <div class="info">
+                <span class="name">yahya merji</span>
+                <span class="preview">Hello , How Can I Assist You ?</span>
+              </div>
+              <span class="status online"></span>
+            </a>
+          </li>
+          <li class="contact">
+            <img
+              src="https://thumbs.dreamstime.com/b/successful-student-sitting-library-working-course-work-using-wireless-internet-portrait-skilled-professional-187113957.jpg"
+              alt="sedki aarouch"
+            />
+            <div class="info">
+              <span class="name">sedki aarouch</span>
+              <span class="preview">See you tomorrow !</span>
             </div>
-            <div class="search-bar">
-                <input type="text" placeholder="Rechercher">
+            <span class="status offline">2</span>
+          </li>
+          <li class="contact">
+            <img
+              src="https://img.freepik.com/free-photo/responsible-student_23-2147650755.jpg"
+              alt="louay smichi"
+            />
+            <div class="info">
+              <span class="name">louay smichi</span>
+              <span class="preview">Thanks !</span>
             </div>
-            <ul class="contact-list">
-                <li class="contact active">
-  <a href="information.html" class="contact-link">
-    <img src="https://www.shutterstock.com/image-photo/portrait-one-young-happy-cheerful-600nw-1980856400.jpg" alt="yahya merji">
-    <div class="info">
-      <span class="name">yahya merji</span>
-      <span class="preview">Hello , How Can I Assist You ?</span>
-    </div>
-    <span class="status online"></span>
-  </a>
-</li>
-                <li class="contact">
-                    <img src="https://thumbs.dreamstime.com/b/successful-student-sitting-library-working-course-work-using-wireless-internet-portrait-skilled-professional-187113957.jpg" alt="sedki aarouch">
-                    <div class="info">
-                        <span class="name">sedki aarouch</span>
-                        <span class="preview">See you tomorrow !</span>
-                    </div>
-                    <span class="status offline">2</span>
-                </li>
-                <li class="contact">
-                    <img src="https://img.freepik.com/free-photo/responsible-student_23-2147650755.jpg" alt="louay smichi">
-                    <div class="info">
-                        <span class="name">louay smichi</span>
-                        <span class="preview">Thanks !</span>
-                    </div>
-                    <span class="status online"></span>
-                </li>
-            </ul>
-        </aside>
+            <span class="status online"></span>
+          </li>
+        </ul>
+      </aside>
 
-        <!-- Zone de chat -->
-        <main class="chat-area">
-            <header class="chat-header">
-                <button class="back-btn"><i class="fas fa-arrow-left"></i></button>
-                <h1>Discussion entre conseiller et étudiant</h1>
-                <div class="chat-actions">
-                    <button><i class="fas fa-phone"></i></button>
-                    <button><i class="fas fa-video"></i></button>
-                    <button><i class="fas fa-ellipsis-v"></i></button>
-                </div>
-            </header>
+      <!-- Zone de chat -->
+      <main class="chat-area">
+        <header class="chat-header">
+          <button class="back-btn"><i class="fas fa-arrow-left"></i></button>
+          <h1>Discussion entre conseiller et étudiant</h1>
+          <div class="chat-actions">
+            <button><i class="fas fa-phone"></i></button>
+            <button><i class="fas fa-video"></i></button>
+            <button><i class="fas fa-ellipsis-v"></i></button>
+          </div>
+        </header>
 
-            <div class="chat-contact">
-<li class="contact active">
-  <a href="information.html" class="contact-link">
-    <img src="https://www.shutterstock.com/image-photo/portrait-one-young-happy-cheerful-600nw-1980856400.jpg" alt="yahya merji">
-    <div class="info">
-    </div>
-  </a>
-</li>                <div>
-                    <span class="name">yahya merji</span>
-                    <span class="online">En ligne 🟢</span>
-                </div>
+        <div class="chat-contact">
+          <li class="contact active">
+            <a href="information.html" class="contact-link">
+              <img
+                src="https://www.shutterstock.com/image-photo/portrait-one-young-happy-cheerful-600nw-1980856400.jpg"
+                alt="yahya merji"
+              />
+              <div class="info"></div>
+            </a>
+          </li>
+          <div>
+            <span class="name">yahya merji</span>
+            <span class="online">En ligne 🟢</span>
+          </div>
+        </div>
+
+        <div class="messages">
+          <div class="day"><span>Aujourd'hui</span></div>
+
+          <div class="message received">
+            <img
+              src="https://www.shutterstock.com/image-photo/portrait-one-young-happy-cheerful-600nw-1980856400.jpg"
+              alt="yahya merji"
+            />
+            <div class="message-content">
+              <div class="bubble">Hello , How Can I Assist You ?</div>
+              <span class="time">10:00</span>
             </div>
+          </div>
 
-            <div class="messages">
-                <div class="day"><span>Aujourd'hui</span></div>
-
-                <div class="message received">
-                    <img src="https://www.shutterstock.com/image-photo/portrait-one-young-happy-cheerful-600nw-1980856400.jpg" alt="yahya merji">
-                    <div class="message-content">
-                        <div class="bubble">Hello , How Can I Assist You ?</div>
-                        <span class="time">10:00</span>
-                    </div>
-                </div>
-
-                <div class="message sent">
-                    <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Vous">
-                    <div class="message-content">
-                        <div class="bubble">Hi , I need help with my assignment</div>
-                        <span class="time">10:50</span>
-                    </div>
-                </div>
-
-                <div class="message sent">
-                    <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Vous">
-                    <div class="message-content">
-                        <div class="bubble">The Topic is Data Science</div>
-                        <span class="time">10:55</span>
-                    </div>
-                </div>
-
-                <div class="message sent">
-                    <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Vous">
-                    <div class="message-content">
-                        <img class="attached-image" src="https://miro.medium.com/1*NXRZV49pDoKiZK0k0ctv5Q.png" alt="Notes">
-                        <div class="bubble">Here are my notes on the topic</div>
-                        <span class="time">13:06</span>
-                    </div>
-                </div>
-
-                <div class="message received">
-                    <img src="https://www.shutterstock.com/image-photo/portrait-one-young-happy-cheerful-600nw-1980856400.jpg" alt="yahya merji">
-                    <div class="message-content">
-                        <div class="bubble">Sure , I can help with That ...</div>
-                        <span class="time">13:10</span>
-                    </div>
-                </div>
+          <div class="message sent">
+            <img
+              src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              alt="Vous"
+            />
+            <div class="message-content">
+              <div class="bubble">Hi , I need help with my assignment</div>
+              <span class="time">10:50</span>
             </div>
+          </div>
 
-            <div class="message-input">
-                <input type="text" placeholder="Écrivez un message">
-                <div class="input-actions">
-                    <button><i class="far fa-smile"></i></button>
-                    <button><i class="fas fa-paperclip"></i></button>
-                    <button><i class="fas fa-microphone"></i></button>
-                </div>
+          <div class="message sent">
+            <img
+              src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              alt="Vous"
+            />
+            <div class="message-content">
+              <div class="bubble">The Topic is Data Science</div>
+              <span class="time">10:55</span>
             </div>
-        </main>
+          </div>
+
+          <div class="message sent">
+            <img
+              src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              alt="Vous"
+            />
+            <div class="message-content">
+              <img
+                class="attached-image"
+                src="https://miro.medium.com/1*NXRZV49pDoKiZK0k0ctv5Q.png"
+                alt="Notes"
+              />
+              <div class="bubble">Here are my notes on the topic</div>
+              <span class="time">13:06</span>
+            </div>
+          </div>
+
+          <div class="message received">
+            <img
+              src="https://www.shutterstock.com/image-photo/portrait-one-young-happy-cheerful-600nw-1980856400.jpg"
+              alt="yahya merji"
+            />
+            <div class="message-content">
+              <div class="bubble">Sure , I can help with That ...</div>
+              <span class="time">13:10</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="message-input">
+          <input type="text" placeholder="Écrivez un message" />
+          <div class="input-actions">
+            <button><i class="far fa-smile"></i></button>
+            <button><i class="fas fa-paperclip"></i></button>
+            <button><i class="fas fa-microphone"></i></button>
+          </div>
+        </div>
+      </main>
     </div>
 
     <!-- Footer -->
-   
 
     <script>
-        function joinNow() {
-            alert("Fonctionnalité à venir !");
-        }
+      function joinNow() {
+        alert("Fonctionnalité à venir !");
+      }
 
-        document.querySelectorAll('.contact').forEach(contact => {
-            contact.addEventListener('click', () => {
-                document.querySelectorAll('.contact').forEach(c => c.classList.remove('active'));
-                contact.classList.add('active');
-            });
+      document.querySelectorAll(".contact").forEach((contact) => {
+        contact.addEventListener("click", () => {
+          document
+            .querySelectorAll(".contact")
+            .forEach((c) => c.classList.remove("active"));
+          contact.classList.add("active");
+        });
+      });
+
+      document.querySelector(".back-btn").addEventListener("click", () => {
+        document.querySelector(".sidebar").classList.add("open");
+        document.querySelector(".chat-area").classList.add("hidden");
+      });
+
+      window.addEventListener("resize", adjustLayout);
+      adjustLayout();
+      function adjustLayout() {
+        if (window.innerWidth <= 768) {
+          document.querySelector(".sidebar").classList.add("open");
+          document.querySelector(".chat-area").classList.add("hidden");
+        } else {
+          document.querySelector(".sidebar").classList.remove("open");
+          document.querySelector(".chat-area").classList.remove("hidden");
+        }
+      }
+      // Resize sidebar
+      let isResizing = false;
+
+      document
+        .querySelector(".resize-handle")
+        .addEventListener("mousedown", (e) => {
+          isResizing = true;
         });
 
-        document.querySelector('.back-btn').addEventListener('click', () => {
-            document.querySelector('.sidebar').classList.add('open');
-            document.querySelector('.chat-area').classList.add('hidden');
-        });
+      document.addEventListener("mousemove", (e) => {
+        if (!isResizing) return;
 
-        window.addEventListener('resize', adjustLayout);
-        adjustLayout();
-        function adjustLayout() {
-            if (window.innerWidth <= 768) {
-                document.querySelector('.sidebar').classList.add('open');
-                document.querySelector('.chat-area').classList.add('hidden');
-            } else {
-                document.querySelector('.sidebar').classList.remove('open');
-                document.querySelector('.chat-area').classList.remove('hidden');
-            }
-        }
-        // Resize sidebar
-let isResizing = false;
+        const container = document.querySelector(".chat-container");
+        const rect = container.getBoundingClientRect();
+        let newWidth = e.clientX - rect.left;
 
-document.querySelector('.resize-handle').addEventListener('mousedown', (e) => {
-  isResizing = true;
-});
+        if (newWidth < 300) newWidth = 300; // Min width
+        if (newWidth > window.innerWidth - 300)
+          newWidth = window.innerWidth - 300; // Max
 
-document.addEventListener('mousemove', (e) => {
-  if (!isResizing) return;
+        document.querySelector(".sidebar").style.width = `${newWidth}px`;
+      });
 
-  const container = document.querySelector('.chat-container');
-  const rect = container.getBoundingClientRect();
-  let newWidth = e.clientX - rect.left;
-
-  if (newWidth < 300) newWidth = 300;  // Min width
-  if (newWidth > window.innerWidth - 300) newWidth = window.innerWidth - 300;  // Max
-
-  document.querySelector('.sidebar').style.width = `${newWidth}px`;
-});
-
-document.addEventListener('mouseup', () => {
-  isResizing = false;
-});
+      document.addEventListener("mouseup", () => {
+        isResizing = false;
+      });
     </script>
-
-
-</body>
-<footer class="footer">
+  </body>
+  <footer class="footer">
     <div class="container">
       <div class="footer-brand">
         <h3>EduLink</h3>
@@ -225,6 +267,4 @@ document.addEventListener('mouseup', () => {
       </div>
     </div>
   </footer>
-
-
 </html>
