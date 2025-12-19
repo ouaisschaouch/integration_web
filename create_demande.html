@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer une Demande - EduLink</title>
+    <link rel="stylesheet" href="./dist/main.css">
+</head>
+<body>
+    <header class="header">
+    <div class="container">
+<a href="index1.html" class="logo-link">
+    <h1 class="logo-title">Edulink</h1>
+  </a>      <nav class="nav-links">
+        <a href="forum_conseiller.html" class="nav-link">Student</a>
+        <a href="organisation.html" class="nav-link">Events</a>
+        <a href="#" class="nav-link">Planning</a>
+        <a href="create_demande.html" class="nav-link">Assistant</a>
+      </nav>
+
+      <button class="btn-join">Join Now</button>
+    </div>
+  </header>
+    <!-- Main Content -->
+    <main class="demande-main">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <!-- Page Title -->
+            <h2 class="page-title">cree une demande</h2>
+            
+            <!-- Form Card -->
+            <div class="demande-card">
+                <h3 class="form-title">How can we help ?!</h3>
+                
+                <form class="demande-form">
+                    <!-- Row 1: Name and Email -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                class="form-input" 
+                                placeholder="Enter your name"
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label for="last name" class="form-label">Last Name</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                class="form-input" 
+                                placeholder="Enter your last name"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                class="form-input" 
+                                placeholder="Enter your email"
+                            >
+                        </div>
+                         <div class="form-group">
+                            <label for="concern" class="form-label">Nature of Concern</label>
+                            <input 
+                                type="text" 
+                                id="concern" 
+                                class="form-input" 
+                                placeholder="type ..."
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Subject -->
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input 
+                            type="text" 
+                            id="subject" 
+                            class="form-input" 
+                            placeholder="Enter subject"
+                        >
+                    </div>
+
+                    <!-- Row 3: Message -->
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea 
+                            id="message" 
+                            class="form-textarea" 
+                            rows="6" 
+                            placeholder="Write your message here..."
+                        ></textarea>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button type="button" class="btn-attachment">
+                            <svg class="attachment-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"></path>
+                            </svg>
+                        </button>
+<button type="button" class="btn-submit" onclick="window.location.href='chosse_conseille.html'">
+  Contact
+</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="footer-brand">EduLink</h3>
+                    <p class="footer-tagline">Connecting minds through shared wisdom</p>
+                </div>
+                <div class="footer-copyright">
+                    © 2025 EduLink. All rights reserved.
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link">f</a>
+                    <a href="#" class="social-link">@</a>
+                    <a href="#" class="social-link">in</a>
+                    <a href="#" class="social-link">x</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form validation
+        document.querySelector('.demande-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            // Here you would normally send the form data to a server
+            alert('Your request has been submitted successfully!');
+            this.reset();
+        });
+        
+        // Attachment button
+        document.querySelector('.btn-attachment').addEventListener('click', function() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.multiple = true;
+            input.accept = 'image/*,.pdf,.doc,.docx';
+            input.click();
+            
+            input.addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    alert(`${this.files.length} file(s) selected`);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

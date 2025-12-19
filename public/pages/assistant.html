@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduLink - EduChat</title>
+
+  <link rel="stylesheet" href="../tailwind.css" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body class="min-h-screen bg-slate-100">
+  <main class="edu-shell edu-full">
+
+    <!-- NAVBAR -->
+    <header class="edu-nav">
+      <a href="#" class="edu-brand">EduLink</a>
+
+      <nav class="edu-links" aria-label="Navigation">
+        <a href="./students.html">Student</a>
+        <a href="#">Events</a>
+        <a href="./planning.html">Planning</a>
+        <a class="active" href="./assistant.html">Assistant</a>
+      </nav>
+
+      <button class="edu-join" type="button">Join Now</button>
+    </header>
+
+<!-- ✅ Place ça DANS ton main (sans toucher nav/footer) -->
+<section class="educhat">
+  <!-- back -->
+  <a class="educhat__back" href="#" aria-label="Back">
+    <span class="educhat__backIcon">←</span>
+  </a>
+
+  <!-- blue board -->
+  <div class="educhat__board">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="educhat__side">
+      <div class="sideTop">
+        <div class="brand">
+          <span class="brand__logo" aria-hidden="true">
+            <!-- mini swirl icon -->
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 3.3c-4.8 0-8.7 3.9-8.7 8.7S7.2 20.7 12 20.7c3.4 0 6.4-2 7.8-4.9"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M21 12c0-5-4-9-9-9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="brand__text">EduChat</span>
+        </div>
+
+        <button class="sideBtn">+ New Chat</button>
+      </div>
+
+      <div class="sideGroup">
+        <div class="sideTitle">Today</div>
+        <a class="sideItem active" href="#">
+          <span class="sideItem__icon">✦</span>
+          <span>Studing</span>
+        </a>
+        <a class="sideItem" href="#">
+          <span class="sideItem__icon">⬚</span>
+          <span>Help</span>
+        </a>
+      </div>
+
+      <div class="sideGroup">
+        <div class="sideTitle">Previouse Day</div>
+        <a class="sideItem" href="#"><span class="sideItem__icon">✎</span><span>Planning</span></a>
+        <a class="sideItem" href="#"><span class="sideItem__icon">🔔</span><span>Events update</span></a>
+        <a class="sideItem" href="#"><span class="sideItem__icon">≡</span><span>Chat Information</span></a>
+      </div>
+
+      <div class="sideProfile">
+        <div class="profileCard">
+          <div class="profileRow">
+            <div class="avatar">
+              <img src="https://i.pravatar.cc/120?img=47" alt="Alina Marta" />
+            </div>
+            <div class="profileInfo">
+              <div class="profileName">Alina Marta</div>
+              <div class="badge">Upgraded To Pro</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CHAT AREA -->
+    <section class="educhat__chat">
+      <!-- header inside blue board -->
+      <header class="chatTop">
+        <button class="iconBtn" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z" stroke="currentColor" stroke-width="2"/>
+            <path d="M16.5 16.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <div class="chatTitle">
+          <span>Photo Generation</span>
+          <button class="iconBtn -tiny" aria-label="Edit title">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M4 20h4l10.5-10.5a2.1 2.1 0 0 0 0-3L16.5 4.5a2.1 2.1 0 0 0-3 0L3 15v5Z"
+                stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="chatActions">
+          <button class="iconBtn" aria-label="Magic">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 2l1.4 5.2L19 9l-5.6 1.8L12 16l-1.4-5.2L5 9l5.6-1.8L12 2Z"
+                stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="iconBtn" aria-label="Delete">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M6 7h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="2"/>
+              <path d="M8 7l1 14h6l1-14" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- white chat panel -->
+      <div class="chatPanel">
+        <div class="dayTag">Today</div>
+
+        <!-- message user -->
+        <div class="msgRow -right">
+          <div class="bubble -user">
+            “Create an HD Wallpaper Student Image”
+          </div>
+          <div class="miniAvatar">
+            <img src="https://i.pravatar.cc/90?img=32" alt="User" />
+          </div>
+        </div>
+
+        <!-- message bot with image card -->
+        <div class="msgRow -left">
+          <div class="miniAvatar">
+            <img src="https://i.pravatar.cc/90?img=12" alt="Bot" />
+          </div>
+
+          <div class="cardMsg">
+            <div class="cardMedia">
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=60"
+                alt="Generated"
+              />
+            </div>
+
+            <div class="cardFooter">
+              <div class="cardLabel">Image Createad</div>
+              <div class="reactions">
+                <button class="react" aria-label="Smile">🙂</button>
+                <button class="react" aria-label="Love">♥</button>
+                <button class="react" aria-label="Like">👍</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- composer -->
+        <div class="composer">
+          <input class="composer__input" type="text" placeholder="Send a message" />
+          <button class="iconBtn -solid" aria-label="Attach">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 21s7-4.4 7-10a7 7 0 0 0-14 0c0 5.6 7 10 7 10Z"
+                stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </button>
+          <button class="iconBtn -solid" aria-label="Send">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M4 12l17-8-7 17-2.6-6.2L4 12Z" stroke="currentColor" stroke-width="2"
+                stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+    <!-- FOOTER -->
+    <footer class="edu-footer">
+      <div class="edu-footer-brand">EduLink</div>
+      <div class="edu-footer-copy">© 2025 EduLink. All rights reserved</div>
+      <div class="edu-footer-icons">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">@</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="X">x</a>
+      </div>
+    </footer>
+
+  </main>
+</body>
+</html>

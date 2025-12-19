@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Confirmation - Hackathon Submission</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="./dist/output.css">
+
+  <!-- SCSS compilé -->
+  <link rel="stylesheet" href="./public/style.css">
+ 
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header aria-label="Main Navigation">
+  <div class="nav-pill">
+    <a href="index.html" class="text-xl font-bold text-blue-600" aria-label="EduLink Home">EduLink</a>
+    <div class="nav-links flex gap-6 text-gray-600 font-medium text-sm">
+      <a href="#">Student</a>
+      <a href="hackathons.html" style="color: #3b82f6; font-weight: 600;">Events</a>
+      <a href="#">Planning</a>
+      <a href="#">Assistant</a>
+    </div>
+    <button class="btn-join">Log out</button>
+  </div>
+</header>
+
+<!-- Flèche de retour -->
+<div class="flex items-center p-4">
+  <button class="back-btn" onclick="goBack()">⬅</button>
+</div>
+
+<!-- TITRE ET SOUS-TITRE -->
+<h1 class="page-title">
+  Confirmation - Hackathon Submission
+</h1>
+<p class="page-subtitle">
+  Your registration has been successfully submitted. Please review the details below.
+</p>
+
+<!-- CARTE DE CONFIRMATION -->
+<div class="confirmation-card">
+  <!-- Icône de succès -->
+  <div class="success-icon">
+    <i class="fas fa-check"></i>
+  </div>
+  
+  <h2 class="text-2xl font-bold text-gray-800 mb-2">Registration Successful!</h2>
+  <p class="text-gray-600 mb-8">
+    Thank you for registering for the hackathon. Your submission has been received and is currently being reviewed.
+  </p>
+  
+  <!-- Détails de la confirmation -->
+  <div class="confirmation-details">
+    <h3 class="text-xl font-semibold text-gray-800 mb-4">Submission Details</h3>
+    
+    <div class="detail-item">
+      <span class="detail-label">Submission ID:</span>
+      <span class="detail-value">HACK-2025-8472</span>
+    </div>
+    
+    <div class="detail-item">
+      <span class="detail-label">Registration Date:</span>
+      <span class="detail-value">December 17, 2025</span>
+    </div>
+    
+    <div class="detail-item">
+      <span class="detail-label">Hackathon Event:</span>
+      <span class="detail-value">AI Innovation Challenge 2025</span>
+    </div>
+    
+    <div class="detail-item">
+      <span class="detail-label">Team Name:</span>
+      <span class="detail-value">Code Pioneers</span>
+    </div>
+    
+    <div class="detail-item">
+      <span class="detail-label">Payment Method:</span>
+      <span class="detail-value">Credit Card (**** 4567)</span>
+    </div>
+    
+    <div class="detail-item">
+      <span class="detail-label">Payment Status:</span>
+      <span class="detail-value text-green-600 font-semibold">Paid ✓</span>
+    </div>
+    
+    <div class="detail-item">
+      <span class="detail-label">Submission Status:</span>
+      <span class="detail-value text-blue-600 font-semibold">Under Review</span>
+    </div>
+  </div>
+  
+  <!-- Instructions -->
+  <div class="text-left mb-8 p-4 bg-blue-50 rounded-xl border border-blue-100">
+    <h4 class="font-semibold text-blue-800 mb-2 flex items-center gap-2">
+      <i class="fas fa-info-circle"></i> Next Steps
+    </h4>
+    <ul class="text-gray-700 space-y-2 pl-5 list-disc">
+      <li>You will receive a confirmation email within 24 hours</li>
+      <li>The review process takes 3-5 business days</li>
+      <li>Check your dashboard for updates on your submission status</li>
+      <li>Finalists will be announced on January 5, 2026</li>
+    </ul>
+  </div>
+  
+  <!-- Boutons d'action -->
+  <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-10">
+    
+    
+    <button class="btn-secondary" onclick="downloadReceipt()">
+      <i class="fas fa-download"></i> Download Receipt
+    </button>
+    
+    
+  </div>
+</div>
+
+<!-- STEPS -->
+<div class="flex justify-center mt-12 mb-16">
+  <div class="flex items-center gap-6">
+    <div class="w-12 h-12 flex items-center justify-center step-inactive rounded-full shadow text-base font-semibold">1</div>
+    <div class="w-20 h-1 bg-gray-300 rounded-full"></div>
+    <div class="w-12 h-12 flex items-center justify-center step-inactive rounded-full shadow text-base font-semibold">2</div>
+    <div class="w-20 h-1 bg-gray-300 rounded-full"></div>
+    <div class="w-12 h-12 flex items-center justify-center step-inactive rounded-full shadow text-base font-semibold">3</div>
+    <div class="w-20 h-1 bg-gray-300 rounded-full"></div>
+    <div class="w-12 h-12 flex items-center justify-center step-active rounded-full shadow text-base font-semibold">4</div>
+  </div>
+</div>
+
+<!-- Next button (caché ou modifié selon le besoin) -->
+<div class="flex justify-end max-w-5xl mx-auto p-4 mb-8">
+  <!-- Pas de flèche suivante sur la page de confirmation finale -->
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-gray-100 py-8 mt-8">
+  <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+    <div>
+      <h3 class="text-xl font-bold text-blue-600">EduLink</h3>
+      <p class="text-gray-600 text-sm">Company's share is a key shareholder.</p>
+    </div>
+    <div class="text-center md:text-right text-xs text-gray-600">
+      <p>© 2025 EduLink. All rights reserved</p>
+      <p>Communication • Organisation • Ressource • Accompagnement</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function goBack() {
+    window.location.href = "payement.html";
+  }
+  
+  function viewDashboard() {
+    // Simulation de chargement
+    const btn = event.target.closest('button');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Redirecting...';
+    btn.disabled = true;
+    
+    setTimeout(() => {
+      alert("Redirecting to your dashboard...");
+      window.location.href = "dashboard.html";
+    }, 1000);
+  }
+  
+  function downloadReceipt() {
+    // Simulation de téléchargement
+    const btn = event.target.closest('button');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating...';
+    btn.disabled = true;
+    
+    setTimeout(() => {
+      btn.innerHTML = originalText;
+      btn.disabled = false;
+      alert("Receipt downloaded successfully!");
+      
+      // Dans une application réelle, vous généreriez un PDF ici
+      // et utiliseriez window.open() ou une API de téléchargement
+    }, 1500);
+  }
+  
+  function printConfirmation() {
+    window.print();
+  }
+  
+  // Afficher une notification de succès au chargement
+  document.addEventListener('DOMContentLoaded', function() {
+    // Cette fonction peut être utilisée pour des animations supplémentaires
+    console.log("Confirmation page loaded successfully");
+  });
+</script>
+
+</body>
+</html>

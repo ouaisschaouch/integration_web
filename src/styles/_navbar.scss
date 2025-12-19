@@ -1,0 +1,92 @@
+
+/* =========================
+   NAVBAR – PILL STYLE
+========================= */
+
+.edu-nav {
+  width: 100%;
+  max-width: 1200px;
+  margin: 24px auto 0;
+
+  background: #dee7f6;
+  border-radius: 999px;
+  padding: 15px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  border: 1px solid rgba(255,255,255,.7);
+}
+
+/* LOGO */
+.edu-brand {
+  font-size: 26px;
+  font-weight: 900;
+  color: $blue2;
+  text-decoration: none;
+  letter-spacing: .2px;
+}
+
+/* NAV LINKS */
+.edu-links {
+  display: flex;
+  gap: 40px;
+  color: #4b5563;
+  font-weight: 600;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    transition: color .2s ease;
+
+    &:hover {
+      color: $blue2;
+    }
+
+    &.active {
+      color: $blue2;
+      font-weight: 700;
+    }
+  }
+}
+
+/* JOIN BUTTON */
+.edu-join {
+  background: $blue2;
+  color: #fff;
+  padding: 10px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(59,130,246,.30);
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+
+  &:hover {
+    background: darken($blue2, 8%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(59,130,246,.40);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .edu-nav {
+    padding: 12px 18px;
+    border-radius: 24px;
+    gap: 14px;
+  }
+
+  .edu-links {
+    display: none;
+  }
+
+  .edu-join {
+    padding: 9px 18px;
+    font-size: 14px;
+  }
+}

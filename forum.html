@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduLink - Forum des étudiants</title>
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="./dist/output.css">
+  <!-- Vos styles SCSS compilés -->
+  <link rel="stylesheet" href="./public/style.css">
+</head>
+
+<body class="bg-white flex flex-col min-h-screen">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <a href="index1.html"><h1 class="logo-title">Édulink</h1></a>
+
+      <nav class="nav-links">
+        <a href="feadback.html" class="nav-link">Communication</a>
+        <a href="organisation.html" class="nav-link">Organisation</a>
+        <a href="#" class="nav-link">Ressource et partage</a>
+        <a href="#" class="nav-link">Accompagnement</a>
+      </nav>
+
+      <button class="btn-join">Join Now</button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-grow">
+    <div class="container mx-auto px-4 py-8">
+      <!-- Titre principal -->
+      <div class="text-center pt-8 pb-6">
+        <h1 class="forum-title">Forum des étudiants</h1>
+        <p class="forum-subtitle">
+          Pose tes questions, partage tes idées, aide les autres !
+        </p>
+      </div>
+
+      <!-- Contenu principal du forum -->
+      <div class="forum-container">
+        <!-- Colonne de gauche -->
+        <div class="sidebar-card">
+          <h3>Étudiants en ligne</h3>
+          
+          <!-- Barre de recherche -->
+          <div class="search-container">
+            <div class="search-box">
+              <input type="text" placeholder="Trouver des collaborateurs ou mentors...">
+              <button class="search-btn">Search</button>
+            </div>
+          </div>
+
+          <!-- Liste des étudiants -->
+          <div class="students-list">
+            <!-- Étudiant 1 - Myriam -->
+            <div class="student-item">
+              <div class="student-avatar">M</div>
+              <div class="student-info">
+                <div class="student-name">Myriam</div>
+                <div class="student-status online">Online</div>
+              </div>
+              <div class="status-indicator online"></div>
+            </div>
+
+            <!-- Étudiant 2 - Lina -->
+            <div class="student-item">
+              <div class="student-avatar">L</div>
+              <div class="student-info">
+                <div class="student-name">Lina</div>
+                <div class="student-status offline">Offline</div>
+              </div>
+              <div class="status-indicator offline"></div>
+            </div>
+
+            <!-- Étudiant 3 - Ans -->
+            <div class="student-item">
+              <div class="student-avatar">A</div>
+              <div class="student-info">
+                <div class="student-name">Ans</div>
+                <div class="student-status offline">Offline</div>
+              </div>
+              <div class="status-indicator offline"></div>
+            </div>
+
+            <!-- Étudiant 4 - Amira -->
+            <div class="student-item">
+              <div class="student-avatar">A</div>
+              <div class="student-info">
+                <div class="student-name">Amira</div>
+                <div class="student-status online">Online</div>
+              </div>
+              <div class="status-indicator online"></div>
+            </div>
+          </div>
+
+          <!-- Liste des fonctionnalités -->
+          <div class="features-list">
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span class="feature-text">Find collaborators or mentors instantly</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Colonne de droite - Chat -->
+        <div class="chat-card">
+          <!-- En-tête du chat -->
+          <div class="chat-header">
+            <h3>Conversation</h3>
+            <div class="current-chat-info">
+              <div class="chat-avatar">A</div>
+              <div>
+                <div class="chat-user">Amira</div>
+                <div class="student-status online">En ligne</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Messages du chat -->
+          <div class="chat-messages">
+            <!-- Message reçu -->
+            <div class="message">
+              <div class="message-content">
+                Bonjour
+              </div>
+              <div class="message-time">10:24</div>
+            </div>
+
+            <!-- Message envoyé -->
+            <div class="message message-sent">
+              <div class="message-content">
+                Bonjour, Amira !
+              </div>
+              <div class="message-time">10:25</div>
+            </div>
+
+            <!-- Message reçu -->
+            <div class="message">
+              <div class="message-content">
+                J'ai un peu de mal à m'organiser avec tous les projets
+              </div>
+              <div class="message-time">10:26</div>
+            </div>
+
+            <!-- Indicateur de saisie -->
+            <div class="message">
+              <div class="message-content">
+                <span class="typing-indicator">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
+                </span>
+                Message en cours
+              </div>
+            </div>
+          </div>
+
+          <!-- Zone de saisie -->
+          <div class="chat-input">
+  <!-- Attachment -->
+  <label class="attachment-btn">
+    📎
+    <input type="file" id="fileInput" hidden>
+  </label>
+
+  <!-- Text message -->
+  <input
+    type="text"
+    id="messageInput"
+    placeholder="Écrire un message..."
+  />
+
+  <!-- Send -->
+  <button class="send-btn" id="sendMessage">
+    Envoyer
+  </button>
+</div>
+
+<!-- File preview -->
+<div class="file-preview" id="filePreview" style="display:none;">
+  <span id="fileName"></span>
+  <button id="removeFile">✕</button>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">
+        <a href="index1.html"><h1 class="logo-title">Édulink</h1></a>
+        <a href="feadback.html">donner voitre feadback</a>
+        <p>Forum des étudiants</p>
+      </div>
+
+      <div class="footer-copyright">
+        <p class="footer-text">© 2025 EduLink. All rights reserved</p>
+        <p class="text-gray-400 text-xs mt-1">Communication • Organisation • Ressource et partage • Accompagnement</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Gestion de l'envoi de messages
+    const messageInput = document.getElementById('messageInput');
+    const sendButton = document.getElementById('sendMessage');
+    const chatMessages = document.querySelector('.chat-messages');
+
+    function sendMessage() {
+      const messageText = messageInput.value.trim();
+      
+      if (messageText) {
+        // Créer un nouveau message
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'message message-sent';
+        
+        const now = new Date();
+        const timeString = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+        
+        messageDiv.innerHTML = `
+          <div class="message-content">${messageText}</div>
+          <div class="message-time">${timeString}</div>
+        `;
+        
+        // Ajouter le message à la fin
+        chatMessages.appendChild(messageDiv);
+        
+        // Effacer le champ de saisie
+        messageInput.value = '';
+        
+        // Défiler vers le bas
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+    }
+
+    // Envoyer avec le bouton
+    sendButton.addEventListener('click', sendMessage);
+    
+    // Envoyer avec la touche Entrée
+    messageInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        sendMessage();
+      }
+    });
+    
+    // Animation de l'indicateur de saisie
+    const typingIndicator = document.querySelector('.typing-indicator');
+    if (typingIndicator) {
+      const dots = typingIndicator.querySelectorAll('span');
+      let currentDot = 0;
+      
+      setInterval(() => {
+        dots.forEach((dot, index) => {
+          dot.style.opacity = index === currentDot ? '1' : '0.3';
+        });
+        currentDot = (currentDot + 1) % dots.length;
+      }, 500);
+    }
+    
+    // Gestion du clic sur les étudiants
+    const studentItems = document.querySelectorAll('.student-item');
+    studentItems.forEach(item => {
+      item.addEventListener('click', function() {
+        // Retirer la classe active de tous les étudiants
+        studentItems.forEach(s => s.style.backgroundColor = 'rgba(255, 255, 255, 0.1)');
+        
+        // Ajouter la classe active à l'étudiant cliqué
+        this.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+        
+        // Mettre à jour le chat avec le nom de l'étudiant
+        const studentName = this.querySelector('.student-name').textContent;
+        const chatUser = document.querySelector('.chat-user');
+        if (chatUser) {
+          chatUser.textContent = studentName;
+        }
+        
+        // Mettre à jour l'avatar
+        const avatar = this.querySelector('.student-avatar').textContent;
+        const chatAvatar = document.querySelector('.chat-avatar');
+        if (chatAvatar) {
+          chatAvatar.textContent = avatar;
+        }
+        
+        // Mettre à jour le statut
+        const isOnline = this.querySelector('.status-indicator').classList.contains('online');
+        const statusElement = document.querySelector('.current-chat-info .student-status');
+        if (statusElement) {
+          statusElement.textContent = isOnline ? 'En ligne' : 'Hors ligne';
+          statusElement.className = `student-status ${isOnline ? 'online' : 'offline'}`;
+        }
+      });
+    });
+  </script>
+  <script>
+  const fileInput = document.getElementById('fileInput');
+  const filePreview = document.getElementById('filePreview');
+  const fileName = document.getElementById('fileName');
+  const removeFile = document.getElementById('removeFile');
+
+  fileInput.addEventListener('change', () => {
+    if (fileInput.files.length > 0) {
+      fileName.textContent = fileInput.files[0].name;
+      filePreview.style.display = 'flex';
+    }
+  });
+
+  removeFile.addEventListener('click', () => {
+    fileInput.value = '';
+    filePreview.style.display = 'none';
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduLink - Ressources et partage</title>
+
+  <!-- Tailwind -->
+  <link rel="stylesheet" href="./dist/main.css">
+  <!-- SCSS compiled -->
+</head>
+
+<body class="bg-white flex flex-col min-h-screen">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+     <a href="index.html"><h1 class="logo-title">EduLink</h1></a>   
+
+      <nav class="nav-links">
+        <a href="forum.html" class="nav-link">Communication</a>
+        <a href="organisation.html" class="nav-link">Organisation</a>
+        <a href="index2.html" class="nav-link text-blue-600 font-semibold">
+          Ressource et partage
+        </a>
+        <a href="#" class="nav-link">Accompagnement</a>
+      </nav>
+
+      <button class="btn-join">Join Now</button>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="flex-grow">
+
+    <!-- Search bar -->
+    <div class="container mx-auto px-6 pt-6">
+      <div class="search-bar">
+        <input
+          type="text"
+          placeholder="Find collaborators or mentors instantly"
+        />
+        <button>Search</button>
+      </div>
+    </div>
+
+    <!-- Title -->
+    <section class="container mx-auto px-6 pt-10">
+      <h1 class="page-title">Ressources et partage</h1>
+      <p class="page-subtitle">
+        Votre espace centralisé pour tous les documents académiques
+      </p>
+    </section>
+
+    <!-- Content box -->
+    <section class="container mx-auto px-6 mt-10">
+      <div class="resources-wrapper">
+        <a href="forum.html">
+        <div class="resource-card">
+          <div class="icon">💬</div>
+          <p>Communication</p>
+        </div>
+        </a>
+           
+        <a href="organisation.html">
+          <div class="resource-card">
+          <div class="icon">📅</div>
+          <p>Organisation</p>
+        </div>
+        </a>
+        
+        <div class="resource-card">
+          <div class="icon">📂</div>
+          <p>Ressources et partages</p>
+        </div>
+
+        <div class="resource-card">
+          <div class="icon">🤝</div>
+          <p>Accompagnement</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">
+        <h3>EduLink</h3>
+        <a href="feadback.html">donner votre feedback</a>
+        <p>Ressources académiques</p>
+      </div>
+
+      <div class="footer-copyright">
+        <p class="footer-text">© 2025 EduLink. All rights reserved</p>
+        <p class="text-gray-400 text-xs mt-1">
+          Communication • Organisation • Ressource et partage • Accompagnement
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

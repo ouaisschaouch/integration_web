@@ -1,0 +1,94 @@
+
+/* Import des partials SCSS avec @import (ancienne méthode) */
+@import 'variable';
+@import '_mixins';  // force explicitement le partial
+
+
+
+@import 'header';
+@import 'footer';
+
+@import'base';
+@import 'layout';
+@import 'navbar';
+@import 'students';
+@import 'planning';
+@import 'student-home';
+@import '_assistant';
+@import 'private-chat';
+@import 'feedback';
+@import 'chat';
+@import 'forum';
+@import 'organisation';
+@import 'liste';
+@import 'hackathons';
+@import 'Detaile_hackathons';
+@import 'payement';
+@import 'Registration Form Section';
+@import 'QR';
+@import 'index';
+@import 'index1';
+@import 'advisor_ouaiss';
+@import 'chat_ouaiss';
+@import 'create_demande';
+@import 'choose_conseille';
+@import 'forum_conseiller';
+
+/* Import des polices */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Styles de base */
+body {
+  font-family: $font-inter;
+  background-color: $white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Classes utilitaires */
+.flex-grow {
+  flex-grow: 1;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding-left: $spacing-4;
+  padding-right: $spacing-4;
+  margin-left: auto;
+  margin-right: auto;
+  
+  @media (min-width: 640px) {
+    max-width: 640px;
+  }
+  
+  @media (min-width: 768px) {
+    max-width: 768px;
+  }
+  
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+  }
+  
+  @media (min-width: 1280px) {
+    max-width: 1280px;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.space-y-4 > * + * {
+  margin-top: $spacing-4;
+}

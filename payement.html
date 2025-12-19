@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Choose Your Payment Method</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="./dist/output.css">
+
+  <!-- SCSS compilé -->
+  <link rel="stylesheet" href="./public/style.css">
+  
+</head>
+
+<body>
+
+<!-- HEADER -->
+<!-- HEADER -->
+<header aria-label="Main Navigation">
+  <div class="nav-pill">
+    <a href="index.html" class="text-xl font-bold text-blue-600" aria-label="EduLink Home">EduLink</a>
+
+    <div class="nav-links flex gap-6 text-gray-600 font-medium text-sm">
+      <a href="#">Student</a>
+
+      <a href="hackathons.html" style="color: #3b82f6; font-weight: 600;">Events</a>
+
+      <a href="#">Planning</a>
+      <a href="#">Assistant</a>
+    </div>
+
+    <button class="btn-join">Log out</button>
+  </div>
+</header>
+
+
+<!-- Flèche de retour -->
+<div class="flex items-center p-4">
+  <button class="back-btn" onclick="goBack()">⬅</button>
+</div>
+
+<!-- TITLE -->
+<h1 class="page-title">
+  Choose Your Payment Method
+</h1>
+
+<!-- FORMULAIRE DE PAIEMENT -->
+<div class="form-card">
+  <div class="payment-options">
+    <div class="payment-option" data-payment="credit-card">
+      <input type="radio" id="credit-card" name="payment-method">
+      <label for="credit-card" class="payment-label">
+        <span class="payment-icon"><i class="fas fa-credit-card"></i></span>
+        Credit Card
+      </label>
+    </div>
+    
+    <div class="payment-option" data-payment="d17">
+      <input type="radio" id="d17" name="payment-method">
+      <label for="d17" class="payment-label">
+        <span class="payment-icon"><i class="fas fa-mobile-alt"></i></span>
+        D17
+      </label>
+    </div>
+    
+    <div class="payment-option" data-payment="bank-transfer">
+      <input type="radio" id="bank-transfer" name="payment-method">
+      <label for="bank-transfer" class="payment-label">
+        <span class="payment-icon"><i class="fas fa-university"></i></span>
+        Bank Transfer
+      </label>
+    </div>
+    
+    <div class="payment-option" data-payment="cash">
+      <input type="radio" id="cash" name="payment-method">
+      <label for="cash" class="payment-label">
+        <span class="payment-icon"><i class="fas fa-money-bill-wave"></i></span>
+        Cash at the Office
+      </label>
+    </div>
+    
+   </div>
+</div>
+
+<!-- STEPS SOUS LE FORMULAIRE -->
+<div class="flex justify-center mt-12 mb-16">
+  <div class="flex items-center gap-6">
+    <div class="w-12 h-12 flex items-center justify-center step-inactive rounded-full shadow text-base font-semibold">1</div>
+    <div class="w-20 h-1 bg-gray-300 rounded-full"></div>
+    <div class="w-12 h-12 flex items-center justify-center step-inactive rounded-full shadow text-base font-semibold">2</div>
+    <div class="w-20 h-1 bg-gray-300 rounded-full"></div>
+    <div class="w-12 h-12 flex items-center justify-center step-active rounded-full shadow text-base font-semibold">3</div>
+    <div class="w-20 h-1 bg-gray-300 rounded-full"></div>
+    <div class="w-12 h-12 flex items-center justify-center step-inactive rounded-full shadow text-base font-semibold">4</div>
+  </div>
+</div>
+
+<!-- Next button -->
+<div class="flex justify-end max-w-5xl mx-auto p-4 mb-8">
+  <button class="next-btn" onclick="goNextPage()">➡</button>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-gray-100 py-8">
+  <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+    <div>
+      <h3 class="text-xl font-bold text-blue-600">EduLink</h3>
+      <p class="text-gray-600 text-sm">Company's share is a key shareholder.</p>
+    </div>
+    <div class="text-center md:text-right text-xs text-gray-600">
+      <p>© 2025 EduLink. All rights reserved</p>
+      <p>Communication • Organisation • Ressource • Accompagnement</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function goBack() {
+    window.location.href = "Registration Form Section.html"; // modifier selon votre page précédente
+  }
+  
+  function goNextPage() {
+    window.location.href = "QR.html";
+  }
+    </script>
+
+</body>
+</html>

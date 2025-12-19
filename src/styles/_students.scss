@@ -1,0 +1,116 @@
+
+$container: 1280px;
+
+/* ✅ un container commun pour navbar + hero */
+.edu-shell{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  /* ton fond gris */
+  background: #f1f5f9;
+
+  /* IMPORTANT: on enlève le padding tailwind (px-10 py-6) */
+  padding: 0 !important;
+}
+
+/* ✅ largeur identique */
+.edu-nav,
+.edu-hero,
+.edu-footer{
+  width: min(#{$container}, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ✅ espace vertical uniforme */
+.edu-nav{ margin-top: 24px; }
+.edu-hero{ margin-top: 18px !important; } /* remplace mt-6 */
+.edu-footer{ margin-top: 18px; }
+
+/* =========================
+   HERO (bleu aligné avec nav)
+========================= */
+.edu-hero{
+  border-radius: $radius-lg;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, $blue1, $blue2);
+  box-shadow: 0 28px 70px rgba(2, 8, 23, .28);
+  isolation: isolate;
+
+  /* on contrôle nous-même le padding */
+  padding: 28px !important;
+
+  /* hauteur + look */
+  min-height: 520px;
+
+  &::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(700px 360px at 18% 15%, rgba(255,255,255,.18), transparent 60%),
+      linear-gradient(135deg, rgba(5,20,60,.65), rgba(30,92,255,.30));
+    pointer-events:none;
+    z-index: 0;
+  }
+
+  > *{
+    position: relative;
+    z-index: 1;
+  }
+
+  h1{
+    margin: 0;
+    padding-top: 10px;
+    font-size: clamp(22px, 2.6vw, 42px);
+    font-weight: 800;
+    color: #fff;
+  }
+
+  /* grid spacing mieux */
+  .grid{
+    margin-top: 34px !important;
+    gap: 26px !important;
+    align-items: start !important;
+  }
+}
+
+/* =========================
+   CARDS smaller
+========================= */
+.edu-card{
+  max-width: 250px;
+  margin: 0 auto;
+  border-radius: 22px;
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(15,23,42,.06);
+  box-shadow:
+    0 18px 45px rgba(2, 8, 23, .14),
+    0 1px 0 rgba(255,255,255,.85) inset;
+
+  position: relative;
+
+}
+.edu-avatar{
+  width: 82px !important;
+  height: 82px !important;
+  border: 5px solid rgba(255,255,255,.92);
+}
+
+.edu-go{
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 999px !important;
+}
+
+/* ✅ responsive */
+@media (max-width: 900px){
+  .edu-nav,
+  .edu-hero,
+  .edu-footer{
+    width: calc(100% - 24px);
+  }
+}
