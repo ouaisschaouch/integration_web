@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>EduLink – Ressources & Partage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind -->
+  <link rel="stylesheet" href="./dist/output.css">
+  <!-- SCSS compilé -->
+  <link rel="stylesheet" href="./public/style.css">
+</head>
+
+<body class="bg-white flex flex-col min-h-screen">
+
+<!-- HEADER -->
+ <header class="edu-nav">
+      <a href="index1.html"><h1 class="logo-title">Édulink</h1></a>
+
+      <nav class="nav-links">
+        <a href="forum.html" class="nav-link">Communication</a>
+        <a href="organisation.html" class="nav-link">Organisation</a>
+        <a href="ressources.html" class="nav-link">Ressource et partage</a>
+        <a href="accompagnement.html" class="nav-link">Accompagnement</a>
+      </nav>
+
+    <button class="btn-join">Join Now</button>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="flex-grow container mx-auto px-4">
+
+  <!-- SEARCH -->
+  <div class="search-wrapper">
+    <span class="search-icon">🔍</span>
+    <input id="searchInput" type="text" placeholder="Rechercher votre cours...">
+    <button id="searchBtn">Search</button>
+  </div>
+
+  <!-- TITLE -->
+  <section class="title-section">
+    <h1>Ressources & Partage</h1>
+    <p>
+      Accédez facilement aux cours, TPs, examens et projets
+      partagés par les anciens (3A)
+    </p>
+  </section>
+
+  <!-- RESOURCES -->
+  <section id="resourcesList" class="resources-list">
+
+    <div class="resource-card" data-title="Cours Java S3">
+      <div class="resource-left">
+        <div class="icon">📘</div>
+        <div>
+          <h3>Cours Java S3</h3>
+          <span>promo 2024.PDF • 1.2 MB</span>
+        </div>
+      </div>
+      <div class="resource-actions">
+        <button class="consult" data-link="cours.html">Consulter</button>
+        <button class="download" data-link="files/java-s3.pdf" data-download>Télécharger</button>
+      </div>
+    </div>
+
+    <div class="resource-card" data-title="Introduction au Python">
+      <div class="resource-left">
+        <div class="icon">💻</div>
+        <div>
+          <h3>Introduction au Python</h3>
+          <span>promo 2024.PDF • 1.4 MB</span>
+        </div>
+      </div>
+      <div class="resource-actions">
+        <button class="consult" data-link="cours.html">Consulter</button>
+        <button class="download" data-link="files/python.pdf" data-download>Télécharger</button>
+      </div>
+    </div>
+
+    <div class="resource-card" data-title="Cours Spring Boot">
+      <div class="resource-left">
+        <div class="icon">📗</div>
+        <div>
+          <h3>Cours Spring Boot</h3>
+          <span>promo 2024.PDF • 1.2 MB</span>
+        </div>
+      </div>
+      <div class="resource-actions">
+        <button class="consult" data-link="cours.html">Consulter</button>
+        <button class="download" data-link="files/spring-boot.pdf" data-download>Télécharger</button>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+  <footer class="edu-footer">
+      <div class="edu-footer-brand">EduLink</div>
+      <div class="edu-footer-copy">© 2025 EduLink. All rights reserved</div>
+      <div class="edu-footer-icons">
+        <a href="#">f</a>
+        <a href="#">@</a>
+        <a href="#">in</a>
+        <a href="#">x</a>
+      </div>
+    </footer>
+
+<!-- SEARCH SCRIPT -->
+<script>
+const input = document.getElementById("searchInput");
+const cards = document.querySelectorAll(".resource-card");
+
+input.addEventListener("keyup", () => {
+  const value = input.value.toLowerCase();
+  cards.forEach(card => {
+    const title = card.dataset.title.toLowerCase();
+    card.style.display = title.includes(value) ? "flex" : "none";
+  });
+});
+
+// NAVIGATION & DOWNLOAD
+const buttons = document.querySelectorAll(".resource-actions button");
+
+buttons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const link = btn.dataset.link;
+    if (!link) return;
+
+    if (btn.hasAttribute("data-download")) {
+      // Télécharger le fichier
+      const a = document.createElement("a");
+      a.href = link;
+      a.download = '';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    } else {
+      window.location.href = link;
+    }
+  });
+});
+</script>
+
+</body>
+</html>

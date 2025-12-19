@@ -1,0 +1,136 @@
+@import 'variable';
+@import 'mixins';
+
+/* PAGE */
+.confirmation-page {
+  text-align: center;
+}
+
+/* BACK ARROW */
+.back-arrow {
+  width: 40px;
+  height: 8px;
+  background: #b5c7ee;
+  border-radius: 6px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: -6px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 12px solid #b5c7ee;
+  }
+}
+
+/* SUCCESS */
+.success-section {
+  margin-top: 4rem;
+
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+  }
+
+  p {
+    color: #555;
+    margin-top: 0.5rem;
+    line-height: 1.5;
+  }
+}
+
+.success-circle {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #6fd3ff, #7a8dff);
+  @include flex-center;
+}
+
+.checkmark {
+  width: 28px;
+  height: 14px;
+  border-left: 4px solid white;
+  border-bottom: 4px solid white;
+  transform: rotate(-45deg);
+}
+
+/* TUTOR CARD */
+.tutor-card {
+  margin-top: 3rem;
+  background: #a8bdee;
+  border-radius: 18px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  background: #e5e5e5;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  @include flex-center;
+}
+
+.tutor-info {
+  text-align: left;
+  flex: 1;
+  margin-left: 1.5rem;
+
+  h4 {
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 0.85rem;
+    color: #333;
+  }
+}
+
+.availability {
+  text-align: right;
+
+  .label {
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 0.85rem;
+  }
+}
+
+/* ACTIONS */
+.actions {
+  margin-top: 2rem;
+
+  .btn-primary {
+    background: #5f86ff;
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 20px;
+    font-weight: 500;
+    margin-right: 1rem;
+  }
+
+  .btn-secondary {
+    background: #9aa3ad;
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  .helper-text {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: #666;
+  }
+}

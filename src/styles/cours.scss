@@ -1,0 +1,84 @@
+@import 'variable';
+@import 'mixins';
+
+/* SEARCH BAR */
+.java-search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  padding: 0.4rem 0.6rem;
+  border-radius: 999px;
+  max-width: 480px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+
+  input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 0.85rem;
+  }
+
+  button {
+    background: $title-blue;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 999px;
+    border: none;
+  }
+}
+
+/* TITLE */
+.java-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.java-subtitle {
+  text-align: center;
+  margin-top: 0.5rem;
+  color: $gray-600;
+}
+
+/* BOX — cadre BLEU SUPPRIMÉ */
+.java-box {
+  padding: 2rem;
+}
+
+/* CARD */
+.java-item {
+  background: #a9bff0;
+  border-radius: 1.5rem;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+
+  button {
+    background: $title-blue;
+    color: white;
+    padding: 0.4rem 1.5rem;
+    border-radius: 999px;
+    border: none;
+  }
+}
+
+/* FEEDBACK */
+.feedback {
+  display: block;
+  text-align: right;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.download-btn {
+  background: $title-blue;
+  color: white;
+  padding: 0.4rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500;
+}

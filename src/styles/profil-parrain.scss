@@ -1,0 +1,57 @@
+@import 'variable';
+@import 'mixins';
+
+/* BACK */
+.back-link {
+  font-size: 2rem;
+  color: $title-blue;
+  text-decoration: none;
+}
+
+/* TITLE */
+.page-title {
+  font-size: $font-size-3xl;
+  font-weight: bold;
+  color: $gray-800;
+}
+
+.page-subtitle {
+  color: $gray-600;
+  margin-top: $spacing-2;
+}
+
+/* CARD */
+/* CARD */
+.parrain-card {
+  background: #a9c0ef;
+  border-radius: 1.75rem;
+  padding: $spacing-10;
+  max-width: 750px;        // ✅ card pas trop large
+  margin: 0 auto;          // ✅ centrée dans la page
+}
+
+/* CONTENU */
+.parrain-info {
+  text-align: center;      // ✅ écriture centrée
+}
+
+/* DESCRIPTION */
+.description {
+  margin: $spacing-6 0;
+  line-height: 1.6;
+  color: $gray-800;
+}
+
+/* BOUTON */
+.btn-primary {
+  display: inline-block;
+  margin-top: $spacing-4;
+}
+
+/* LIEN */
+.feedback-link {
+  display: block;
+  margin-top: $spacing-4;
+  text-decoration: underline;
+  font-weight: 500;
+}

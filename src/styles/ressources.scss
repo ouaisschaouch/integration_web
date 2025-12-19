@@ -1,0 +1,121 @@
+@import 'variable';
+@import 'mixins';
+
+/* SEARCH */
+.search-wrapper {
+  margin-top: 2rem;
+  background: $white;
+  border-radius: 999px;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+
+  input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem;
+  }
+
+  button {
+    background: $title-blue;
+    color: white;
+    border-radius: 999px;
+    padding: 0.4rem 1.2rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+}
+
+/* TITLE */
+.title-section {
+  text-align: center;
+  margin-top: 2.5rem;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  p {
+    margin-top: 0.5rem;
+    color: $gray-600;
+  }
+}
+
+/* LIST */
+.resources-list {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* CARD */
+.resource-card {
+  background: #9cb7f0;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .resource-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .icon {
+      font-size: 2.2rem;
+    }
+
+    h3 {
+      font-weight: 600;
+    }
+
+    span {
+      font-size: 0.8rem;
+      color: #2f3e5c;
+    }
+  }
+
+  .resource-actions {
+    display: flex;
+    gap: 0.8rem;
+
+    /* Nouveau : tous les boutons et liens */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-decoration: none; /* pour <a> */
+      cursor: pointer;
+      border: none;
+      transition: background 0.3s;
+    }
+
+    .btn-primary {
+      background-color: $title-blue;
+      color: #fff;
+
+      &:hover {
+        background-color: darken($title-blue, 15%);
+      }
+    }
+
+    .btn-secondary {
+      background-color: #a5a5a5;
+      color: #fff;
+
+      &:hover {
+        background-color: darken(#a5a5a5, 10%);
+      }
+    }
+  }
+}

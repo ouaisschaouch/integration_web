@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduLink – Cours Java</title>
+
+  <link rel="stylesheet" href="./dist/output.css">
+  <link rel="stylesheet" href="./public/style.css">
+</head>
+
+<body class="bg-white flex flex-col min-h-screen">
+
+  <!-- HEADER -->
+    <nav class="nav-links">
+        <a href="feadback.html" class="nav-link">Communication</a>
+        <a href="organisation.html" class="nav-link">Organisation</a>
+        <a href="ressources.html" class="nav-link">Ressource et partage</a>
+        <a href="accompagnement.html" class="nav-link">Accompagnement</a>
+      </nav>
+
+       <main class="flex-grow">
+    <div class="container mx-auto px-4 py-8">
+      <!-- Titre principal -->
+      <div class="text-center pt-8 pb-6">
+        <h1 class="title-page">donner un feedback</h1>
+        <p class="subtitle-page">aide-nous a améliorer l'expérience edulink !</p>
+      </div>
+
+      <button class="btn-join">Join Now</button>
+    </div>
+  </header>
+
+  <!-- SEARCH -->
+  <div class="container mx-auto px-6 mt-8">
+    <div class="java-search">
+      <input type="text" id="searchInput" placeholder="Rechercher votre cours ..">
+      <button>Search</button>
+    </div>
+  </div>
+
+  <!-- TITLE -->
+  <section class="container mx-auto px-6 mt-10">
+    <h1 class="java-title">Cours de programmation Java</h1>
+    <p class="java-subtitle">
+      Ce cours est conçu pour vous enseigner les bases de Java, du débutant au niveau avancé.
+    </p>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="container mx-auto px-6 mt-12">
+    <div class="java-box">
+
+      <!-- ITEM 1 -->
+      <div class="java-item">
+        <span>1. Cours Java – S3</span>
+        <a href="./files/java-s3.pdf" download class="download-btn">
+          Télécharger
+        </a>
+      </div>
+
+      <!-- ITEM 2 -->
+      <div class="java-item">
+        <span>2. Syntaxe de base</span>
+        <a href="./files/syntaxe.pdf" download class="download-btn">
+          Télécharger
+        </a>
+      </div>
+
+      <!-- ITEM 3 -->
+      <div class="java-item">
+        <span>3. Les classes</span>
+        <a href="./files/classes.pdf" download class="download-btn">
+          Télécharger
+        </a>
+      </div>
+
+      <a class="feedback">Donner votre avis</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+   <footer class="edu-footer">
+      <div class="edu-footer-brand">EduLink</div>
+      <div class="edu-footer-copy">© 2025 EduLink. All rights reserved</div>
+      <div class="edu-footer-icons">
+        <a href="#">f</a>
+        <a href="#">@</a>
+        <a href="#">in</a>
+        <a href="#">x</a>
+      </div>
+    </footer>
+
+  <!-- SEARCH SCRIPT -->
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const items = document.querySelectorAll(".java-item");
+
+    searchInput.addEventListener("keyup", () => {
+      const value = searchInput.value.toLowerCase();
+      items.forEach(item => {
+        item.style.display = item.innerText.toLowerCase().includes(value)
+          ? "flex"
+          : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
+<!DOCTYPE html>
