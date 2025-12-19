@@ -1,119 +1,109 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EduLink - Liste des notifications</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduLink - Liste des notifications</title>
 
-  <!-- Tailwind CSS -->
-  <link rel="stylesheet" href="./dist/output.css">
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
 
-  <!-- SCSS compilé -->
-  <link rel="stylesheet" href="./public/style.css">
-</head>
+    <!-- SCSS compilé -->
+    <link rel="stylesheet" href="./public/style.css" />
+  </head>
 
-<body class="bg-white flex flex-col min-h-screen">
+  <body class="bg-white flex flex-col min-h-screen">
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+      <div class="container">
+        <a href="index1.html"><h1 class="logo-title">Édulink</h1></a>
 
-  <!-- ================= HEADER ================= -->
-  <header class="header">
-    <div class="container">
-      <a href="index1.html"><h1 class="logo-title">Édulink</h1></a>
+        <nav class="nav-links">
+          <a href="forum.html" class="nav-link">Communication</a>
+          <a href="organisation.html" class="nav-link">Organisation</a>
+          <a href="ressources.html" class="nav-link">Ressource et partage</a>
+          <a href="accompagnement.html" class="nav-link">Accompagnement</a>
+        </nav>
 
-      <nav class="nav-links">
-        <a href="forum.html" class="nav-link">Communication</a>
-        <a href="organisation.html" class="nav-link">Organisation</a>
-        <a href="#" class="nav-link">Ressource et partage</a>
-        <a href="#" class="nav-link">Accompagnement</a>
-      </nav>
-
-      <button class="btn-join">Join Now</button>
-    </div>
-  </header>
-
-  <!-- ================= MAIN ================= -->
-  <main class="flex-grow">
-    <div class="container mx-auto px-4 py-8">
-
-      <!-- Back -->
-      <div class="mb-4">
-        <button class="list-back-btn">←</button>
+        <button class="btn-join">Join Now</button>
       </div>
+    </header>
 
-      <!-- Title -->
-      <h1 class="list-title text-center">
-        liste des notification
-      </h1>
-
-      <!-- Card -->
-      <section class="notification-card mx-auto mt-6">
-
-        <!-- Search -->
-        <div class="notification-search">
-          <input
-            type="text"
-            placeholder="Find collaborators or mentors instantly"
-          />
-          <button class="search-btn">Search</button>
+    <!-- ================= MAIN ================= -->
+    <main class="flex-grow">
+      <div class="container mx-auto px-4 py-8">
+        <!-- Back -->
+        <div class="mb-4">
+          <button class="list-back-btn">←</button>
         </div>
 
-        <!-- List -->
-        <div class="notification-list">
+        <!-- Title -->
+        <h1 class="list-title text-center">liste des notification</h1>
 
-          <div class="notification-item">
-            <span class="notification-text">ux</span>
-            <div class="notification-right">
-              <span class="notification-date">18/02/2025</span>
-              <span class="notification-icon">🔔</span>
+        <!-- Card -->
+        <section class="notification-card mx-auto mt-6">
+          <!-- Search -->
+          <div class="notification-search">
+            <input
+              type="text"
+              placeholder="Find collaborators or mentors instantly"
+            />
+            <button class="search-btn">Search</button>
+          </div>
+
+          <!-- List -->
+          <div class="notification-list">
+            <div class="notification-item">
+              <span class="notification-text">ux</span>
+              <div class="notification-right">
+                <span class="notification-date">18/02/2025</span>
+                <span class="notification-icon">🔔</span>
+              </div>
+            </div>
+
+            <div class="notification-item">
+              <span class="notification-text">programmation</span>
+              <div class="notification-right">
+                <span class="notification-date">18/02/2025</span>
+                <span class="notification-icon">🔔</span>
+              </div>
+            </div>
+
+            <div class="notification-item">
+              <span class="notification-text">devops</span>
+              <div class="notification-right">
+                <span class="notification-date">18/02/2025</span>
+                <span class="notification-icon">🔔</span>
+              </div>
             </div>
           </div>
 
-          <div class="notification-item">
-            <span class="notification-text">programmation</span>
-            <div class="notification-right">
-              <span class="notification-date">18/02/2025</span>
-              <span class="notification-icon">🔔</span>
-            </div>
+          <!-- Add button -->
+          <div class="text-center mt-6">
+            <button class="add-notification-btn">
+              ajouter des notifications 🔔
+            </button>
           </div>
+        </section>
+      </div>
+    </main>
 
-          <div class="notification-item">
-            <span class="notification-text">devops</span>
-            <div class="notification-right">
-              <span class="notification-date">18/02/2025</span>
-              <span class="notification-icon">🔔</span>
-            </div>
-          </div>
-
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-brand">
+          <h3>EduLink</h3>
+          <p>Forum des étudiants</p>
+          <a href="feadback.html">donner voitre feadback</a>
         </div>
 
-        <!-- Add button -->
-        <div class="text-center mt-6">
-          <button class="add-notification-btn">
-            ajouter des notifications 🔔
-          </button>
+        <div class="footer-copyright">
+          <p class="footer-text">© 2025 EduLink. All rights reserved</p>
+          <p class="text-gray-400 text-xs mt-1">
+            Communication • Organisation • Ressource et partage • Accompagnement
+          </p>
         </div>
-
-      </section>
-
-    </div>
-  </main>
-
-  <!-- ================= FOOTER ================= -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-brand">
-        <h3>EduLink</h3>
-        <p>Forum des étudiants</p>
-        <a href="feadback.html">donner voitre feadback</a>
       </div>
-
-      <div class="footer-copyright">
-        <p class="footer-text">© 2025 EduLink. All rights reserved</p>
-        <p class="text-gray-400 text-xs mt-1">
-          Communication • Organisation • Ressource et partage • Accompagnement
-        </p>
-      </div>
-    </div>
-  </footer>
-
-</body>
+    </footer>
+  </body>
 </html>

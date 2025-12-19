@@ -1,0 +1,123 @@
+@import 'variable';
+@import 'mixins';
+
+/* SEARCH */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: $spacing-2;
+  background: $white;
+  padding: 0.4rem 0.75rem;   // ⬅️ PLUS PETITE
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.08);
+  max-width: 520px;         // ⬅️ largeur réduite
+  margin: 0 auto;
+
+  .search-icon {
+    font-size: 0.9rem;
+    opacity: 0.6;
+  }
+
+  input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 0.8rem;      // ⬅️ texte plus petit
+  }
+
+  button {
+    background: $title-blue;
+    color: $white;
+    padding: 0.3rem 0.9rem; // ⬅️ bouton plus fin
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+
+/* TITLES */
+.main-title {
+  font-size: $font-size-3xl;
+  font-weight: bold;
+  color: $gray-800;
+}
+
+.subtitle {
+  margin-top: $spacing-3;
+  color: $gray-600;
+}
+
+/* CARD */
+.accompagnement-card {
+  background: #a9c0ef;
+  border-radius: 1.75rem;
+  padding: $spacing-10;
+}
+
+/* FORM */
+.form-grid {
+  display: grid;
+  gap: $spacing-6;
+}
+
+.form-group {
+  label {
+    font-weight: 600;
+    margin-bottom: $spacing-2;
+    display: block;
+  }
+
+  input {
+    width: 100%;
+    padding: $spacing-3 $spacing-4;
+    border-radius: 999px;
+    border: none;
+    outline: none;
+  }
+}
+
+/* CHIPS */
+.chips {
+  display: flex;
+  gap: $spacing-3;
+
+  .chip {
+    background: $white;
+    padding: $spacing-2 $spacing-6;
+    border-radius: 999px;
+    font-weight: 500;
+    cursor: pointer;
+    @include transition-all;
+
+    &:hover {
+      background: $title-blue;
+      color: $white;
+    }
+  }
+}
+
+/* CTA */
+.cta {
+  margin-top: $spacing-8;
+  text-align: center;
+}
+
+.btn-primary {
+  background: $title-blue;
+  color: $white;
+  padding: $spacing-3 $spacing-8;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* INFO */
+.info-row {
+  display: flex;
+  justify-content: space-around;
+  margin-top: $spacing-10;
+  color: $gray-800;
+  font-weight: 500;
+}

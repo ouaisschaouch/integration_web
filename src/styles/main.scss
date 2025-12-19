@@ -1,9 +1,17 @@
 
 /* Import des partials SCSS avec @import (ancienne méthode) */
 @import 'variable';
-@import 'mixins';
+@import '_mixins';  // force explicitement le partial
+
+
+
 @import 'header';
 @import 'footer';
+@import 'ressources';
+@import 'cours';
+@import 'accompagnement';
+@import 'profil-parrain'; 
+@import 'confirmation';
 
 @import'base';
 @import 'layout';
@@ -25,6 +33,12 @@
 @import 'QR';
 @import 'index';
 @import 'index1';
+@import 'advisor_ouaiss';
+@import 'chat_ouaiss';
+@import 'create_demande';
+@import 'choose_conseille';
+@import 'forum_conseiller';
+
 /* Import des polices */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 

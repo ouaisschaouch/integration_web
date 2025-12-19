@@ -1,163 +1,181 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EduLink - Private Chat</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduLink - Private Chat</title>
 
-  <link rel="stylesheet" href="../tailwind.css" />
-  <link rel="stylesheet" href="../style.css" />
-</head>
+    <link rel="stylesheet" href="../tailwind.css" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
 
-<body class="min-h-screen bg-slate-100">
+  <body class="min-h-screen bg-slate-100">
+    <main class="edu-shell edu-full">
+      <!-- NAVBAR -->
+      <header class="edu-nav">
+        <a href="#" class="edu-brand">EduLink</a>
 
-  <main class="edu-shell edu-full">
+        <nav class="edu-links">
+          <a class="active" href="Students.html">Student</a>
+          <a href="#">Events</a>
+          <a href="planning.html">Planning</a>
+          <a href="assistant.html">Assistant</a>
+        </nav>
 
-    <!-- NAVBAR -->
-    <header class="edu-nav">
-      <a href="#" class="edu-brand">EduLink</a>
-
-      <nav class="edu-links">
-        <a class="active" href="./students.html">Student</a>
-        <a href="#">Events</a>
-        <a href="./planning.html">Planning</a>
-        <a href="./assistant.html">Assistant</a>
-      </nav>
-
-      <button class="edu-join">Join Now</button>
-    </header>
-
-    <!-- CHAT WRAPPER -->
-<main class="app">
-    <!-- LEFT -->
-    <aside class="panel panel--left">
-      <h2 class="panel-title">Message</h2>
-
-      <label class="search">
-        <span class="search-ico">⌕</span>
-        <input type="text" placeholder="Search" />
-      </label>
-
-      <div class="list">
-        <button class="row active">
-          <img class="avatar" src="https://i.pravatar.cc/80?img=32" alt="">
-          <div class="row-meta">
-            <div class="row-top">
-              <span class="name">Aljna Marta</span>
-              <span class="dot online"></span>
-            </div>
-            <div class="sub">Online</div>
-          </div>
-        </button>
-
-        <button class="row">
-          <img class="avatar" src="https://i.pravatar.cc/80?img=47" alt="">
-          <div class="row-meta">
-            <div class="row-top">
-              <span class="name">Salma Lamir</span>
-              <span class="dot"></span>
-            </div>
-            <div class="sub">See you tomorrow</div>
-          </div>
-        </button>
-
-        <button class="row">
-          <img class="avatar" src="https://i.pravatar.cc/80?img=12" alt="">
-          <div class="row-meta">
-            <div class="row-top">
-              <span class="name">Aziz Rahouej</span>
-              <span class="dot"></span>
-            </div>
-            <div class="sub">Thanks!</div>
-          </div>
-        </button>
-      </div>
-    </aside>
-
-    <!-- CENTER -->
-    <section class="panel panel--center">
-      <header class="chat-head">
-        <div class="who">
-          <img class="avatar lg" src="https://i.pravatar.cc/100?img=32" alt="">
-          <div>
-            <div class="who-name">Aljna Marta</div>
-            <div class="who-sub"><span class="dot online"></span> Online</div>
-          </div>
-        </div>
+        <button class="edu-join">Join Now</button>
       </header>
 
-      <div class="chat-body">
-        <div class="msg msg--me">
-          <div class="bubble">Hi. I need help with my assignment</div>
-          <div class="time">9:05 am</div>
-        </div>
+      <!-- CHAT WRAPPER -->
+      <main class="app">
+        <!-- LEFT -->
+        <aside class="panel panel--left">
+          <h2 class="panel-title">Message</h2>
 
-        <div class="msg msg--bot">
-          <div class="bubble">Hello, How can I Assist You?</div>
-          <div class="time">9:06 am</div>
-        </div>
+          <label class="search">
+            <span class="search-ico">⌕</span>
+            <input type="text" placeholder="Search" />
+          </label>
 
-        <div class="msg msg--me">
-          <div class="bubble">The Topic Is Data Science</div>
-          <div class="time">9:10 am</div>
-        </div>
+          <div class="list">
+            <button class="row active">
+              <img
+                class="avatar"
+                src="https://i.pravatar.cc/80?img=32"
+                alt=""
+              />
+              <div class="row-meta">
+                <div class="row-top">
+                  <span class="name">Aljna Marta</span>
+                  <span class="dot online"></span>
+                </div>
+                <div class="sub">Online</div>
+              </div>
+            </button>
 
-        <div class="msg msg--bot">
-          <div class="bubble">Sure, I can help with That ...</div>
-          <div class="time">9:16 am</div>
-        </div>
-      </div>
+            <button class="row">
+              <img
+                class="avatar"
+                src="https://i.pravatar.cc/80?img=47"
+                alt=""
+              />
+              <div class="row-meta">
+                <div class="row-top">
+                  <span class="name">Salma Lamir</span>
+                  <span class="dot"></span>
+                </div>
+                <div class="sub">See you tomorrow</div>
+              </div>
+            </button>
 
-      <footer class="chat-input">
-        <input type="text" placeholder="Type a message ..." />
-        <button class="ico" title="image">🖼</button>
-        <button class="ico" title="clip">📎</button>
-        <button class="send" title="send">➤</button>
+            <button class="row">
+              <img
+                class="avatar"
+                src="https://i.pravatar.cc/80?img=12"
+                alt=""
+              />
+              <div class="row-meta">
+                <div class="row-top">
+                  <span class="name">Aziz Rahouej</span>
+                  <span class="dot"></span>
+                </div>
+                <div class="sub">Thanks!</div>
+              </div>
+            </button>
+          </div>
+        </aside>
+
+        <!-- CENTER -->
+        <section class="panel panel--center">
+          <header class="chat-head">
+            <div class="who">
+              <img
+                class="avatar lg"
+                src="https://i.pravatar.cc/100?img=32"
+                alt=""
+              />
+              <div>
+                <div class="who-name">Aljna Marta</div>
+                <div class="who-sub">
+                  <span class="dot online"></span> Online
+                </div>
+              </div>
+            </div>
+          </header>
+
+          <div class="chat-body">
+            <div class="msg msg--me">
+              <div class="bubble">Hi. I need help with my assignment</div>
+              <div class="time">9:05 am</div>
+            </div>
+
+            <div class="msg msg--bot">
+              <div class="bubble">Hello, How can I Assist You?</div>
+              <div class="time">9:06 am</div>
+            </div>
+
+            <div class="msg msg--me">
+              <div class="bubble">The Topic Is Data Science</div>
+              <div class="time">9:10 am</div>
+            </div>
+
+            <div class="msg msg--bot">
+              <div class="bubble">Sure, I can help with That ...</div>
+              <div class="time">9:16 am</div>
+            </div>
+          </div>
+
+          <footer class="chat-input">
+            <input type="text" placeholder="Type a message ..." />
+            <button class="ico" title="image">🖼</button>
+            <button class="ico" title="clip">📎</button>
+            <button class="send" title="send">➤</button>
+          </footer>
+        </section>
+
+        <!-- RIGHT -->
+        <aside class="panel panel--right">
+          <h3 class="info-title">Information about Student</h3>
+
+          <div class="profile">
+            <img
+              class="avatar xl"
+              src="https://i.pravatar.cc/140?img=32"
+              alt=""
+            />
+            <div class="p-name">Alina Marta</div>
+            <div class="p-sub">Online</div>
+          </div>
+
+          <div class="info-block">
+            <div class="info-h">Description</div>
+            <p class="info-p">
+              A.DS student specializes in data analysis, machine learning,
+              statistics, and programming. They learn how to extract insights
+              from data.
+            </p>
+          </div>
+
+          <div class="toggle">
+            <span>Notification</span>
+            <label class="switch">
+              <input type="checkbox" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </aside>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="edu-footer">
+        <div class="edu-footer-brand">EduLink</div>
+        <div class="edu-footer-copy">© 2025 EduLink. All rights reserved</div>
+        <div class="edu-footer-icons">
+          <a href="#">f</a>
+          <a href="#">@</a>
+          <a href="#">in</a>
+          <a href="#">x</a>
+        </div>
       </footer>
-    </section>
-
-    <!-- RIGHT -->
-    <aside class="panel panel--right">
-      <h3 class="info-title">Information about Student</h3>
-
-      <div class="profile">
-        <img class="avatar xl" src="https://i.pravatar.cc/140?img=32" alt="">
-        <div class="p-name">Alina Marta</div>
-        <div class="p-sub">Online</div>
-      </div>
-
-      <div class="info-block">
-        <div class="info-h">Description</div>
-        <p class="info-p">
-          A.DS student specializes in data analysis, machine learning, statistics, and programming.
-          They learn how to extract insights from data.
-        </p>
-      </div>
-
-      <div class="toggle">
-        <span>Notification</span>
-        <label class="switch">
-          <input type="checkbox" checked />
-          <span class="slider"></span>
-        </label>
-      </div>
-    </aside>
-  </main>
-
-
-    <!-- FOOTER -->
-    <footer class="edu-footer">
-      <div class="edu-footer-brand">EduLink</div>
-      <div class="edu-footer-copy">© 2025 EduLink. All rights reserved</div>
-      <div class="edu-footer-icons">
-        <a href="#">f</a>
-        <a href="#">@</a>
-        <a href="#">in</a>
-        <a href="#">x</a>
-      </div>
-    </footer>
-
-  </main>
-
-</body>
+    </main>
+  </body>
 </html>

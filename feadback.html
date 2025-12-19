@@ -1,124 +1,149 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EduLink - Feedback</title>
-  <!-- Tailwind CSS -->
-  <link rel="stylesheet" href="./dist/output.css">
-  <!-- Vos styles SCSS compilés -->
-  <link rel="stylesheet" href="./public/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduLink - Feedback</title>
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <!-- Vos styles SCSS compilés -->
+    <link rel="stylesheet" href="./public/style.css" />
+  </head>
 
-<body class="bg-white flex flex-col min-h-screen">
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container">
-<a href="index1.html"><h1 class="logo-title">Édulink</h1></a>
-      <nav class="nav-links">
-        <a href="forum.html" class="nav-link">Communication</a>
-        <a href="organisation.html" class="nav-link">Organisation</a>
-        <a href="#" class="nav-link">Ressource et partage</a>
-        <a href="#" class="nav-link">Accompagnement</a>
-      </nav>
+  <body class="bg-white flex flex-col min-h-screen">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container">
+        <a href="index1.html"><h1 class="logo-title">Édulink</h1></a>
+        <nav class="nav-links">
+          <a href="forum.html" class="nav-link">Communication</a>
+          <a href="organisation.html" class="nav-link">Organisation</a>
+          <a href="ressources.html" class="nav-link">Ressource et partage</a>
+          <a href="organisation.html" class="nav-link">Accompagnement</a>
+        </nav>
 
-      <button class="btn-join">Join Now</button>
-    </div>
-  </header>
-
-  <!-- MAIN CONTENT -->
-  <main class="flex-grow">
-    <div class="container mx-auto px-4 py-8">
-      <!-- Titre principal -->
-      <div class="text-center pt-8 pb-6">
-        <h1 class="title-page">donner un feedback</h1>
-        <p class="subtitle-page">aide-nous a améliorer l'expérience edulink !</p>
+        <button class="btn-join">Join Now</button>
       </div>
+    </header>
 
-      <!-- Carte de feedback -->
-      <div class="card-feedback">
-        <!-- Section choix -->
-        <div class="option-group">
-          <h2 class="section-title">A propos de quoi veux-tu donner ton avis ?</h2>
-          
-          <div class="space-y-4">
-            <div class="option-item">
-              <input type="radio" id="parrain" name="feedback-type" class="radio-custom">
-              <label for="parrain" class="option-label">un parrain</label>
-            </div>
-            
-            <div class="option-item">
-              <input type="radio" id="cours" name="feedback-type" class="radio-custom">
-              <label for="cours" class="option-label">un cours ou document partagé</label>
-            </div>
-            
-            <div class="option-item">
-              <input type="radio" id="experience" name="feedback-type" class="radio-custom" checked>
-              <label for="experience" class="option-label">l'expérience globale sur Edulink</label>
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+      <div class="container mx-auto px-4 py-8">
+        <!-- Titre principal -->
+        <div class="text-center pt-8 pb-6">
+          <h1 class="title-page">donner un feedback</h1>
+          <p class="subtitle-page">
+            aide-nous a améliorer l'expérience edulink !
+          </p>
+        </div>
+
+        <!-- Carte de feedback -->
+        <div class="card-feedback">
+          <!-- Section choix -->
+          <div class="option-group">
+            <h2 class="section-title">
+              A propos de quoi veux-tu donner ton avis ?
+            </h2>
+
+            <div class="space-y-4">
+              <div class="option-item">
+                <input
+                  type="radio"
+                  id="parrain"
+                  name="feedback-type"
+                  class="radio-custom"
+                />
+                <label for="parrain" class="option-label">un parrain</label>
+              </div>
+
+              <div class="option-item">
+                <input
+                  type="radio"
+                  id="cours"
+                  name="feedback-type"
+                  class="radio-custom"
+                />
+                <label for="cours" class="option-label"
+                  >un cours ou document partagé</label
+                >
+              </div>
+
+              <div class="option-item">
+                <input
+                  type="radio"
+                  id="experience"
+                  name="feedback-type"
+                  class="radio-custom"
+                  checked
+                />
+                <label for="experience" class="option-label"
+                  >l'expérience globale sur Edulink</label
+                >
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Étoiles -->
-        <div class="star-rating" id="starContainer">
-          <span class="star">★</span>
-          <span class="star">★</span>
-          <span class="star">★</span>
-          <span class="star">★</span>
-          <span class="star">★</span>
-          <span class="star">★</span>
-        </div>
+          <!-- Étoiles -->
+          <div class="star-rating" id="starContainer">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
 
-        <!-- Commentaire -->
-        <div class="comment-section">
-          <h3 class="section-title">ajouter un commentaire :</h3>
-          <textarea 
-            class="comment-box" 
-            placeholder="Explique ce qui t'a aidé ou ce que l'on pourrait améliorer..."
-          ></textarea>
-        </div>
+          <!-- Commentaire -->
+          <div class="comment-section">
+            <h3 class="section-title">ajouter un commentaire :</h3>
+            <textarea
+              class="comment-box"
+              placeholder="Explique ce qui t'a aidé ou ce que l'on pourrait améliorer..."
+            ></textarea>
+          </div>
 
-        <!-- Bouton envoyer -->
-        <div class="text-center">
-          <button class="btn-send" id="sendFeedback">Envoyer feedback</button>
+          <!-- Bouton envoyer -->
+          <div class="text-center">
+            <button class="btn-send" id="sendFeedback">Envoyer feedback</button>
+          </div>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-brand">
-        <h3>EduLink</h3>
-        <a href="feadback.html">donner voitre feadback</a>
-        
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-brand">
+          <h3>EduLink</h3>
+          <a href="feadback.html">donner voitre feadback</a>
+        </div>
+
+        <div class="footer-copyright">
+          <p class="footer-text">© 2025 EduLink. All rights reserved</p>
+          <p class="text-gray-400 text-xs mt-1">
+            Communication • Organisation • Ressource et partage • Accompagnement
+          </p>
+        </div>
       </div>
+    </footer>
 
-      <div class="footer-copyright">
-        <p class="footer-text">© 2025 EduLink. All rights reserved</p>
-        <p class="text-gray-400 text-xs mt-1">Communication • Organisation • Ressource et partage • Accompagnement</p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // JavaScript pour les étoiles
-    const stars = document.querySelectorAll('.star');
-    stars.forEach((star, index) => {
-      star.addEventListener('click', () => {
-        // Mettre à jour toutes les étoiles
-        stars.forEach((s, i) => {
-          if (i <= index) {
-            s.classList.remove('star-empty');
-            s.classList.add('star');
-          } else {
-            s.classList.remove('star');
-            s.classList.add('star-empty');
-          }
+    <script>
+      // JavaScript pour les étoiles
+      const stars = document.querySelectorAll(".star");
+      stars.forEach((star, index) => {
+        star.addEventListener("click", () => {
+          // Mettre à jour toutes les étoiles
+          stars.forEach((s, i) => {
+            if (i <= index) {
+              s.classList.remove("star-empty");
+              s.classList.add("star");
+            } else {
+              s.classList.remove("star");
+              s.classList.add("star-empty");
+            }
+          });
         });
       });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>

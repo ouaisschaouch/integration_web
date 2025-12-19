@@ -1,155 +1,156 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EduLink - Organisation</title>
-<link rel="stylesheet" href="./public/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduLink - Organisation</title>
+    <link rel="stylesheet" href="./public/style.css" />
 
-  <!-- Tailwind -->
-  <link rel="stylesheet" href="./dist/output.css">
-  <!-- SCSS compilé -->
-  <link rel="stylesheet" href="./public/style.css">
-</head>
+    <!-- Tailwind -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <!-- SCSS compilé -->
+    <link rel="stylesheet" href="./public/style.css" />
+  </head>
 
-<body class="bg-white flex flex-col min-h-screen">
+  <body class="bg-white flex flex-col min-h-screen">
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+      <div class="container">
+        <a href="index1.html"><h1 class="logo-title">Édulink</h1></a>
 
-<!-- ================= HEADER ================= -->
-<header class="header">
-  <div class="container">
-    <a href="index1.html"><h1 class="logo-title">Édulink</h1></a>
+        <nav class="nav-links">
+          <a href="forum.html" class="nav-link">Communication</a>
+          <a href="organisation.html" class="nav-link active">Organisation</a>
+          <a href="ressources.html" class="nav-link">Ressource et partage</a>
+          <a href="accompagnement.html" class="nav-link">Accompagnement</a>
+        </nav>
 
-    <nav class="nav-links">
-      <a href="forum.html" class="nav-link">Communication</a>
-      <a href="organisation.html" class="nav-link active">Organisation</a>
-      <a href="#" class="nav-link">Ressource et partage</a>
-      <a href="#" class="nav-link">Accompagnement</a>
-    </nav>
-
-    <button class="btn-join">Join Now</button>
-  </div>
-</header>
-
-<!-- ================= MAIN ================= -->
-<main class="flex-grow">
-  <div class="container mx-auto px-4 py-8">
-
-    <div class="text-center pt-8 pb-6">
-      <h1 class="organisation-title">Organisation</h1>
-      <p class="organisation-subtitle">
-        Gère tes cours, examens et reçois les alertes importantes
-      </p>
-    </div>
-
-    <!-- CENTERED CARD -->
-    <div class="organisation-container">
-
-  <!-- BLUE CARD -->
-  <div class="calendar-card">
-
-    <!-- WHITE CALENDAR -->
-    <div class="calendar-wrapper">
-
-      <div class="calendar-header">
-        <div class="month-year">Mai 2023</div>
-
-        <div class="calendar-nav">
-          <button id="prevMonth">‹</button>
-          <button id="nextMonth">›</button>
-        </div>
+        <button class="btn-join">Join Now</button>
       </div>
+    </header>
 
-      <div class="calendar-grid">
-        <div class="weekdays">
-          <div class="weekday">Lun</div>
-          <div class="weekday">Mar</div>
-          <div class="weekday">Mer</div>
-          <div class="weekday">Jeu</div>
-          <div class="weekday">Ven</div>
-          <div class="weekday">Sam</div>
-          <div class="weekday">Dim</div>
+    <!-- ================= MAIN ================= -->
+    <main class="flex-grow">
+      <div class="container mx-auto px-4 py-8">
+        <div class="text-center pt-8 pb-6">
+          <h1 class="organisation-title">Organisation</h1>
+          <p class="organisation-subtitle">
+            Gère tes cours, examens et reçois les alertes importantes
+          </p>
         </div>
 
-        <div class="days" id="calendarDays"></div>
+        <!-- CENTERED CARD -->
+        <div class="organisation-container">
+          <!-- BLUE CARD -->
+          <div class="calendar-card">
+            <!-- WHITE CALENDAR -->
+            <div class="calendar-wrapper">
+              <div class="calendar-header">
+                <div class="month-year">Mai 2023</div>
+
+                <div class="calendar-nav">
+                  <button id="prevMonth">‹</button>
+                  <button id="nextMonth">›</button>
+                </div>
+              </div>
+
+              <div class="calendar-grid">
+                <div class="weekdays">
+                  <div class="weekday">Lun</div>
+                  <div class="weekday">Mar</div>
+                  <div class="weekday">Mer</div>
+                  <div class="weekday">Jeu</div>
+                  <div class="weekday">Ven</div>
+                  <div class="weekday">Sam</div>
+                  <div class="weekday">Dim</div>
+                </div>
+
+                <div class="days" id="calendarDays"></div>
+              </div>
+            </div>
+            <a href="liste.html" class="add-list-btn">
+              liste des notifications
+            </a>
+          </div>
+        </div>
       </div>
+    </main>
 
-    </div>
-    <a href="liste.html" class="add-list-btn">
-       liste des notifications
-    </a>
-  </div>
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+      <div class="container">
+        <a href="index1.html"><h1 class="logo-title">Édulink</h1></a>
+        <p class="footer-text">© 2025 Édulink</p>
+        <a href="feadback.html">donner voitre feadback</a>
+      </div>
+    </footer>
 
+    <!-- ================= SCRIPT ================= -->
+    <script>
+      let currentMonth = 4;
+      let currentYear = 2023;
 
-</div>
-  </div>
-</main>
+      const daysWithEvents = [4, 12, 17, 19, 25, 30];
 
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-  <div class="container">
-    <a href="index1.html"><h1 class="logo-title">Édulink</h1></a>
-    <p class="footer-text">© 2025 Édulink</p>
-    <a href="feadback.html">donner voitre feadback</a>
-  </div>
-</footer>
+      const monthNames = [
+        "Janvier",
+        "Février",
+        "Mars",
+        "Avril",
+        "Mai",
+        "Juin",
+        "Juillet",
+        "Août",
+        "Septembre",
+        "Octobre",
+        "Novembre",
+        "Décembre",
+      ];
 
-<!-- ================= SCRIPT ================= -->
-<script>
-  let currentMonth = 4;
-  let currentYear = 2023;
+      function generateCalendar(month, year) {
+        const calendarDays = document.getElementById("calendarDays");
+        const monthYear = document.querySelector(".month-year");
 
-  const daysWithEvents = [4, 12, 17, 19, 25, 30];
+        monthYear.textContent = `${monthNames[month]} ${year}`;
+        calendarDays.innerHTML = "";
 
-  const monthNames = [
-    "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
-    "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
-  ];
+        const firstDay = new Date(year, month, 1);
+        const lastDay = new Date(year, month + 1, 0);
+        const startDay = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1;
 
-  function generateCalendar(month, year) {
-    const calendarDays = document.getElementById("calendarDays");
-    const monthYear = document.querySelector(".month-year");
+        for (let i = 0; i < startDay; i++) {
+          calendarDays.innerHTML += `<div class="day other-month"></div>`;
+        }
 
-    monthYear.textContent = `${monthNames[month]} ${year}`;
-    calendarDays.innerHTML = "";
-
-    const firstDay = new Date(year, month, 1);
-    const lastDay = new Date(year, month + 1, 0);
-    const startDay = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1;
-
-    for (let i = 0; i < startDay; i++) {
-      calendarDays.innerHTML += `<div class="day other-month"></div>`;
-    }
-
-    for (let i = 1; i <= lastDay.getDate(); i++) {
-      const hasEvent = daysWithEvents.includes(i) ? "has-event" : "";
-      calendarDays.innerHTML += `
+        for (let i = 1; i <= lastDay.getDate(); i++) {
+          const hasEvent = daysWithEvents.includes(i) ? "has-event" : "";
+          calendarDays.innerHTML += `
         <div class="day ${hasEvent}">
           ${i}
         </div>
       `;
-    }
-  }
+        }
+      }
 
-  document.getElementById("prevMonth").onclick = () => {
-    currentMonth--;
-    if (currentMonth < 0) {
-      currentMonth = 11;
-      currentYear--;
-    }
-    generateCalendar(currentMonth, currentYear);
-  };
+      document.getElementById("prevMonth").onclick = () => {
+        currentMonth--;
+        if (currentMonth < 0) {
+          currentMonth = 11;
+          currentYear--;
+        }
+        generateCalendar(currentMonth, currentYear);
+      };
 
-  document.getElementById("nextMonth").onclick = () => {
-    currentMonth++;
-    if (currentMonth > 11) {
-      currentMonth = 0;
-      currentYear++;
-    }
-    generateCalendar(currentMonth, currentYear);
-  };
+      document.getElementById("nextMonth").onclick = () => {
+        currentMonth++;
+        if (currentMonth > 11) {
+          currentMonth = 0;
+          currentYear++;
+        }
+        generateCalendar(currentMonth, currentYear);
+      };
 
-  generateCalendar(currentMonth, currentYear);
-</script>
-
-</body>
+      generateCalendar(currentMonth, currentYear);
+    </script>
+  </body>
 </html>

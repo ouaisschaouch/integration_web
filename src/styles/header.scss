@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 @import 'variable';
 @import 'mixins';
 
@@ -67,5 +69,110 @@
   &:hover {
     background-color: adjust-color($title-blue, $lightness: -10%);
     transform: translateY(-2px);
+  }
+}
+.header {
+  background-color: $nav-gray;
+  padding: $spacing-5 $spacing-8;  /* Plus d'espace interne (haut/bas et gauche/droite) */
+  border-radius: 1rem;             /* Coins un peu plus arrondis pour un look moderne */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12); /* Ombre un peu plus prononcée */
+
+  /* Élargissement de la navbar */
+  max-width: 1920px;               /* Beaucoup plus large (standard grand écran) */
+  width: 95%;                      /* Occupe presque toute la largeur disponible */
+  margin: 1.5rem auto;             /* Centrée avec un peu plus d'espace vertical */
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-5;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: $spacing-8;
+    }
+
+    @media (min-width: 1200px) {
+      gap: $spacing-10;            /* Plus d'espace entre éléments sur très grands écrans */
+    }
+  }
+}
+
+.logo-title {
+  color: $title-blue;
+  font-size: $font-size-4xl;       /* Légèrement plus grand pour équilibrer la largeur */
+  font-weight: bold;
+  margin-bottom: $spacing-5;
+  text-decoration: none;  /* Important : enlève le soulignement */
+
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+    font-size: $font-size-3xl;
+  }
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $spacing-8;                 /* Plus d'espace entre les liens */
+  color: $gray-700;
+  font-weight: 600;                /* Un peu plus épais pour visibilité */
+  margin-bottom: $spacing-5;
+
+  @media (min-width: 768px) {
+    gap: $spacing-10;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 1200px) {
+    gap: $spacing-12;              /* Encore plus espacés sur très grands écrans */
+  }
+
+  a {
+    text-decoration: none;
+    color: $gray-700;
+    font-size: 1.1rem;             /* Liens un peu plus grands */
+    padding: $spacing-2 $spacing-4;
+    border-radius: $spacing-2;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: $title-blue;
+      background-color: rgba($title-blue, 0.08);
+    }
+  }
+}
+
+.btn-join {
+  background-color: $title-blue;
+  color: $white;
+  padding: $spacing-3 $spacing-8;  /* Bouton plus large et confortable */
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+
+  &:hover {
+    background-color: color.adjust($title-blue, $lightness: -12%);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+.logo-link {
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: none;
   }
 }
