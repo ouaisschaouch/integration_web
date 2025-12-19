@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "build": "npm run build:tailwind && npm run build:scss",
-    "build:tailwind": "tailwindcss -i ./tailwind.css -o ./dist/output.css --minify",
+    "build:tailwind": "tailwindcss -i ./tailwind.css -o ./public/dist/output.css --minify",
     "build:scss": "sass src/styles/main.scss:public/style.css --style compressed --quiet",
     "dev": "concurrently \"npm run watch:tailwind\" \"npm run watch:scss\"",
     "watch:tailwind": "tailwindcss -i ./tailwind.css -o ./dist/output.css --watch",
