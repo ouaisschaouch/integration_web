@@ -1,0 +1,130 @@
+@import 'variable';
+@import 'mixins';
+
+/* SEARCH BAR */
+.top-search {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: $white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.1);
+
+  input {
+    flex: 1;
+    border: none;
+    outline: none;
+  }
+
+  button {
+    background: $title-blue;
+    color: $white;
+    padding: 0.4rem 1.5rem;
+    border-radius: 999px;
+    font-size: .85rem;
+  }
+}
+
+/* TITLES */
+.resources-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.resources-subtitle {
+  margin-top: .5rem;
+  color: $gray-600;
+}
+
+/* SIDEBAR */
+.resources-sidebar {
+  width: 220px;
+  background: #f7f7fb;
+  border-radius: 1rem;
+  padding: 1rem;
+
+  li {
+    padding: .8rem 1rem;
+    border-radius: .7rem;
+    cursor: pointer;
+    margin-bottom: .4rem;
+
+    &.active {
+      background: rgba(74, 108, 247, .1);
+      color: $title-blue;
+      font-weight: 600;
+    }
+  }
+}
+
+/* RESOURCE ROW */
+.resource-row {
+  background: #a8bdf0;
+  border-radius: 1.3rem;
+  padding: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.4rem;
+
+  .icon-box {
+    font-size: 2.2rem;
+  }
+
+  .resource-info {
+    flex: 1;
+    margin-left: 1rem;
+
+    span {
+      font-size: .85rem;
+      color: #444;
+    }
+  }
+
+  .actions {
+    display: flex;
+    gap: .8rem;
+  }
+}
+
+.btn-primary {
+  background: #4a6cf7;
+  color: white;
+  padding: .4rem 1.2rem;
+  border-radius: 999px;
+}
+
+.btn-secondary {
+  background: #bfc5cc;
+  color: #333;
+  padding: .4rem 1.2rem;
+  border-radius: 999px;
+}
+
+/* POPULAR */
+.popular-title {
+  margin: 2rem 0 1rem;
+  font-weight: bold;
+}
+
+.popular-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.popular-card {
+  background: #a8bdf0;
+  border-radius: 1.3rem;
+  padding: 1.5rem;
+  text-align: center;
+
+  button {
+    margin-top: 1rem;
+    background: #4a6cf7;
+    color: white;
+    padding: .4rem 1.2rem;
+    border-radius: 999px;
+  }
+}

@@ -1,5 +1,59 @@
+
+
+// Responsive - CORRECTION : @content au lieu de geometric
+@mixin mobile {
+  @media (max-width: 480px) { @content; }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) { @content; }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) { @content; }
+}
+
+@mixin large {
+  @media (min-width: 1200px) { @content; }
+}
+
+// Firefox → Flexbox (correction du nom)
 @mixin flex-center {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Transition
+@mixin transition($property: all, $duration: 0.3s) {
+  transition: $property $duration ease-in-out;
+}
+
+// Ombre portée
+@mixin shadow($level: 1) {
+  @if $level == 1 {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  } @else if $level == 2 {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  } @else if $level == 3 {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  } @else if $level == 4 {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// Gradient avec la couleur #96B4EB demandée
+@mixin gradient-blue {
+  background: linear-gradient(135deg, #96B4EB 0%, #4A6FA5 100%);
 }

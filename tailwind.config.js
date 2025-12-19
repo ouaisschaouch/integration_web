@@ -1,15 +1,38 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
+    "./accompagnement.html",
     "./chat.html",
-    "./src/**/*.{html,js,scss}"
+    "./*.html",
+    "./**/*.html",
+    "./src/**/*.scss",
+    "./src/**/*.js",
+    "./js/**/*.js"
   ],
   theme: {
     extend: {
       colors: {
-        'title-blue': '#1E40AF',
-        'nav-gray': '#96B4EB',
+        'nav-gray': '#F8F9FA',
+        'title-blue': '#4A6FA5',
+        'primary-blue-light': '#166088',
+        'card-blue': '#F0F7FF',
+        'edulink-primary': '#4A6FA5',
+        'edulink-secondary': '#1A936F',
+        'edulink-accent': '#FF6B6B',
+      },
+      fontFamily: {
+        'sans': ['Inter', 'system-ui', 'sans-serif'],
+      },
+      borderRadius: {
+        'xl': '1rem',
+        '2xl': '1.5rem',
+        '3xl': '2rem',
+      },
+      boxShadow: {
+        'edulink': '0 10px 30px rgba(74, 111, 165, 0.15)',
+        'edulink-lg': '0 20px 50px rgba(74, 111, 165, 0.2)',
       }
-    }
+    },
   },
   plugins: [],
 }

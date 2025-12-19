@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../public/favicon.ico"s />
+  <title>EduLink - Ressources & Partage</title>
+
+  <!-- Tailwind -->
+  <link rel="stylesheet" href="./dist/output.css">
+  <!-- SCSS compiled -->
+  <link rel="stylesheet" href="./public/style.css">
+</head>
+
+<body class="bg-white flex flex-col min-h-screen">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <h1 class="logo-title">EduLink</h1>
+
+      <nav class="nav-links">
+        <a class="nav-link">Communication</a>
+        <a class="nav-link">Organisation</a>
+        <a class="nav-link font-semibold text-blue-600">Ressource et partage</a>
+        <a class="nav-link">Accompagnement</a>
+      </nav>
+
+      <button class="btn-join">Join Now</button>
+    </div>
+  </header>
+
+  <!-- SEARCH -->
+  <section class="container mx-auto px-6 mt-6">
+    <div class="top-search">
+      <span class="search-icon">🔍</span>
+      <input type="text" placeholder="Rechercher votre cours ..">
+      <button>Search</button>
+    </div>
+  </section>
+
+  <!-- TITLE -->
+  <section class="text-center mt-10">
+    <h1 class="resources-title">Ressources & Partage</h1>
+    <p class="resources-subtitle">
+      Accédez facilement aux cours, TPs, examens et projets<br>
+      partagés par les anciens (3A)
+    </p>
+  </section>
+
+  <!-- CONTENT -->
+  <main class="container mx-auto px-6 mt-10 flex gap-8">
+
+    <!-- SIDEBAR -->
+    <aside class="resources-sidebar">
+      <ul>
+        <li class="active">📘 Cours</li>
+        <li>📝 Examens</li>
+        <li>🧪 TP</li>
+        <li>📄 DS</li>
+        <li>💻 Pi-dev</li>
+      </ul>
+    </aside>
+
+    <!-- MAIN LIST -->
+    <section class="flex-1">
+
+      <!-- Resource card -->
+      <div class="resource-row">
+        <div class="icon-box">📖</div>
+        <div class="resource-info">
+          <h3>Cours Java-S3</h3>
+          <span>promo 2024.PDF.1.2 MB</span>
+        </div>
+        <div class="actions">
+          <button class="btn-primary">Consulter</button>
+          <button class="btn-secondary">Télécharger</button>
+        </div>
+      </div>
+
+      <div class="resource-row">
+        <div class="icon-box">🐍</div>
+        <div class="resource-info">
+          <h3>Introduction au Python</h3>
+          <span>promo 2024.PDF.1.4 MB</span>
+        </div>
+        <div class="actions">
+          <button class="btn-primary">Consulter</button>
+          <button class="btn-secondary">Télécharger</button>
+        </div>
+      </div>
+
+      <!-- POPULAR -->
+      <h3 class="popular-title">Populaires cette semaine</h3>
+
+      <div class="popular-grid">
+        <div class="popular-card">
+          <div class="popular-icon">🖥️</div>
+          <button>Télécharger</button>
+        </div>
+        <div class="popular-card">
+          <div class="popular-icon">☁️</div>
+          <button>Télécharger</button>
+        </div>
+        <div class="popular-card">
+          <div class="popular-icon">🤖</div>
+          <button>Télécharger</button>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer mt-16">
+    <div class="container">
+      <div class="footer-brand">
+        <h3>EduLink</h3>
+        <p>Empowering students through smart collaboration</p>
+      </div>
+      <div class="footer-copyright">
+        <p class="footer-text">© 2025 EduLink. All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

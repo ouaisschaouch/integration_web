@@ -1,6 +1,37 @@
-$primary-blue: #4667ff;
-$primary-blue-light: #5d7bff;
-$gray-light: #f3f4f6;
-$gray-dark: #4b5563;
-$radius-large: 1.5rem;
-$radius-medium: 1rem;
+// ============================================
+// VARIABLES SASS - Édulink
+// ============================================
+
+// Couleurs principales (bleu ciel #96B4EB)
+$primary-blue: #96B4EB;
+$primary-dark: #4A6FA5;
+$accent-green: #1A936F;
+$accent-red: #FF6B6B;
+
+// Couleurs neutres
+$light-bg: #F8FAFC;
+$card-bg: #FFFFFF;
+$text-dark: #2D3748;
+$text-muted: #718096;
+$border-color: #E2E8F0;
+$white: #FFFFFF;
+
+// Dégradé principal
+$primary-gradient: linear-gradient(135deg, $primary-blue, $primary-dark);
+
+// Tailles
+$header-height: 70px;
+$container-max: 1200px;
+$border-radius: 15px;
+$border-radius-lg: 25px;
+
+// Box shadows
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+$shadow-lg: 0 10px 30px rgba($primary-blue, 0.15);
+$shadow-xl: 0 20px 60px rgba($primary-blue, 0.2);
+
+// Transitions
+$transition-fast: 0.2s;
+$transition-normal: 0.3s;
+$transition-slow: 0.5s;

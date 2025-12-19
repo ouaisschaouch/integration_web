@@ -1,20 +1,32 @@
 {
-  "name": "tail",
+  "name": "edulink",
   "version": "1.0.0",
-  "description": "",
+  "description": "Projet Édulink - Integration Web",
   "main": "index.js",
   "scripts": {
-  "dev": "tailwindcss -i ./src/styles/main.scss -o ./dist/output.css --watch"
-}
-,
-  "keywords": [],
+    "sass:build": "sass src/styles/main.scss public/style.css --style compressed",
+    "sass:watch": "sass --watch src/styles/main.scss public/style.css",
+    "sass:dev": "sass --watch src/styles/main.scss public/style.css --source-map",
+    "build": "npm run sass:build",
+    "dev": "npm run sass:dev",
+    "clean": "rm -rf public/*.css public/*.css.map"
+  },
+  "keywords": [
+    "edulink",
+    "sass",
+    "web"
+  ],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "devDependencies": {
-    "autoprefixer": "^10.4.22",
-    "postcss": "^8.5.6",
-    "postcss-cli": "^11.0.1",
-    "tailwindcss": "^3.4.19"
-  }
+    "sass": "^1.96.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ouaisschaouch/Integration_Web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ouaisschaouch/Integration_Web/issues"
+  },
+  "homepage": "https://github.com/ouaisschaouch/Integration_Web#readme"
 }

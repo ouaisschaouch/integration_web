@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduLink – Accompagnement</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="./dist/output.css">
+</head>
+<body>
+
+<header class="top-bar">
+  <div class="logo">EduLink</div>
+
+  <nav class="nav">
+    <a href="#">Communication</a>
+    <a href="#">Organisation</a>
+    <a href="#">Ressource et partage</a>
+    <a href="#" class="active">Accompagnement</a>
+  </nav>
+
+  <button class="btn-primary">Join Now</button>
+</header>
+
+<div class="search-bar">
+  <input type="text" placeholder="Find collaborators or mentors instantly">
+  <button>Search</button>
+</div>
+
+<section class="hero">
+  <h1>Accompagnement personnalisé<br>pour les 3A</h1>
+  <p>Trouver un tuteur adapté à vos besoins</p>
+</section>
+
+<section class="form-card">
+
+  <!-- FILIÈRE -->
+  <div class="row">
+    <label>Votre Filière :</label>
+
+    <div class="select-box" id="filiereBox">
+      <span id="filiereValue">Votre filière</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+
+    <div class="dropdown" id="filiereList">
+      <div>Informatique</div>
+      <div>Électronique</div>
+      <div>Mécanique</div>
+    </div>
+  </div>
+
+  <!-- BESOIN -->
+<div class="row">
+  <label>Choisissez votre besoin :</label>
+
+  <div class="select-box" id="besoinBox">
+    <span id="besoinValue">Votre besoin</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </div>
+
+  <div class="dropdown" id="besoinList">
+    <div>TP</div>
+    <div>Mini-projet</div>
+    <div>Révision module</div>
+  </div>
+</div>
+
+
+  <!-- DISPONIBILITÉ -->
+  <div class="row">
+    <label>Disponibilités :</label>
+
+    <div class="select-box" id="dispoBox">
+      <span id="dispoValue">Vos disponibilités</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+
+    <div class="dropdown" id="dispoList">
+      <div>Matin</div>
+      <div>Après-midi</div>
+      <div>Soir</div>
+      <div>Week-end</div>
+    </div>
+  </div>
+  
+
+<button class="btn-submit" onclick="location.href='src/profil-parrain.html'">
+  Demander un parrain
+</button>
+
+
+
+  <div class="stats">
+    <div><i class="fa-solid fa-user"></i> +40 tuteurs disponibles</div>
+    <div><i class="fa-solid fa-bolt"></i> Réponse sous 24h</div>
+    <div><i class="fa-solid fa-check"></i> Matching automatique</div>
+  </div>
+
+</section>
+
+<footer class="footer">
+  <div class="logo">EduLink</div>
+  <div class="socials">
+    <i class="fab fa-facebook"></i>
+    <i class="fas fa-at"></i>
+    <i class="fab fa-linkedin"></i>
+    <i class="fab fa-x-twitter"></i>
+  </div>
+</footer>
+
+<script src="accompagnement.js"></script>
+</body>
+</html>

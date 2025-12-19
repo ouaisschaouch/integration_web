@@ -1,0 +1,24 @@
+@import 'accompagnement';
+@import "ressources";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.join-now-btn {
+  padding: 0.75rem 1.5rem;
+  background: white;
+  color: #4A6FA5;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.edulink-footer {
+  background: linear-gradient(135deg, #4A6FA5, #166088);
+  color: white;
+  text-align: center;
+  padding: 3rem 2rem;
+  margin-top: 4rem;
+}
