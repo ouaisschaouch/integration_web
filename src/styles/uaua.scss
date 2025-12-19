@@ -1,0 +1,132 @@
+@import 'variable';
+
+// Mixins réutilisables
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin transition-all($duration: 300ms) {
+  transition: all $duration ease-in-out;
+}
+
+@mixin transition-colors($duration: 300ms) {
+  transition: background-color $duration ease-in-out, 
+              color $duration ease-in-out, 
+              border-color $duration ease-in-out;
+}
+
+@mixin card {
+  background-color: $title-blue;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  
+  @media (min-width: 768px) {
+    padding: 2rem;
+    border-radius: 1.5rem;
+  }
+}
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin gradient-bg($color1, $color2) {
+  background: linear-gradient(135deg, $color1 0%, $color2 100%);
+}
+
+@mixin shadow($size: 'md') {
+  @if $size == 'sm' {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  } @else if $size == 'md' {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  } @else if $size == 'lg' {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  } @else if $size == 'xl' {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@mixin transition($property: all, $duration: 0.3s) {
+  transition: $property $duration ease;
+}
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin button-base {
+  padding: $spacing-4 $spacing-6;  // équivalent logique à "lg"
+;
+  border-radius: $radius-full;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: $transition-base;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+@mixin card {
+  background-color: $card-bg;
+  border-radius: $radius-xl;
+  padding: $spacing-12; // ✅ corrigé
+  box-shadow: $shadow-md;
+}
+
+// Responsive
+@mixin mobile {
+  @media (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+@mixin transition-all($duration: 300ms) {
+  transition: all $duration ease-in-out;
+}
